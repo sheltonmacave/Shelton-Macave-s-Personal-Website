@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="icon" href="LogoAssinatura/Branco-sembg.png" type="image/png">
+    <link rel="stylesheet" href="Contactos.css">
+    <link rel="stylesheet" href="fonts-6/css/all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Contactos.js"></script>
+    <title>CONTACTOS</title>
+</head>
+<body>
+    <audio id = "click" src="click.mp3"></audio>
+    <audio id = "clicklow" src="click low.mp3"></audio>
+    <audio id = "mouseover" src="mouseover open.mp3"></audio>
+    <audio id = "mouseout" src="mouseout close.mp3"></audio>
+    <audio id = "PSSE" src="PSSE.mp3"></audio>
+    <audio id = "XBSE" src="XBSE.mp3"></audio>
+    <audio id = "bnsound" src="BN.mp3"></audio>
+    <audio id = "bnlowsound" src="BNlow.mp3"></audio>
+    
+    <aside id = "navegacao">
+        <div id = "botoes">
+            <div class = "botoescada">
+                <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#sec1');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                <label for = "seccao" class =  "botaop">Profissional</label>
+            </div>
+            <div class = "botoescada">
+                <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#sec2');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                <label for = "seccao" class =  "botaop">Social</label>
+            </div>
+            <div class = "botoescada">
+                <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#sec3');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                <label for = "seccao" class =  "botaop">Musica</label>
+            </div>
+            <div class = "botoescada">
+                <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#sec4');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                <label for = "seccao" class =  "botaop">Gaming</label>
+            </div>
+        </div>
+    </aside>
+
+    <div class="box">
+        
+    </div>
+
+    <header id = "BN">
+        <figure id = "BNdivlogo">
+            <a href="Pagina Inicial.html"><img id = "BNlogo" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+        </figure>
+        <div id = "BNfixar">
+            <button id = "BNfb" onclick="fix()"><i class="fa-solid fa-thumbtack" style="color: #ffffff;"></i></button>
+        </div>
+        <ul id = "BNitens">
+            <li class = "BNitem"><a class = "BNia" href="Sobre Mim.html" onmouseover="playSound('bnsound')">Sobre Mim</a></li>
+            <li id = "dropdown" class = "BNitem">
+                <a class = "BNia" onmouseover = "playSound('bnsound')">
+                    Carreiras
+                    <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                </a>
+                
+                <div id = "dropdown-menu">
+                    <a class = "dmitem" href="CWebDev.html" onmouseover = "playSound('bnlowsound')";>Desenvolvedor Web</a>
+                    <a class = "dmitem" href="CDA.html" onmouseover = "playSound('bnlowsound')">Analista de Dados</a>
+                    <a class = "dmitem" href="CPM.html" onmouseover = "playSound('bnlowsound')">Produtor Musical</a>
+                </div>
+            </li>
+            <li class = "BNitem"><a class = "BNia" href="Galeria.html" onmouseover = "playSound('bnsound')">Galeria</a></li>
+            <li class = "BNitem"><a class = "BNia" href="Contactos.html" onmouseover = "playSound('bnsound')">Contactos</a></li>
+        </ul>
+        <button id = "BNbotao" onclick="mostrarnavbar()">
+            <i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>
+        </button>
+        <ul id = "BNitens2">
+            <li class = "BNitem2"><a class = "BNia2" href="Sobre Mim.html" onclick="playSound('bnsound')">Sobre Mim</a></li>
+            <li id = "dropdown2" class = "BNitem2">
+                <a class = "BNia2" onclick = "dmi2()" onclick = "playSound('bnsound')">
+                    Carreiras &nbsp
+                    <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                </a>
+                
+                <div id = "dropdown-menu2">
+                    <a class = "dmitem2" href="CWebDev.html" onclick = "playSound('bnlowsound')">Desenvolvedor Web</a>
+                    <a class = "dmitem2" href="CDA.html" onclick = "playSound('bnlowsound')">Analista de Dados</a>
+                    <a class = "dmitem2" href="CPM.html" onclick = "playSound('bnlowsound')">Produtor Musical</a>
+                </div>
+            </li>
+            <li class = "BNitem2"><a class = "BNia2" href="Galeria.html" onclick = "playSound('bnsound')">Galeria</a></li>
+            <li class = "BNitem2"><a class = "BNia2" href="Contactos.html" onclick = "playSound('bnsound')">Contactos</a></li>
+        </ul>
+    </header>
+
+    <aside id = "popup">
+        <p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>
+    </aside>
+
+    <main>
+        <section id = "Contactos">
+            <section id = "Contactostitulo">
+                <h1>Contactos</h1>
+            </section>
+            <section id = "sec1" class = "sec">
+                <section class = "ContactoLG">
+                    <video autoplay loop muted class = "videosGLobal ContactoBP">
+                        <source src="Background/Branco Preto.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <section class = "ContactoLI">
+                        <section id = "LIlogo">
+                            <i class="fa-brands fa-linkedin fa-flip iSize" style = "color: white;"></i>
+                        </section>
+                        <nav id = "LItexto">
+                            <p id = "txtP">No meu perfil do <span class = "diffP">LinkedIn</span>, compartilho a minha trajectoria profissional, desde a formação até os projectos mais recentes e realizações.</p>
+                            <a id = "txtB" class = "txtBC" href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank">
+                                <span class = "txtSpan">Link Up</span>
+                                <i class="fa-solid fa-link txtIcon" style="color: #ffffff;"></i>
+                            </a>
+                        </nav>
+                    </section>
+                </section>
+                
+                <section class = "ContactoLG">
+                    <video autoplay loop muted class = "videosGLobal ContactoBP">
+                        <source src="Background/Branco Preto.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <section class = "ContactoLI">
+                        <nav id = "GITtexto">
+                            <a id = "txtB2" class = "txtBC" href="https://github.com/sheltonmacave" target="_blank">
+                                <span class = "txtSpan">Collab</span>
+                                <i class="fa-solid fa-handshake txtIcon" style="color: #ffffff;"></i>
+                            </a>
+                            <p id = "txtP2">No <span class = "diffP">GitHub</span>, apresento meus códigos e projectos colaborativos.
+                                <br>É um espaco para inovação e aprendizado contínuo.</p>
+                        </nav>
+                        <section id = "GITlogo">
+                            <i class="fa-brands fa-square-github fa-flip iSize" style="color: white;"></i>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+            <section id = "sec2" class = "sec">
+                <section id = "ContactoMN">
+                    <section id = "CMN">
+                        <video autoplay loop muted class = "videosGLobal ContactoPB">
+                            <source src="Background/Preto Branco.mp4" type="video/mp4">
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                        <section id = "CMail">
+                            <section class = "Cboxtopo">
+                                <i class="fa-regular fa-envelope fa-fade iSize2" style="color: #ffffff;"></i>
+                                <h2 class = "CBTtitulo">E-mail</h2>
+                            </section>
+                            <hr class = "CMNhr">
+                            <nav class = "Cboxtexto">
+                                <ul class = "CBTul">
+                                    <li><a class = "CBTli" href="mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a></li>
+                                </ul>
+                            </nav>
+                        </section>
+
+                        <section id = "CNumero">
+                            <section class = "Cboxtopo">
+                                <i class="fa-solid fa-phone fa-fade iSize2" style="color: #ffffff;"></i>
+                                <h2 class = "CBTtitulo">Numero</h2>
+                            </section>
+                            <hr class = "CMNhr">
+                            <nav class = "Cboxtexto">
+                                <ul  class = "CBTul">
+                                    <li><a class = "CBTli CBTliN" href = "tel:+258855673021">+258 855673021</a></li>
+                                </ul>
+                            </nav>
+                        </section>
+                    </section>
+                </section>
+                
+                <section id = "ContactoMN">
+                    <section id = "CMN">
+                        <video autoplay loop muted class = "videosGLobal ContactoPB">
+                            <source src="Background/Preto Branco.mp4" type="video/mp4">
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                        <iframe id = "ifras" src="https://www.instagram.com/_drakesdeception/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                            
+                        <nav id = "Ciframe2">
+                            <iframe frameborder="0" width="100%" height="100%" src="https://www.facebook.com/v9.0/plugins/page.php?adapt_container_width=true&amp;app_id=113869198637480&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df310a21b6f5a654%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff3cf179cd85d47c%26relation%3Dparent.parent&amp;container_width=500&amp;height=500&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2F/sheltone153/&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=none&amp;width=500"></iframe>
+                            <script type="text/javascript" src="https://www.embedista.com/j/fbwidget.js"></script>
+                            <div id="fbroot"></div>
+                            <div style="overflow: auto; position: absolute; height: 0pt; width: 0pt;">
+                                <a href="https://www.embedista.com/embed-facebook-feed">Embed Facebook Feed</a>
+                            </div>
+                            <div class="fblike" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
+                        </nav>
+                    </section>
+                </section>
+            </section>
+
+            <section id = "sec3" class = "sec">
+                <section id = "ContactoSpoti">
+                    <video autoplay loop muted class = "videosGLobal contactoSpot">
+                        <source src="Videos/Spotify.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <nav id = CS>
+                        <a class = "CSb" href = "https://open.spotify.com/intl-pt/artist/7xTFjEEHD72UOdaLZ6klYX?si=bgbiw6D8Qa2WNb-v69p9gg">
+                            Artista
+                        </a>
+                        <hr class = "CShr">
+                        <a class = "CSb" href = "https://open.spotify.com/user/sqwipxrhyi6uz9ms2khopenm6?si=0a2c21d6c3fa48b2">
+                            Pessoal
+                        </a>
+                    </nav>
+                </section>
+            </section>
+
+            <section id = "sec4" class = "sec">
+                <section id = "Xbox" onmouseover = "playSound('XBSE')" onclick="toggleXbox()">
+                    <i class="fa-brands fa-xbox iSize3 XBlogo" style="color: #ffffff;"></i>
+                    <h2 class = "Gamingh2">Itaky153</h2>
+                    <p id = "XboxP" class = "GamingPs">"...You take <strong>the green pill</strong>, you stay in Wonderland, and I show you how deep the rabbit hole goes."</p>
+                    <!--<div id = "Xboxextra" class = "sec4extra">
+                        <p id = "XboxP" class = "GamingPs">"...You take <strong>the green pill</strong>, you stay in Wonderland, and I show you how deep the rabbit hole goes."</p>
+                    </div>-->
+                </section>
+                <section id = "PS" onmouseover = "playSound('PSSE')" onclick="togglePS()">
+                    <i class="fa-brands fa-playstation iSize3 PSlogo" style="color: #ffffff;"></i>
+                    <h2 class = "Gamingh2">itaky_153</h2>
+                    <p id = "PSP" class = "GamingPs">"You take <strong>the blue pill</strong>, the story ends. You wake up in your bed and believe whatever you want to believe..."</p>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer id = "ConteudoBaixo" class = "sec">
+        <nav id = "CB1">
+            <nav id = "Logo">
+                <a href="Pagina Inicial.html"><img id = "Logoimg" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+            </nav>
+            <nav id = "Tele">
+                <h2 class = "Teletitulo">Contacto:</h2>
+                <p>
+                    <a class = "CB1links" href = "tel:+258855673021">+258 855673021</a>
+                </p>
+            </nav>
+            <nav id = "Mail">
+
+                <h2 class = "Teletitulo">Endereço Electrônico:</h2>
+                <a class = "CB1links" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+            </nav>
+            <nav id = "Redes">
+                <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+            </nav>
+        </nav>
+        <nav id = "CB2">
+            <div id = "sec1footer">
+                <nav id = "Logo2">
+                    <a href="Pagina Inicial.html"><img id = "Logoimg2" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+                </nav>
+                <nav id = "Redes2">
+                    <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+                </nav>
+            </div>
+            <div id = "sec2footer">
+                <nav id = "Tele2">
+                    <h2 class = "Teletitulo2">Contacto:</h2>
+                    <p>
+                        <a class = "CB1links2" href = "tel:+258855673021">+258 855673021</a>
+                    </p>
+                </nav>
+                <nav id = "Mail2">
+
+                    <h2 class = "Teletitulo2">Endereço Electrônico:</h2>
+                    <a class = "CB1links2" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+                </nav>
+            </div>
+        </nav>
+        <hr id = "CBhr">
+        <div id = "Clegal">
+            <p>© 2024 SHELTON MACAVE</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Se o vídeo estiver visível, inicie a reprodução
+                    entry.target.play();
+                } else {
+                    // Se o vídeo não estiver visível, pause a reprodução
+                    entry.target.pause();
+                }
+            });
+        }
+
+        const options = {
+            threshold: 0.4
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, options)
+
+        const videoSet = document.querySelectorAll('.videosGLobal');
+        videoSet.forEach(vid => {
+            observer.observe (vid);
+        });
+
+        function playSound(soundId) {
+            var audio = document.getElementById(soundId);
+            audio.play();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Obtenha todas as seções e botões
+            var sections = document.querySelectorAll(".sec");
+            var buttons = document.querySelectorAll(".nbotao");
+
+            // Adicione um ouvinte de rolagem ao documento
+            document.addEventListener("scroll", function () {
+                var scrollPosition = window.scrollY;
+
+                // Iterar sobre as seções
+                sections.forEach(function (section, index) {
+                    var sectionTop = section.offsetTop;
+                    var sectionHeight = section.clientHeight;
+
+                    // Verifique se a posição de rolagem está dentro da seção
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remova a classe 'active' de todos os botões
+                        buttons.forEach(function (button) {
+                            button.parentElement.classList.remove("active");
+                        });
+
+                        // Adicione a classe 'active' ao botão correspondente à seção visível
+                        buttons[index].parentElement.classList.add("active");
+                        function playSound() {
+                            var audio = document.getElementById('#mouseover');
+                            audio.play();
+                        }
+                    }
+                });
+            });
+        });
+
+
+
+        function fix() {
+            const but = document.querySelector('#BN');
+            const pp = document.querySelector('#popup');
+
+            if (but.style.position === "sticky") {
+                but.style.position = "static";
+                pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Livre</strong>.</p>';
+            } else {
+                but.style.position = "sticky";
+                pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>';
+            }
+
+            pp.style.display = "block";
+
+            setTimeout(() => {
+                pp.style.display = "none";
+            }, 7000);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById("BNitens2");
+            const botao = document.querySelector("#BNbotao");
+
+            let isNavbarOpen = false;
+
+            // Evento para abrir/fechar o dropdown ao clicar no botão
+            botao.addEventListener('click', function(event) {
+                event.stopPropagation(); // Impede que o evento de clique se propague para o documento
+                isNavbarOpen = !isNavbarOpen;
+
+                if (isNavbarOpen) {
+                    navbar.style.display = "block";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-up fa-2xl" style="color: #ffffff;"></i>';
+                } else {
+                    navbar.style.display = "none";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+                }
+            });
+
+            // Evento para fechar o dropdown ao clicar fora dele
+            document.addEventListener('click', function(event) {
+                if (isNavbarOpen && !navbar.contains(event.target) && event.target !== botao) {
+                    navbar.style.display = "none";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+                    isNavbarOpen = false; // Atualiza o estado para refletir que o navbar está fechado
+                }
+            });
+        });
+
+        let num1 = 0;
+        function mostrarnavbar() {
+            const navbar = document.getElementById("BNitens2");
+            const botao = document.querySelector("#BNbotao")
+            const ddm2 = document.querySelector("#dropdown-menu2");
+            // Se a barra de navegação estiver visível, oculta; se estiver oculta, mostra
+            if (num1 === 0) {
+                num1 = 1;
+                navbar.style.display = "flex";
+                botao.innerHTML = '<i class="fa-solid fa-chevron-up fa-2xl" style="color: #ffffff;"></i>';
+            } else {
+                num1 = 0;
+                navbar.style.display = "none";
+                botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+            }
+        }
+
+        function dmi2() {
+            const ddm2 = document.querySelector("#dropdown-menu2");
+            
+            if (ddm2.style.display === "none" || ddm2.style.display === "") {
+                ddm2.style.display = "flex";
+            } else {
+                ddm2.style.display = "none";
+            }
+        }
+
+        function Scrollar(id) {
+            document.querySelector(id).scrollIntoView({ behavior: 'smooth'});
+            bp.style.display = "block"
+        }
+
+        const botaos = document.querySelectorAll('.nbotao');
+        botaos.forEach(botao => {
+            const botaop = botao.nextElementSibling;
+
+            botao.addEventListener('mouseover', () => {
+                botaop.style.display = "block";
+            });
+
+            botao.addEventListener('mouseout', () => {
+                botaop.style.display = "none";
+            });
+        });
+
+        function toggleXbox() {
+            var xbox = document.getElementById('Xbox');
+            var xboxLogo = document.querySelector('#Xbox .XBlogo');
+            const xp = document.querySelector('#XboxP');
+            const xbse = document.querySelector('#XBSE');
+            const xbh2 = document.querySelector('#Xbox h2');
+        
+            if (xbox.classList.contains('active')) {
+                xbox.style.backdropFilter = '';
+                xbox.style.backgroundColor = '';
+                xbox.style.border = '';
+                xboxLogo.style.display = 'block';
+                xboxLogo.style.animation = 'xtz 2s ease';
+                xbox.classList.remove('active');
+                xp.style.display = 'none';
+                xbse.play();
+                xbh2.style.display = 'block';
+            } else {
+                xbox.style.backdropFilter = 'saturate(100%)';
+                xbox.style.backgroundColor = 'rgba(46, 171, 17, .5)';
+                xbox.style.border = 'solid .15rem rgb(46, 171, 17)';
+                xboxLogo.style.display = 'none';
+                xboxLogo.style.animation = '';
+                xbox.classList.add('active');
+                xp.style.display = 'block';
+                xbh2.style.display = 'none';
+            }
+        }
+
+        function togglePS() {
+            var ps = document.getElementById('PS');
+            var psLogo = document.querySelector('#PS .PSlogo');
+            const psp = document.querySelector('#PSP');
+            const psse = document.querySelector('#PSSE');
+            const psh2 = document.querySelector('#PS h2');
+
+            if (ps.classList.contains('active')) {
+                ps.style.backdropFilter = '';
+                ps.style.backgroundColor = '';
+                ps.style.border = '';
+                psLogo.style.display = 'block';
+                psLogo.style.animation = 'ptz 2s ease';
+                ps.classList.remove('active');
+                psp.style.display = 'none';
+                psh2.style.display = "block"
+                psse.play();
+                psh2.background = "rgb(21, 68, 136)";
+            } else {
+                ps.style.backdropFilter = 'saturate(100%)';
+                ps.style.backgroundColor = 'rgba(21, 68, 136, .5)';
+                ps.style.border = 'solid .15rem rgb(21, 68, 136)';
+                psLogo.style.display = 'none';
+                psLogo.style.animation = '';
+                ps.classList.add('active');
+                psp.style.display = 'block';
+                psh2.style.display = "none"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2539 @@
+html {
+    font-size: 100%;
+}
+body {
+    background-color: black;
+    margin: 0;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+@font-face {
+    font-family: 'JuliusSansOne-Regular';
+    src: url('Fontes/Julius_Sans_One/JuliusSansOne-Regular.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-Light';
+    src: url('Fontes/Dosis/static/Dosis-Light.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-Medium';
+    src: url('Fontes/Dosis/static/Dosis-Medium.ttf') format('opentype');
+}
+
+#navegacao {
+    align-items: center;
+    backdrop-filter: blur(1.5rem);
+    border-radius: 0.3rem;
+    bottom: 50%;
+    display: flex;
+    left: 1%;
+    opacity: 0.4;
+    padding: .3%;
+    position: fixed;
+    transform: translateY(50%);
+    z-index: 2;
+    transition: opacity 1s;
+}
+#navegacao:hover {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.botoescada {
+    display: flex;
+    flex-direction: row;
+}
+/* Adicione uma classe para destacar o botão da seção ativa */
+.botoescada.active .nbotao {
+    background-color: white;
+    /* Adicione outros estilos desejados para a seção ativa */
+}
+
+.nbotao {
+    appearance: none;
+    background-color: black;
+    border-radius: 0.3rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: width 0.5s ease;
+}
+.nbotao:hover {
+    width: 2.8rem;
+}
+.botaop {
+    color: white;
+    display: none;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.4rem;
+    padding: 2%;
+    text-wrap: nowrap;
+}
+
+.box {
+    display:none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+#BN {
+    align-items: center;
+    backdrop-filter: blur(0.6rem);
+    background-color: transparent;
+    box-shadow: 0 0 .5rem .20rem rgba(0, 0, 0, 0.25);
+    display: flex;
+    height: 17vh;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    transition: display 2s ease;
+    transition: position 1s ease;
+}
+#BNdivlogo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 20%;
+}
+#BNdivlogo a {
+    display: flex;
+    justify-content: center;
+}
+#BNlogo {
+    height: 10%;
+    width: 45%;
+}
+#BNfixar {
+    left: 16.85%;
+    top: 0;
+    position: absolute;
+}
+#BNfb {
+    background-color: transparent;
+    border: none;
+    padding: 20%;
+}
+#BNfb:hover {
+    cursor: pointer;
+    font-size: 1.3rem;
+
+    transition: font-size 0.5s ease;
+}
+
+#BNitens {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.BNia {
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+    height: 100%;
+    padding: 1.5vw;
+    position: relative;
+    text-decoration: none;
+    text-wrap: nowrap;
+
+    transition: border 0.5s ease;
+    transition: font-size 0.5s ease;
+}
+.BNia::before, .BNia::after {
+    background-color: white;
+    content: "";
+    height: .1rem;
+    position: absolute;
+    transition: .5s;
+    width: 0%;
+}
+.BNia::after {
+    bottom: .1rem;
+    left: 0;
+}
+.BNia::before {
+    right: 0;
+    top: .1rem;
+}
+.BNia:hover {
+    cursor: pointer;
+}
+.BNia:hover::after,
+.BNia:hover::before {
+    width: 100%;
+}
+#dropdown:hover #dropdown-menu{
+    display: flex;
+    transition: display 1s ease;
+}
+#dropdown-menu {
+    background-color: black;
+    border-radius: 0 0 1.1rem 1.1rem;
+    display: none;
+    flex-direction: column;
+    margin-top: 1%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+}
+.dmitem {
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.5vw;
+    height: 100%;
+    padding: 1.2vw;
+    text-decoration: none;
+
+    transition: border 0.5s ease;
+    transition: font-size 0.5s ease;
+}
+.dmitem:hover {
+    border-left: 0.1rem solid gray;
+    font-size: 2vw;
+}
+#BNbotao {
+    background-color: transparent;
+    border: solid white .15rem;
+    border-radius: .5rem;
+    visibility: hidden;
+    height: 50%;
+    padding: 0 4%;
+    position: absolute;
+    right: 14%;
+}
+#popup {
+    animation: popup 7s ease;
+    background-color: white;
+    border-radius: 1rem;
+    bottom: -15%;
+    position: fixed;
+    right: 3%;
+    z-index: 3;
+}
+#popuptexto {
+    color: black;
+    font-size: 1.5vw;
+    padding: 0 1vw;
+    text-wrap: nowrap;
+}
+@keyframes popup {
+    0%, 100% {transform: translateY(0); opacity: 0;}
+    10%, 90% {transform: translateY(-250%); opacity: 1;}
+}
+
+#Contactos {
+    background-color: #0a142f;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 420vh;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+#Contactostitulo {
+    align-items: center;
+    backdrop-filter: blur(0.6rem);
+    background: transparent;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 5rem;
+    height: 20vh;
+    justify-content: center;
+    padding: .5%;
+    z-index: 1;
+}
+.iSize {
+    font-size: 12vw;
+}
+#sec1 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.ContactoLG {
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .3rem rgba(0, 0, 0, 0.5);
+    height: 40vh;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+}
+.ContactoBP {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    transition: filter 1s ease;
+    z-index: -1;
+}
+.ContactoLI {
+    border-radius: 1.3rem;
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 94%;
+}
+#LIlogo {
+    align-items: center;
+    background-color: #0a142f;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+#LItexto {
+    align-items: center;
+    backdrop-filter: blur(.6rem) brightness(80%);
+    border-radius: 0 1.3rem 1.3rem 0;
+    color: black;
+    display: flex;
+    font-family: "Dosis-Medium";
+    font-size: 2.5vw;
+    justify-content: center;
+    padding: 0 3% 2% 3%;
+    width: 70%;
+}
+#txtB {
+    align-items: center;
+    background: #0a142f;
+    bottom: 0%;
+    border: none;
+    border-radius: 1.3rem 0;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2.5vw;
+    height: 25%;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    right: 0%;
+    width: 30%;
+}
+#GITlogo {
+    align-items: center;
+    background-color: #f25232;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+#GITtexto {
+    align-items: center;
+    backdrop-filter: blur(.6rem) brightness(80%);
+    border-radius: 1.3rem 0 0 1.3rem;
+    color: black;
+    display: flex;
+    font-family: "Dosis-Medium";
+    font-size: 2.3vw;
+    justify-content: center;
+    
+    padding: 0 3% 2% 3%;
+    text-align: right;
+    width: 70%;
+}
+#txtP2 {
+    margin-top: 5%;
+}
+#txtB2 {
+    align-items: center;
+    background: #f25232;
+    border: none;
+    border-radius: 0 1.3rem;
+    bottom: 0%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2.5vw;
+    height: 25%;
+    justify-content: center;
+    left: 0%;
+    position: absolute;
+    text-decoration: none;
+    width: 30%;
+}
+.txtSpan {
+    animation: disp 6s infinite;
+    opacity: 0;
+    position: absolute;
+}
+
+@keyframes disp {
+    0%, 49.9% {
+        opacity: 0;
+    }
+    50%, 100% {
+        opacity: 1;
+    }
+}
+
+.txtIcon {
+    animation: disp2 6s infinite;
+    opacity: 1;
+    position: absolute;
+}
+
+@keyframes disp2 {
+    0%, 49.9% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+.diffP {
+    font-weight: bold;
+}
+#sec2 {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-height: 100vh;
+    width: 100%;
+}
+#CMN, #ContactoSpoti {
+    align-items: center;
+    border-radius: 1.3rem;
+    box-shadow: 0 0 .5rem .3rem rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: space-evenly;
+    overflow: hidden;
+    position: relative;
+    width: 45vw;
+}
+.ContactoPB {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    transition: filter 1s ease;
+    z-index: 0;
+}
+#CMail, #CNumero {
+    backdrop-filter: blur(.6rem);
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    height: 40%;
+    overflow: hidden;
+    width: 85%;
+    z-index: 1;
+}
+.iSize2 {
+    font-size: 2.5vw;
+}
+.Cboxtopo {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+    justify-content: center;
+}
+.Cboxtopo i {
+    padding: 2%;
+}
+.CBTtitulo {
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2.5vw;
+}
+.CMNhr {
+    opacity: .4;
+    width: 80%;
+}
+.Cboxtexto {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+    justify-content: center;
+}
+.CBTul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0 0%;
+}
+.CBTul li {
+    margin: 5% 0;
+    text-align: start;
+}
+.CBTli {
+    color: rgb(185, 185, 185);
+    font-family: 'Dosis-Light';
+    font-size: 3vw;
+    text-decoration: none;
+}
+.CBTli:hover {
+    color: white;
+}
+.CBTliN {
+    letter-spacing: .5rem;
+}
+#Ciframe{
+    background: black;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    height: 35%;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    z-index: 1;
+}
+#ifras {
+    background: black;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    height: 19.5rem;
+    overflow: hidden;
+    top: 0;
+    width: 90%;
+    z-index: 2;
+}
+#Ciframe2{
+    border-radius: .5rem;
+    box-sizing: border-box;
+    display: flex;
+    height: 21%;
+    justify-content: center;
+    overflow: hidden;
+    width: 66%;
+    z-index: 1;
+}
+
+#sec3 {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+#ContactoSpoti {
+    width: 95%;
+}
+.contactoSpot {
+    height: 100%;
+    object-fit: fill;
+    width: 100%;
+    transition: filter 1s ease;
+    z-index: 0;
+}
+#CS {
+    align-items: center;
+    box-shadow: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 95%;
+}
+.CSb {
+    align-items: center;
+    backdrop-filter: blur(.6rem);
+    background-color: transparent;
+    border: solid gray .15rem;
+    border-radius: 1.3rem;
+    color: rgb(206, 206, 206);
+    cursor: pointer;
+    display: flex;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 7vw;
+    height: 80%;
+    justify-content: center;
+    text-decoration: none;
+    width: 80%;
+
+    transition: color 1s ease;
+    transition: backdrop-filter 1s ease;
+}
+.CSb:hover {
+    backdrop-filter: blur(.3rem) saturate(0%);
+    border: solid #1cb46c .15rem;
+    color: white;
+}
+.CShr {
+    border-color: white;
+    opacity: .6;
+    transform: rotate(-90deg);
+    width: 20rem;
+}
+
+#sec4 {
+    background-image: url('Background/Green or Blue inverted.jpeg');
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh; /* Defina a altura do elemento div */
+    overflow: hidden;
+    width: 100vw; /* Defina a largura do elemento div */
+}
+#Xbox {
+    align-items: center;
+    backdrop-filter: saturate(0%);
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    width: 50%;
+
+    transition: backdrop-filter .5s ease;
+    transition: background-color .5s ease;
+}
+#Xbox:hover {
+    backdrop-filter: saturate(100%);
+    background-color: rgba(46, 171, 17, .4);
+    border: solid .15rem rgb(46, 171, 17);
+    box-sizing: border-box;
+}
+#Xbox:hover .XBlogo {
+    animation: xtz 2s ease;
+}
+@keyframes xtz {
+    0% {
+        transform: perspective(500px) translateZ(500px);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(500px) translateZ(0);
+        opacity: 1;
+    }
+}
+#PS {
+    align-items: center;
+    backdrop-filter: saturate(0%);
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    width: 50%;
+
+    transition: backdrop-filter .5s ease;
+    transition: background-color .5s ease;
+}
+#PS:hover {
+    backdrop-filter: saturate(100%);
+    background-color: rgba(21, 68, 136, .4);
+    border: solid .15rem rgb(21, 68, 136);
+    box-sizing: border-box;
+}
+#PS:hover .PSlogo {
+    animation: ptz 1s ease;
+}
+@keyframes ptz {
+    0% {
+        opacity: 0;
+        transform: scale(.1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    70%, 90% {
+        opacity: 0.5;
+    }
+    80%, 100% {
+        opacity: 1;
+    }
+
+}
+@keyframes xptz {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    70%, 90% {
+        opacity: 0.25;
+    }
+    80%, 100% {
+        opacity: 1;
+    }
+
+}
+.iSize3 {
+    font-size: 15vw;
+}
+#Xbox h2, #PS h2 {
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 5vw;
+    margin-top: 30%;
+}
+#XboxP, #PSP {
+    color: white;
+    display: none;
+    font-family: 'Dosis-Light';
+    font-size: 5vw;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+#ConteudoBaixo {
+    background-color: black;
+    color: rgb(196, 196, 196);
+}
+#CB1 {
+    background-color: black;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    margin-top: 2%;
+    min-height: 30vh;
+}
+#Logo {
+    display: flex;
+    justify-content: center;
+    height: 5%;
+    margin: 0 3%;
+    width: 20%;
+}
+#Logo a {
+    height: 200%;
+}
+#Logoimg {
+    height: 10%;
+    width: 100%;
+}
+.Teletitulo {
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+}
+.CB1links {
+    color: gray;
+    font-family: 'Dosis-Light';
+    font-size: 1.8vw;
+    text-decoration: none;
+}
+.CB1links:hover {
+    color: rgb(199, 199, 199);
+    text-decoration: underline;
+    transition: color 0.5s ease;
+    transition: text-decoration 0.5s ease;
+}
+#Tele, #Mail, #Redes {
+    margin: 0 2%;
+}
+#CBhr {
+    background-color: gray;
+    border: none;
+    height: .05rem;
+    width: 60%;
+}
+#Redes {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    width: 40%;
+}
+#Redes a {
+    font-size: 3vw;
+    transition: font-size 0.5s ease;
+}
+#Redes a:hover {
+    font-size: 4.5vw;
+}
+#Clegal {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.6vw;
+    justify-content: center;
+}
+#Clegal p {
+    font-family: 'Dosis-Light';
+}
+
+@media (500px >= width) and (orientation: portrait) {
+    /*Smartphone*/
+    .box::before  {
+        content: "0-500px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 15vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 100%;
+        height: 100%;
+        width: 25vw;
+    }
+    #BNfixar {
+        display: none;
+        left: 92%;
+        top: 40%;
+    }
+    #BNitens {
+        display: none;
+    }
+    #BNitens2 {
+        animation: opct .5s ease-in-out;
+        background: black;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        height: 200%;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(76%) translateX(-16%);
+        width: 60%;
+        z-index: 4;
+    }
+    @keyframes opct {
+        0% {
+          opacity: 0;
+        }
+        100% {
+            opacity: 1;
+          }      
+    }
+    .BNia2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 1.6rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        width: 100%;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .BNia2:nth-child(1) {
+        border-radius:1.5rem;
+    }
+    .BNia2:active {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+    }
+    #dropdown2 {
+        cursor: pointer;
+    }
+    #dropdown-menu2 {
+        animation: opct .5s ease-in-out, pos 1s ease;
+        background-color: rgb(19, 19, 19);
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        transform: translateY(6.8rem);
+        z-index: 3;
+    }
+    @keyframes pos {
+        0% {  
+          transform: translateY(-3rem);
+        }
+        100% {
+            transform: translateY(6.8rem);  
+          }      
+    }
+    .dmitem2 {
+        border: none;
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 5vw;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .dmitem2:active {
+        color: rgb(19, 19, 19);
+        background-color: white;
+        font-weight: bold;
+    }
+    #BNbotao {
+        cursor: pointer;
+        overflow: hidden;
+        transform: translateX(-35%);
+        visibility: visible;
+
+        width: 20%;
+    }
+    #BNbotao i {
+        transition: opacity 1s ease;
+        animation: opa .5s; /* Adicionando a duração da animação aqui */
+    }
+    @keyframes opa {
+        from {
+            opacity: 0; /* Corrigindo a propriedade opacity inicial */
+            transform: translatey(-4rem) scaleY(-3);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #Contactos {
+        height: 369vh;
+    }
+    #Contactostitulo {
+        font-size: 12vw;
+        height: 14vh;
+    }
+    .ContactoLG {
+        border-radius: unset;
+        width: 100%;
+    }
+    .ContactoLG:nth-child(2) .ContactoLI {
+        flex-direction: column-reverse;
+    }
+    .ContactoLI {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    #LIlogo, #GITlogo {
+        border-radius: 1.3rem 1.3rem 0 0;
+        padding: 3%;
+        width: 70%;
+    }
+    #LItexto, #GITtexto {
+        border-radius: 0 0 1.3rem 1.3rem;
+    }
+
+    .iSize {
+        font-size: 20vw;
+    }
+    #txtP, #txtP2 {
+        font-size: 4.15vw;
+        margin-bottom: 30%;
+    }
+    #txtB, #txtB2 {
+        width: 40%;
+    }
+    .txtSpan {
+        font-size: 4.5vw;
+    }
+    .txtIcon {
+        font-size: 6vw;
+    }
+
+    #sec1 {
+        background-color: #0a142f;
+        min-height: 130vh;
+    }
+    .ContactoBP {
+        display: none;
+    }
+    .ContactoLG {
+        box-shadow: unset;
+        height: 65vh;
+    }
+    .ContactoLI {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    #LIlogo, #txtB {
+        background-color: #0e1f4e;
+    }
+    #LItexto, #GITtexto {
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 60%;
+    }
+    #txtP, #txtP2 {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 5.8vw;
+        margin-top: 0;
+        text-align: justify;
+    }
+    #txtB, #txtB2 {
+        border-radius: 0 0 1.3rem 1.3rem;
+        height: 25%;
+        width: 100%;
+    }
+    .txtSpan {
+        font-size: 9vw;
+    }
+    .txtIcon {
+        font-size: 9vw;
+    }
+
+    #sec2 {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        min-height: 120vh;
+        width: 100%;
+    }
+    #CMN {
+        align-items: center;
+        border-radius: 0;
+        box-shadow: 0 0 .5rem .3rem rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        justify-content: space-evenly;
+        overflow: hidden;
+        position: relative;
+        width: 100vw;
+    }
+    #ifras {
+        height: 14.5rem;
+    }
+    .iSize2 {
+        font-size: 6vw;
+    }
+    .CBTtitulo {
+        font-size: 6vw;
+    }
+    .CBTul {
+        padding: 2%;
+    }
+    .CBTli {
+        font-size: 6vw;
+    }
+
+    #sec3 {
+        height: 60vh;
+    }
+    .iSize3 {
+        font-size: 25vw;
+    }
+    #ContactoSpoti {
+        height: 100%;
+        width: 100%;
+    }
+    #CS {
+        flex-direction: column;
+    }
+    .CSb {
+        align-items: center;
+        backdrop-filter: blur(.6rem);
+        background-color: transparent;
+        border: solid gray .15rem;
+        border-radius: 1.3rem;
+        color: rgb(206, 206, 206);
+        cursor: pointer;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 12vw;
+        height: 80%;
+        justify-content: center;
+        text-decoration: none;
+        width: 80%;
+    
+        transition: color 1s ease;
+        transition: backdrop-filter 1s ease;
+    }
+    .CSb:hover {
+        backdrop-filter: blur(.3rem) saturate(0%);
+        border: solid #1cb46c .15rem;
+        color: white;
+    }
+    .CShr {
+        margin: 10% 0;
+        transform: rotate(0deg);
+    }
+
+    #sec4 {
+        height: 45vh; /* Defina a largura do elemento div */
+    }
+    .iSize3 {
+        transform: translateY(-15%);
+    }
+    #PS h2, #Xbox h2  {
+        font-size: 7vw;
+        margin-top: 30%;
+    }
+    #Xbox {
+        height: 45vh;
+    }
+    #Xbox:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #Xbox:hover .XBlogo {
+        animation: unset;
+    }
+    #XboxP, #PSP {
+        font-size: 7vw;
+        padding: 0 .5rem;
+    }
+    #PS {
+        height: 45vh;
+    }
+    #PS:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #PS:hover .PSlogo {
+        animation: unset;
+    }
+    #Xbox:hover #XboxP, #PS:hover #PSP {
+        display: none;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #CB2 {
+        height: 50vh;
+    }
+    #sec1footer {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+        margin: 0 3%;
+        width: 60%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 40%;
+    }
+    #Redes2 a {
+        font-size: 7vw;
+        padding: 10% 0;
+    }
+    #Redes2 a:active {
+        font-size: 7vw;
+    }
+    #sec2footer {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 6vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 4.7vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 4vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (501px <= width <= 768px) and (orientation: portrait) {
+    /*Tablet*/
+    .box::before  {
+        content: "501-768px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 20vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 100%;
+        height: 100%;
+        width: 25vw;
+    }
+    #BNfixar {
+        display: none;
+        left: 92%;
+        top: 40%;
+    }
+    #BNfb {
+        background-color: transparent;
+        border: none;
+        font-size: 1.3rem;
+    }
+    #BNfb:hover {
+        cursor: pointer;
+        font-size: 1.3rem;
+        transition: none;
+    }
+    #BNitens {
+        display: none;
+    }
+    #BNitens2 {
+        animation: opct .5s ease-in-out;
+        background: black;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        height: 140%;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(76%) translateX(-10%);
+        width: 40%;
+        z-index: 999;
+    }
+    @keyframes opct {
+        0% {
+          opacity: 0;  
+        }
+        100% {
+            opacity: 1;  
+          }      
+    }
+    .BNia2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2.5rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        width: 100%;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .BNia2:nth-child(1) {
+        border-radius:1.5rem;
+    }
+    .BNia2:active {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+    }
+    #dropdown2 {
+        cursor: pointer;
+    }
+    #dropdown-menu2 {
+        animation: opct .5s ease-in-out;
+        background-color: rgb(19, 19, 19);
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        transform: translateX(-100%) translateY(-33.5%);
+        z-index: 3;
+    }
+    .dmitem2 {
+        border: none;
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .dmitem2:active {
+        color: rgb(19, 19, 19);
+        background-color: white;
+        font-weight: bold;
+    }
+    #BNbotao {
+        cursor: pointer;
+        overflow: hidden;
+        visibility: visible;
+        width: 20%;
+    }
+    #BNbotao i {
+        font-size: 2.5rem;
+        transition: opacity 1s ease;
+        animation: opa .5s; /* Adicionando a duração da animação aqui */
+    }
+    @keyframes opa {
+        from {
+            opacity: 0; /* Corrigindo a propriedade opacity inicial */
+            transform: translatey(-4rem) scaleY(-3);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+    
+    #Contactos {
+        height: 405vh;
+    }
+    #Contactostitulo {
+        font-size: 8vw;
+        margin: 0;
+    }
+    #sec1 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 2%;
+        min-height: 30vh;
+    }
+    #ifras {
+        height: 13.5rem;
+    }
+    #txtP, #txtP2 {
+        font-size: 1.75rem;
+        margin-bottom: 18%;
+    }
+    #txtB, #txtB2 {
+        width: 50%;
+    }
+    .txtSpan {
+        font-size: 5vw;
+    }
+    .txtIcon {
+        font-size: 6vw;
+    }
+    #sec2 {
+        flex-direction: column;
+        height: 140vh;
+    }
+    #CMN {
+        height: 100%;
+        width: 90vw;
+    }
+    #ContactoMN {
+        height: 45%;
+    }
+    .Cboxtopo i {
+        padding: 2%;
+    }
+    .CBTtitulo {
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 6vw;
+    }
+    #sec3 {
+        height: 90vh;
+    }
+    #ContactoSpoti {
+        height: 80vh;
+        width: 90vw;
+    }
+    #CS {
+        flex-direction: column;
+    }
+    .CSb {
+        font-size: 10vw;
+        height: 40%;
+    }
+    .CShr {
+        transform: rotate(0deg);
+    }
+    .iSize2 {
+        font-size: 5vw;
+    }
+    .CBTli {
+        font-size: 6vw;
+    }
+    .iSize3 {
+        font-size: 16vw;
+    }
+    #sec4 {
+        background-image: url('Background/Green or Blue inverted.jpeg');
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row-reverse;
+        height: 55vh; /* Defina a altura do elemento div */
+        overflow: hidden;
+        width: 100vw; /* Defina a largura do elemento div */
+    }
+    #PS, #Xbox {
+        height: 55vh;
+    }
+    #Xbox h2, #PS h2 {
+        font-size: 6vw;
+    }
+    .Gamingh2 {
+        font-size: 5vw;
+        margin-top: 30%;
+    }
+    #Xbox:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #Xbox:hover .XBlogo {
+        animation: unset;
+    }
+    #XboxP, #PSP {
+        font-size: 6vw;
+    }
+    #PS:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #PS:hover .PSlogo {
+        animation: unset;
+    }
+    #Xbox:hover #XboxP, #PS:hover #PSP {
+        display: none;
+    }
+    
+    #secone {
+        background-color: #0a142f;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    #CB1 {
+        display: none;
+    }
+    #CB2 {
+        height: 45vh;
+    }
+    #sec1footer {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 2%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+        margin: 0 3%;
+        width: 30%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 0%;
+        padding-right: 10%;
+        width: 40%;
+    }
+    #Redes2 a {
+        font-size: 6vw;
+        margin-right: 7%;
+    }
+    #Redes2 a:active {
+        font-size: 6vw;
+    }
+    #sec2footer {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 5%;
+        min-height: 30vh;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 4vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 3vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (769px <= width <= 1199px) and (orientation: portrait) {
+    /*Laptop*/
+    .box::before  {
+        content: "769-1199px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        height: 10%;
+        padding-left: 30%;
+        width: 15vw;
+    }
+    #navegacao {
+        padding: .6% 0;
+    }
+    .nbotao {
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+    .nbotao:hover {
+        width: 2.4rem;
+    }
+    .botaop {
+        font-size: 1.2rem;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    .BNia {
+        font-size: 3.1vw;
+        padding: 1.5vw;
+    }
+    .BNia:hover {
+        font-size: 3.5vw;
+    }
+    .dmitem {
+        font-size: 1.5rem;
+        padding: 1.5vw;
+    }
+    .dmitem:hover {
+        font-size: 1.7rem;
+    }
+    
+    #Contactos {
+        height: 405vh;
+    }
+    #Contactostitulo {
+        font-size: 8vw;
+        margin: 0;
+    }
+    #ifras {
+        height: 13.5rem;
+    }
+    #txtP, #txtP2 {
+        font-size: 1.9rem;
+        margin-bottom: 18%;
+    }
+    #txtB, #txtB2 {
+        width: 50%;
+    }
+    .txtSpan {
+        font-size: 5vw;
+    }
+    .txtIcon {
+        font-size: 6.5vw;
+    }
+    #sec2 {
+        flex-direction: column;
+        height: 140vh;
+    }
+    #CMN {
+        height: 100%;
+        width: 90vw;
+    }
+    #ContactoMN {
+        height: 45%;
+    }
+    .Cboxtopo i {
+        padding: 2%;
+    }
+    .CBTtitulo {
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 5vw;
+    }
+    #sec3 {
+        height: 90vh;
+    }
+    #ContactoSpoti {
+        height: 80vh;
+        width: 90vw;
+    }
+    #CS {
+        flex-direction: column;
+    }
+    .CSb {
+        font-size: 10vw;
+        height: 35%;
+    }
+    .CShr {
+        transform: rotate(0deg);
+    }
+    .iSize2 {
+        font-size: 5vw;
+    }
+    .CBTli {
+        font-size: 6vw;
+    }
+    .iSize3 {
+        font-size: 16vw;
+    }
+    #sec4 {
+        background-image: url('Background/Green or Blue inverted.jpeg');
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row-reverse;
+        height: 55vh; /* Defina a altura do elemento div */
+        overflow: hidden;
+        width: 100vw; /* Defina a largura do elemento div */
+    }
+    #PS, #Xbox {
+        height: 55vh;
+    }
+    #Xbox h2, #PS h2 {
+        font-size: 6vw;
+    }
+    .Gamingh2 {
+        font-size: 5vw;
+        margin-top: 30%;
+    }
+    #Xbox:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #Xbox:hover .XBlogo {
+        animation: unset;
+    }
+    #XboxP, #PSP {
+        font-size: 6vw;
+    }
+    #PS:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #PS:hover .PSlogo {
+        animation: unset;
+    }
+    #Xbox:hover #XboxP, #PS:hover #PSP {
+        display: none;
+    }
+    
+    .Teletitulo {
+        font-size: 2.5vw;
+    }
+    #CB1 {
+        min-height: 15vh;
+    }
+    #CB2 {
+        display: none;
+    }
+    .CB1links {
+        font-size: 2.2vw;
+    }
+    #Redes {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0%;
+        width: 60%;
+    }
+    #Redes a {
+        font-size: 1.6rem;
+    }
+    #Redes a:hover {
+        font-size: 1.6rem;
+    }
+    #Clegal {
+        font-size: 1.7vw;
+    }
+}
+@media (width >= 1200px) and (orientation: portrait) {
+    /*Laptop*/
+    .box::before  {
+        content: "769-1199px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        height: 10%;
+        padding-left: 30%;
+        width: 15vw;
+    }
+    #navegacao {
+        padding: .6% 0;
+    }
+    .nbotao {
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+    .nbotao:hover {
+        width: 2.4rem;
+    }
+    .botaop {
+        font-size: 1.2rem;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    .BNia {
+        font-size: 3.1vw;
+        padding: 1.5vw;
+    }
+    .BNia:hover {
+        font-size: 3.5vw;
+    }
+    .dmitem {
+        font-size: 1.5rem;
+        padding: 1.5vw;
+    }
+    .dmitem:hover {
+        font-size: 1.7rem;
+    }
+    
+    #Contactos {
+        height: 405vh;
+    }
+    #Contactostitulo {
+        font-size: 8vw;
+        margin: 0;
+    }
+    #ifras {
+        height: 13.5rem;
+    }
+    #txtP, #txtP2 {
+        font-size: 1.9rem;
+        margin-bottom: 18%;
+    }
+    #txtB, #txtB2 {
+        width: 50%;
+    }
+    .txtSpan {
+        font-size: 5vw;
+    }
+    .txtIcon {
+        font-size: 6.5vw;
+    }
+    #sec2 {
+        flex-direction: column;
+        height: 140vh;
+    }
+    #CMN {
+        height: 100%;
+        width: 90vw;
+    }
+    #ContactoMN {
+        height: 45%;
+    }
+    .Cboxtopo i {
+        padding: 2%;
+    }
+    .CBTtitulo {
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 5vw;
+    }
+    #sec3 {
+        height: 90vh;
+    }
+    #ContactoSpoti {
+        height: 80vh;
+        width: 90vw;
+    }
+    #CS {
+        flex-direction: column;
+    }
+    .CSb {
+        font-size: 10vw;
+        height: 35%;
+    }
+    .CShr {
+        transform: rotate(0deg);
+    }
+    .iSize2 {
+        font-size: 5vw;
+    }
+    .CBTli {
+        font-size: 6vw;
+    }
+    .iSize3 {
+        font-size: 16vw;
+    }
+    #sec4 {
+        background-image: url('Background/Green or Blue inverted.jpeg');
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row-reverse;
+        height: 55vh; /* Defina a altura do elemento div */
+        overflow: hidden;
+        width: 100vw; /* Defina a largura do elemento div */
+    }
+    #PS, #Xbox {
+        height: 55vh;
+    }
+    #Xbox h2, #PS h2 {
+        font-size: 6vw;
+    }
+    .Gamingh2 {
+        font-size: 5vw;
+        margin-top: 30%;
+    }
+    #Xbox:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #Xbox:hover .XBlogo {
+        animation: unset;
+    }
+    #XboxP, #PSP {
+        font-size: 6vw;
+    }
+    #PS:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #PS:hover .PSlogo {
+        animation: unset;
+    }
+    #Xbox:hover #XboxP, #PS:hover #PSP {
+        display: none;
+    }
+    
+    .Teletitulo {
+        font-size: 2.5vw;
+    }
+    #CB1 {
+        min-height: 15vh;
+    }
+    #CB2 {
+        display: none;
+    }
+    .CB1links {
+        font-size: 2.2vw;
+    }
+    #Redes {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0%;
+        width: 60%;
+    }
+    #Redes a {
+        font-size: 1.6rem;
+    }
+    #Redes a:hover {
+        font-size: 1.6rem;
+    }
+    #Clegal {
+        font-size: 1.7vw;
+    }
+}
+
+@media (767px >= width) and (orientation: landscape) {
+    /*Smartphone*/
+    .box::before  {
+        content: "0-767px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 25vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        width: 50%;
+    }
+    #BNfixar {
+        display: none;
+        left: 22%;
+        top: 10%;
+    }
+    #BNitens {
+        display: flex;
+    }
+    #BNitens2 {
+        display: none;
+    }
+    .BNia {
+        font-size: 1.3rem;
+    }
+    #dropdown2 {
+        display: none;
+    }
+    .dmitem, .dmitem:hover {
+        font-size: 3vw;
+    }
+    
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #Contactos {
+        height: 520vh;
+        justify-content: space-evenly;
+    }
+    #Contactostitulo {
+        height: 20vh;
+        font-size: 5vw;
+        margin: 0;
+    }
+    #sec1 {
+        height: 100vh;
+    }
+    .ContactoLG {
+        border-radius: 1rem;
+        height: 45%;
+        width: 90%;
+    }
+    #ifras {
+        height: 13.5rem;
+    }
+    #txtP, #txtP2 {
+        font-size: 1.3rem;
+        margin-bottom: 6%;
+    }
+    #txtB, #txtB2 {
+        height: 25%;
+        width: 35%;
+    }
+    .txtSpan {
+        font-size: 3.5vw;
+    }
+    .txtIcon {
+        font-size: 5vw;
+    }
+    #sec2 {
+        flex-direction: row;
+        height: 150vh;
+    }
+    #CMN {
+        border-radius: 1rem;
+        height: 100%;
+        width: 45vw;
+    }
+    #ContactoMN {
+        height: 90%;
+    }
+    #CMail, #CNumero {
+        height: 30%;
+    }
+    .Cboxtopo i {
+        font-size: 2.5vw;
+        padding: 0;
+    }
+    .CBTtitulo {
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3.7vw;
+    }
+    .CBTul a {
+        color: rgb(185, 185, 185);
+        font-family: 'Dosis-Light';
+        font-size: 2.8vw;
+        text-decoration: none;
+    }
+    #sec3 {
+        height: 100vh;
+    }
+    #ContactoSpoti {
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+    }
+    #CS {
+        flex-direction: row;
+    }
+    .CSb {
+        font-size: 8vw;
+        height: 50%;
+        width: 90%;
+    }
+    .CShr {
+        transform: rotate(90deg);
+    }
+    .iSize2 {
+        font-size: 5vw;
+    }
+    .CBTli {
+        font-size: 6vw;
+    }
+    .iSize3 {
+        font-size: 16vw;
+    }
+    #sec4 {
+        background-image: url('Background/Green or Blue inverted.jpeg');
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row-reverse;
+        height: 100vh; /* Defina a altura do elemento div */
+        overflow: hidden;
+        width: 100vw; /* Defina a largura do elemento div */
+    }
+    #PS, #Xbox {
+        height: 100vh;
+    }
+    #Xbox h2, #PS h2 {
+        font-size: 6vw;
+    }
+    .Gamingh2 {
+        font-size: 5vw;
+        margin-top: 30%;
+    }
+    #Xbox:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #Xbox:hover .XBlogo {
+        animation: unset;
+    }
+    #XboxP, #PSP {
+        font-size: 5vw;
+    }
+    #PS:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #PS:hover .PSlogo {
+        animation: unset;
+    }
+    #Xbox:hover #XboxP, #PS:hover #PSP {
+        display: none;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #sec1footer {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        padding-left: 5%;
+        width: 20%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    #Redes2 a, #Redes2 a:active {
+        font-size: 4vw;
+        padding: 10% 0;
+    }
+    #sec2footer {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 0 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 2.5vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 2vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (768px <= width <= 1023px) and (orientation: landscape) {
+    /*Smartphone*/
+    .box::before  {
+        content: "768px-1023px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 25vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        width: 50%;
+    }
+    #BNfixar {
+        display: none;
+        left: 22%;
+        top: 10%;
+    }
+    #BNitens {
+        display: flex;
+    }
+    #BNitens2 {
+        display: none;
+    }
+    .BNia {
+        font-size: 1.3rem;
+    }
+    #dropdown2 {
+        display: none;
+    }
+    .dmitem, .dmitem:hover {
+        font-size: 3vw;
+    }
+    
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #Contactos {
+        height: 520vh;
+        justify-content: space-evenly;
+    }
+    #Contactostitulo {
+        height: 20vh;
+        font-size: 5vw;
+        margin: 0;
+    }
+    #sec1 {
+        height: 100vh;
+    }
+    .ContactoLG {
+        border-radius: 1rem;
+        height: 45%;
+        width: 90%;
+    }
+    #ifras {
+        height: 13.5rem;
+    }
+    #txtP, #txtP2 {
+        font-size: 1.4rem;
+        margin-bottom: 10%;
+    }
+    #txtP2 {
+        text-wrap: nowrap;
+    }
+    #txtB, #txtB2 {
+        height: 30%;
+        width: 35%;
+    }
+    .txtSpan {
+        font-size: 3.5vw;
+    }
+    .txtIcon {
+        font-size: 4vw;
+    }
+    #sec2 {
+        flex-direction: row;
+        height: 150vh;
+    }
+    #CMN {
+        border-radius: 1rem;
+        height: 100%;
+        width: 45vw;
+    }
+    #ContactoMN {
+        height: 90%;
+    }
+    #CMail, #CNumero {
+        height: 30%;
+    }
+    .Cboxtopo i {
+        font-size: 2.5vw;
+        padding: 0;
+    }
+    .CBTtitulo {
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3.5vw;
+    }
+    .CBTul a {
+        color: rgb(185, 185, 185);
+        font-family: 'Dosis-Light';
+        font-size: 3.25vw;
+        text-decoration: none;
+    }
+    #sec3 {
+        height: 100vh;
+    }
+    #ContactoSpoti {
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+    }
+    #CS {
+        flex-direction: row;
+    }
+    .CSb {
+        font-size: 8vw;
+        height: 60%;
+        width: 90%;
+    }
+    .CShr {
+        transform: rotate(90deg);
+    }
+    .iSize2 {
+        font-size: 5vw;
+    }
+    .CBTli {
+        font-size: 6vw;
+    }
+    .iSize3 {
+        font-size: 16vw;
+    }
+    #sec4 {
+        background-image: url('Background/Green or Blue inverted.jpeg');
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row-reverse;
+        height: 100vh; /* Defina a altura do elemento div */
+        overflow: hidden;
+        width: 100vw; /* Defina a largura do elemento div */
+    }
+    #PS, #Xbox {
+        height: 100vh;
+    }
+    #Xbox h2, #PS h2 {
+        font-size: 6vw;
+    }
+    .Gamingh2 {
+        font-size: 5vw;
+        margin-top: 30%;
+    }
+    #Xbox:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #Xbox:hover .XBlogo {
+        animation: unset;
+    }
+    #XboxP, #PSP {
+        font-size: 5vw;
+    }
+    #PS:hover {
+        backdrop-filter: unset;
+        background-color: unset;
+        border: unset;
+        box-sizing: border-box;
+    }
+    #PS:hover .PSlogo {
+        animation: unset;
+    }
+    #Xbox:hover #XboxP, #PS:hover #PSP {
+        display: none;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #sec1footer {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        padding-left: 5%;
+        width: 20%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    #Redes2 a, #Redes2 a:active {
+        font-size: 4vw;
+        padding: 10% 0;
+    }
+    #sec2footer {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 0 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 2.5vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 2vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (1024px <= width <= 1439px) and (orientation: landscape) {
+    /*Desktop*/
+    .box::before  {
+        content: "1024px-1439px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        height: 100%;
+        width: 8vw;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #CB2 {
+        display: none;
+    }
+}
+@media (width >= 1440px) and (orientation: landscape) {
+    /*Desktop*/
+    .box::before  {
+        content: "1440px-para frente";
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #CB2 {
+        display: none;
+    }
+}

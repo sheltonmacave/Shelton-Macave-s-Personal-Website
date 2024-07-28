@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <link rel="icon" href="LogoAssinatura/Branco-sembg.png" type="image/png">
+        <link rel="stylesheet" href="CWebDev.css">
+        <link rel="stylesheet" href="fonts-6/css/all.css">
+        <link href="lightbox2-dev/lightbox2-dev/dist/css/lightbox.css" rel="stylesheet" />  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="CWebDev.js"></script>
+        <title>DESENVOLVEDOR WEB</title>
+    </head>
+    <body>
+        <audio id = "click" src="click.mp3"></audio>
+        <audio id = "clicklow" src="click low.mp3"></audio>
+        <audio id = "mouseover" src="mouseover open.mp3"></audio>
+        <audio id = "mouseout" src="mouseout close.mp3"></audio>
+        <audio id = "bnsound" src="BN.mp3"></audio>
+        <audio id = "bnlowsound" src="BNlow.mp3"></audio>
+
+        <aside id = "navegacao">
+            <div id = "botoes">
+                <div class = "botoescada">
+                    <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#Educacao');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                    <label for = "seccao" class =  "botaop">História</label>
+                </div>
+                <div class = "botoescada">
+                    <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#LF');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                    <label for = "seccao" class =  "botaop">Habilidades</label>
+                </div>
+                <div class = "botoescada">
+                    <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#SS');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                    <label for = "seccao" class =  "botaop">Soft Skills</label>
+                </div>
+                <div class = "botoescada">
+                    <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#Projectos0');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                    <label for = "seccao" class =  "botaop">Projectos</label>
+                </div>
+                <div class = "botoescada">
+                    <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#Links0');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                    <label for = "seccao" class =  "botaop">Extra</label>
+                </div>
+            </div>
+        </aside>
+
+        <div class="box">
+            
+        </div>
+
+        <header id = "BN">
+            <figure id = "BNdivlogo">
+                <a href="Pagina Inicial.html"><img id = "BNlogo" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+            </figure>
+            <div id = "BNfixar">
+                <button id = "BNfb" onclick="fix()"><i class="fa-solid fa-thumbtack" style="color: #ffffff;"></i></button>
+            </div>
+            <ul id = "BNitens">
+                <li class = "BNitem"><a class = "BNia" href="Sobre Mim.html" onmouseover="playSound('bnsound')">Sobre Mim</a></li>
+                <li id = "dropdown" class = "BNitem">
+                    <a class = "BNia" onmouseover = "playSound('bnsound')">
+                        Carreiras
+                        <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                    </a>
+                    
+                    <div id = "dropdown-menu">
+                        <a class = "dmitem" href="CWebDev.html" onmouseover = "playSound('bnlowsound')";>Desenvolvedor Web</a>
+                        <a class = "dmitem" href="CDA.html" onmouseover = "playSound('bnlowsound')">Analista de Dados</a>
+                        <a class = "dmitem" href="CPM.html" onmouseover = "playSound('bnlowsound')">Produtor Musical</a>
+                    </div>
+                </li>
+                <li class = "BNitem"><a class = "BNia" href="Galeria.html" onmouseover = "playSound('bnsound')">Galeria</a></li>
+                <li class = "BNitem"><a class = "BNia" href="Contactos.html" onmouseover = "playSound('bnsound')">Contactos</a></li>
+            </ul>
+            <button id = "BNbotao" onclick="mostrarnavbar()">
+                <i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>
+            </button>
+            <ul id = "BNitens2">
+                <li class = "BNitem2"><a class = "BNia2" href="Sobre Mim.html" onclick="playSound('bnsound')">Sobre Mim</a></li>
+                <li id = "dropdown2" class = "BNitem2">
+                    <a class = "BNia2" onclick = "dmi2()" onclick = "playSound('bnsound')">
+                        Carreiras &nbsp
+                        <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                    </a>
+                    
+                    <div id = "dropdown-menu2">
+                        <a class = "dmitem2" href="CWebDev.html" onclick = "playSound('bnlowsound')">Desenvolvedor Web</a>
+                        <a class = "dmitem2" href="CDA.html" onclick = "playSound('bnlowsound')">Analista de Dados</a>
+                        <a class = "dmitem2" href="CPM.html" onclick = "playSound('bnlowsound')">Produtor Musical</a>
+                    </div>
+                </li>
+                <li class = "BNitem2"><a class = "BNia2" href="Galeria.html" onclick = "playSound('bnsound')">Galeria</a></li>
+                <li class = "BNitem2"><a class = "BNia2" href="Contactos.html" onclick = "playSound('bnsound')">Contactos</a></li>
+            </ul>
+        </header>
+
+        <aside id = "popup">
+            <p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>
+        </aside>
+
+        <main id = "CWD">
+            <section id = "WDtitulodiv">
+                <section id = "WDtitulo">
+                    <video id = "WDvideo" autoplay loop muted>
+                        <source src = "WDscript/Black/WDsbfullvidWM.webm">
+                    </video>
+                </section>
+            </section>
+            <section id = "Educacao">
+                <video autoplay loop muted id = "Edvideo" class = "videosGLobal">
+                    <source src = "Background/Preto Branco.mp4">
+                </video>
+                <section id = "edts0">
+                    <div id = "edts">
+                        <section id = "edtexto">
+                            <h1>HISTÓRIA</h1>
+                            <p>Aos 17 anos despertei o interesse em saber como Websites funcionam.<br></p>
+                            <p>Eu já possuia 10 meses de experência em programação com <span id = "pythonpin">Python</span> e <span id = "sqlpin">SQL</span>, que foram adquiridos na área de <span>Análise de Dados</span>.
+                            Fui analisando websites e perguntando a mim mesmo "Como será que isto foi feito?", fui vendo códigos em <span id = "htmlpin">HTML</span> e pensei "Wow, isto parece facil." <sup>(quão inocente eu fui...)</sup>.<br></p>
+                            <p>Um dia decidi entrar na secção de Desenvolvimento Web do mesmo aplicativo que usava para aprender <span id = "pythonpin">Python</span>, e fui pouco a pouco me envolvendo e amando cada vez mais a área de Desenvolvimento Web.<br></p>
+                            <p>O início foi fácil, mas a dificuldade foi aumentando, principalmente quando cheguei em <span id = "jspin">JavaScript</span>, mas tentei sempre manter-me motivado.<br></p>
+                            <h2>
+                                <span class = "aspaspin">“</span> A persistência é a chave do sucesso <span class = "aspaspin"><sub>„</sub></span>
+                            </h2>
+                            <nav id = "athing">
+                                <a href = "https://pt.wikipedia.org/wiki/Arist%C3%B3teles" id = "edta">- Aristoteles</a>
+                            </nav>
+                        </section>
+                        <section id = "edslide">
+                            <div id = "edssquare">
+                                <div class = "edslideicon">
+                                    <i class="fa-regular fa-lightbulb"></i>
+                                    <h1>Criativo</h1>
+                                </div>
+                                <div class = "edslideicon">
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                    <h1>Autodidata</h1>
+                                </div>
+                                <div class = "edslideicon">
+                                    <i class="fa-solid fa-gears"></i>
+                                    <h1>Perspicaz</h1>
+                                </div>
+                                <div class = "edslideicon">
+                                    <i class="fa-solid fa-mountain"></i>
+                                    <h1>Resiliência</h1>
+                                </div>
+                                <div class = "edslideicon">
+                                    <i class="fa-regular fa-compass"></i>
+                                    <h1>Visionário</h1>
+                                </div>
+                                <div class = "edslideicon">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                    <h1>Desenvolvedor</h1>
+                                </div>
+                                <div class = "edslideicon">
+                                    <i class="fa-solid fa-trophy"></i>
+                                    <h1>Determinado</h1>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </section>
+            <section id = "LF">
+                <video autoplay loop muted class = "Lingvid videosGLobal">
+                    <source src = "Background/Contraste wave 2.mp4">
+                </video>
+                <section id = "LFupper">
+                    <section id = "Ling">
+                        <h1>LINGUAGENS</h1>
+                        <ul id = "LingLista">
+                            <li class = "LLitem">
+                                <div class = "LLiicone">
+                                    <i class="fa-brands fa-html5 LLicone" style="color: #f2672c;"></i>
+                                </div>
+                                <div class = "LLitexto">
+                                    <p>HTML</p>
+                                </div>
+                            </li>
+                            <li class = "LLitem">
+                                <div class = "LLiicone">
+                                    <i class="fa-brands fa-css3-alt LLicone" style="color: #30aadd;"></i>
+                                </div>
+                                <div class = "LLitexto">
+                                    <p>CSS</p>
+                                </div>
+                            </li>
+                            <li class = "LLitem">
+                                <div class = "LLiicone">
+                                    <i class="fa-brands fa-square-js LLicone" style="color: #f0c026;"></i>
+                                </div>
+                                <div class = "LLitexto">
+                                    <p>JS</p>
+                                </div>
+                            </li>
+                            <li class = "LLitem">
+                                <div class = "LLiicone">
+                                    <i class="fa-brands fa-python LLicone" style="color: #4c84a4;"></i>
+                                </div>
+                                <div class = "LLitexto">
+                                    <p>PYTHON</p>
+                                </div>
+                            </li>
+                            <li class = "LLitem">
+                                <div class = "LLiicone">
+                                    <i class="fa-solid fa-database LLicone" style="color: #3399db;"></i>
+                                </div>
+                                <div class = "LLitexto">
+                                    <p>SQL</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <section id = "Ferr">
+                        <h1>FERRAMENTAS</h1>
+                        <ul id = "FerrLista">
+                            <li class = "FLitem">
+                                <div class = "FLiicone">
+                                    <img src="vscodeicon.png" id = "vscodeimg">
+                                </div>
+                                <div class = "FLitexto">
+                                    <p>VS CODE</p>
+                                </div>
+                            </li>
+                            <li class = "FLitem">
+                                <div class = "FLiicone">
+                                    <i class="fa-brands fa-git-alt LLicone" style="color: #f05133;"></i>
+                                </div>
+                                <div class = "FLitexto">
+                                    <p>GIT</p>
+                                </div>
+                            </li>
+                            <li class = "FLitem">
+                                <div class = "FLiicone">
+                                    <i class="fa-brands fa-github LLicone" style="color: #ffffff;"></i>
+                                </div>
+                                <div class = "FLitexto">
+                                    <p>GIT HUB</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+            </section>
+            <section id = "SS">
+                <video autoplay loop muted class = "Lingvid videosGLobal">
+                    <source src = "Background/Contraste wave 2.mp4">
+                </video>
+                <section id = "SS1">
+                    <div id = "SSh1">
+                        <h1>Habilidades Interpessoais</h1>
+                    </div>
+                    <section id = "SS2">
+                        <section id = "SSbuttons">
+                            <button class = "SSb" onclick="mostrarIcone(this); toggleSection('skill1'); playSound('click')"><i class="fa-solid fa-clipboard-list SSicon"></i><span class = "btnp">Organização</span></button>
+                            <button class = "SSb" onclick="mostrarIcone(this); toggleSection('skill2'); playSound('click')"><i class="fa-solid fa-hand-fist SSicon"></i><span class = "btnp">Resiliência</span></button>
+                            <button class = "SSb" onclick="mostrarIcone(this); toggleSection('skill3'); playSound('click')"><i class="fa-regular fa-lightbulb SSicon"></i><span class = "btnp">Criatividade</span></button>
+                            <button class = "SSb" onclick="mostrarIcone(this); toggleSection('skill4'); playSound('click')"><i class="fa-solid fa-hourglass SSicon"></i><span class = "btnp">Boa Gestão de Tempo</span></button>
+                            <button class = "SSb" onclick="mostrarIcone(this); toggleSection('skill5'); playSound('click')"><i class="fa-solid fa-people-group SSicon"></i><span class = "btnp">Colaboração</span></button>
+                            <button class = "SSb" onclick="mostrarIcone(this); toggleSection('skill6'); playSound('click')"><i class="fa-regular fa-compass SSicon"></i><span class = "btnp">Pensamento a Longo Prazo</span></button>
+                            <button class = "SSb" onclick="mostrarIcone(this); toggleSection('skill7'); playSound('click')"><i class="fa-solid fa-magnifying-glass-chart SSicon"></i><span class = "btnp">Pensamento Analítico</span></button>
+                            <button class = "SSb" onclick="mostrarIcone(this); toggleSection('skill8'); playSound('click')"><i class="fa-solid fa-gears SSicon"></i><span class = "btnp">Resolução de Problemas</span></button>
+                        </section>
+                        <section id = "SScard">
+                            <div id = "SScardbox">
+                                <section id = "SScdicon">
+                                    <i class="SScdicon"></i>
+                                </section>
+                                <hr>
+                                <section id = "SScdCaption">
+                                    <p class = "skills" id = "skill1">Demonstra habilidades para planejar e organizar atividades de forma eficaz, criando sistemas e processos para gerenciar tarefas, recursos e tempo de maneira sistemática.</p>
+                                    <p class = "skills" id = "skill2">Capacidade de se recuperar rapidamente de desafios ou situações adversas, lidando com falhas, contratempos e obstáculos de maneira adaptativa e persistente.</p>
+                                    <p class = "skills" id = "skill3">Exibe criatividade em atividades, buscando soluções inovadoras e originais, pensando de maneira não convencional e encontrando novas abordagens para resolver problemas.</p>
+                                    <p class = "skills" id = "skill4">Capacidade de planejar e gerenciar tempo de forma eficiente para alcançar metas, priorizando tarefas, estabelecendo prazos e utilizando ferramentas de gestão de tempo para maximizar a produtividade.</p>
+                                    <p class = "skills" id = "skill5">Trabalha bem com outros, contribuindo de forma eficaz para alcançar objetivos comuns, comunicando-se claramente, ouvindo e respeitando as ideias dos outros, e trabalhando em equipe de maneira construtiva.</p>
+                                    <p class = "skills" id = "skill6">Capacidade de pensar estrategicamente e planejar para o futuro, considerando os impactos de suas ações a longo prazo e antecipando oportunidades e desafios futuros.</p>
+                                    <p class = "skills" id = "skill7">Habilidade de desconstruir informações, analisar dados, solucionar problemas, tomar decisões, ser crítico e criativo. É essencial para entender o mundo, resolver problemas e tomar decisões inteligentes.</p>
+                                    <p class = "skills" id = "skill8">Capacidade de identificar, analisar e solucionar problemas de forma eficiente e eficaz.</p>
+                                </section>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section id = "Projectos0">
+                <video autoplay loop muted class = "Projvid videosGLobal">
+                    <source src = "Background/Grid background _ overlay _ iman gadzi background.mp4">
+                </video>
+                <section id = "Projectos">
+                    <section class = "Projecto" onmouseenter="playSound('mouseover')">
+                        <img class = "Pimg" src="LogoAssinatura/Branco-sembg.png" alt="Logo do meu website">
+                        <h2 class = "Ph2">Shelton Macave</h2>
+                        <p class = "Pp">Website Pessoal onde falo um pouco sobre mim, minhas carreiras, apresento algumas fotos minhas e tiradas por mim e forneço também os meus contactos.<br>
+                        Um simples currículo não seria suficiente ^_~</p>
+                        <a class = "Pa" href = "Pagina Inicial.html">Explorar</a>
+                    </section>
+                    <section class = "Projecto" onmouseenter="playSound('mouseover')">
+                        <img class = "Pimg" src="LogoAssinatura/logoneztech.png" alt="Logo da Neztech">
+                        <h2 class = "Ph2">NEZTECH</h2>
+                        <p class = "Pp">Projecto escolar envolvendo uma empresa fictícia especializada em design e desenvolvimento de websites.</p>
+                        <a class = "Pa" href = "Pagina Inicial.html">Explorar</a>
+                    </section>
+                </section>
+            </section>
+            <section id = "Links0">
+                <section id = "Links">
+                    <section id = "LHL">
+                        <section id = "LH">
+                            <i class="fa-brands fa-square-github gh"></i>
+                            <a href = "https://github.com/sheltonmacave">sheltonmacave</a>
+                        </section>
+                        <section id = "LL">
+                            <i class="fa-brands fa-linkedin li"></i>
+                            <a href = "https://www.linkedin.com/in/shelton-elias-57a340249">Shelton Elias</a>
+                        </section>
+                    </section>
+                    <section id = "LCV">
+                        <h1>Curriculum Vitae</h1>
+                        <div id = LCVimg>
+                            <a href="CV/Shelton Macave CV.jpg" data-lightbox="roadtrip" >
+                                <img src="CV/Shelton Macave CV.jpg" alt="Meu Curriculum Vitae">
+                            </a>
+                        </div>
+                        <a href="CV/Shelton Macave CV.pdf" download="CV Shelton Macave">Descarregar</a>
+                    </section>
+                </section>
+            </section>
+        </main>
+
+        <footer id = "ConteudoBaixo" class = "sec">
+            <nav id = "CB1">
+                <nav id = "Logo">
+                    <a href="Pagina Inicial.html"><img id = "Logoimg" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+                </nav>
+                <nav id = "Tele">
+                    <h2 class = "Teletitulo">Contacto:</h2>
+                    <p>
+                        <a class = "CB1links" href = "tel:+258855673021">+258 855673021</a>
+                    </p>
+                </nav>
+                <nav id = "Mail">
+    
+                    <h2 class = "Teletitulo">Endereço Electrônico:</h2>
+                    <a class = "CB1links" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+                </nav>
+                <nav id = "Redes">
+                    <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+                </nav>
+            </nav>
+            <nav id = "CB2">
+                <div id = "sec1">
+                    <nav id = "Logo2">
+                        <a href="Pagina Inicial.html"><img id = "Logoimg2" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+                    </nav>
+                    <nav id = "Redes2">
+                        <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+                    </nav>
+                </div>
+                <div id = "sec2">
+                    <nav id = "Tele2">
+                        <h2 class = "Teletitulo2">Contacto:</h2>
+                        <p>
+                            <a class = "CB1links2" href = "tel:+258855673021">+258 855673021</a>
+                        </p>
+                    </nav>
+                    <nav id = "Mail2">
+    
+                        <h2 class = "Teletitulo2">Endereço Electrônico:</h2>
+                        <a class = "CB1links2" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+                    </nav>
+                </div>
+            </nav>
+            <hr id = "CBhr">
+            <div id = "Clegal">
+                <p>© 2024 SHELTON MACAVE</p>
+            </div>
+        </footer>
+
+        <script>
+            
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Se o vídeo estiver visível, inicie a reprodução
+                        entry.target.play();
+                    } else {
+                        // Se o vídeo não estiver visível, pause a reprodução
+                        entry.target.pause();
+                    }
+                });
+            }
+
+            const options = {
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver(handleIntersection, options)
+
+            const videoSet = document.querySelectorAll('.videosGLobal');
+            videoSet.forEach(vid => {
+                observer.observe (vid);
+            });
+
+            function playSound(soundId) {
+                var audio = document.getElementById(soundId);
+                audio.play();
+            }
+
+            function fix() {
+                const but = document.querySelector('#BN');
+                const pp = document.querySelector('#popup');
+
+                if (but.style.position === "sticky") {
+                    but.style.position = "static";
+                    pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Livre</strong>.</p>';
+                } else {
+                    but.style.position = "sticky";
+                    pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>';
+                }
+
+                pp.style.display = "block";
+
+                setTimeout(() => {
+                    pp.style.display = "none";
+                }, 7000);
+            }
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                const navbar = document.getElementById("BNitens2");
+                const botao = document.querySelector("#BNbotao");
+
+                let isNavbarOpen = false;
+
+                // Evento para abrir/fechar o dropdown ao clicar no botão
+                botao.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Impede que o evento de clique se propague para o documento
+                    isNavbarOpen = !isNavbarOpen;
+
+                    if (isNavbarOpen) {
+                        navbar.style.display = "block";
+                        botao.innerHTML = '<i class="fa-solid fa-chevron-up fa-2xl" style="color: #ffffff;"></i>';
+                    } else {
+                        navbar.style.display = "none";
+                        botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+                    }
+                });
+
+                // Evento para fechar o dropdown ao clicar fora dele
+                document.addEventListener('click', function(event) {
+                    if (isNavbarOpen && !navbar.contains(event.target) && event.target !== botao) {
+                        navbar.style.display = "none";
+                        botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+                        isNavbarOpen = false; // Atualiza o estado para refletir que o navbar está fechado
+                    }
+                });
+            });
+
+            let num1 = 0;
+            function mostrarnavbar() {
+                const navbar = document.getElementById("BNitens2");
+                const botao = document.querySelector("#BNbotao")
+                const ddm2 = document.querySelector("#dropdown-menu2");
+                // Se a barra de navegação estiver visível, oculta; se estiver oculta, mostra
+                if (num1 === 0) {
+                    num1 = 1;
+                    navbar.style.display = "flex";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-up fa-2xl" style="color: #ffffff;"></i>';
+                } else {
+                    num1 = 0;
+                    navbar.style.display = "none";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+                }
+            }
+
+            function dmi2() {
+                const ddm2 = document.querySelector("#dropdown-menu2");
+                
+                if (ddm2.style.display === "none" || ddm2.style.display === "") {
+                    ddm2.style.display = "flex";
+                } else {
+                    ddm2.style.display = "none";
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                // Obtenha todas as seções e botões
+                var sections = document.querySelectorAll(".sec");
+                var buttons = document.querySelectorAll(".nbotao");
+
+                // Adicione um ouvinte de rolagem ao documento
+                document.addEventListener("scroll", function () {
+                    var scrollPosition = window.scrollY;
+
+                    // Iterar sobre as seções
+                    sections.forEach(function (section, index) {
+                        var sectionTop = section.offsetTop;
+                        var sectionHeight = section.clientHeight;
+
+                        // Verifique se a posição de rolagem está dentro da seção
+                        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                            // Remova a classe 'active' de todos os botões
+                            buttons.forEach(function (button) {
+                                button.parentElement.classList.remove("active");
+                            });
+
+                            // Adicione a classe 'active' ao botão correspondente à seção visível
+                            buttons[index].parentElement.classList.add("active");
+                            function playSound() {
+                                var audio = document.getElementById('#mouseover');
+                                audio.play();
+                            }
+                        }
+                    });
+                });
+            });
+
+            const botaos = document.querySelectorAll('.nbotao');
+            botaos.forEach(botao => {
+                const botaop = botao.nextElementSibling;
+
+                botao.addEventListener('mouseover', () => {
+                    botaop.style.display = "block";
+                });
+
+                botao.addEventListener('mouseout', () => {
+                    botaop.style.display = "none";
+                });
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                // Obtenha todos os botões
+                var buttons = document.querySelectorAll(".SSb");
+
+                // Adicione um ouvinte de clique a cada botão
+                buttons.forEach(function (button) {
+                    button.addEventListener("click", function () {
+                        // Remova a classe 'active' de todos os botões
+                        buttons.forEach(function (btn) {
+                            btn.classList.remove("active");
+                        });
+                        
+                        // Adicione a classe 'active' apenas ao botão clicado
+                        button.classList.add("active");
+                    });
+                });
+            });
+
+            function mostrarIcone(botao) {
+                var icone = botao.querySelector('.SSicon').cloneNode(true);
+                document.querySelector('.SScdicon').innerHTML = '';
+                document.querySelector('.SScdicon').appendChild(icone);
+            }
+            function toggleSection(sectionId) {
+                var sections = document.querySelectorAll('.skills');
+                sections.forEach(function(section) {
+                    if (section.id === sectionId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const icons = document.querySelectorAll('.edslideicon');
+
+                function showNextIcon(index) {
+                    if (index < icons.length) {
+                        icons[index].style.opacity = '1';
+                        setTimeout(function() {
+                            icons[index].style.opacity = '0';
+                            showNextIcon((index + 1) % icons.length); // Avança para o próximo ícone
+                        }, 5000); // Tempo de exibição de cada ícone em milissegundos
+                    }
+                }
+
+                // Exibir o primeiro ícone
+                showNextIcon(0);
+            });
+        </script>
+        <script src="lightbox2-dev/lightbox2-dev/dist/js/lightbox-plus-jquery.js"></script>
+    </body>
+</html>

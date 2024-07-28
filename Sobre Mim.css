@@ -1,0 +1,3272 @@
+html {
+    font-size: 100%;
+}
+body {
+    background-color: black;
+    margin: 0;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+@font-face {
+    font-family: 'JuliusSansOne-Regular';
+    src: url('Fontes/Julius_Sans_One/JuliusSansOne-Regular.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-Light';
+    src: url('Fontes/Dosis/static/Dosis-Light.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-Medium';
+    src: url('Fontes/Dosis/static/Dosis-Medium.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-SemiBold';
+    src: url('Fontes/Dosis/static/Dosis-SemiBold.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Goldoni_DEMO';
+    src: url('Fontes/goldoni/Goldoni_DEMO.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Color Basic';
+    src: url('Fontes/color-basic/Color Basic.otf') format('opentype');
+}
+
+#navegacao {
+    align-items: center;
+    backdrop-filter: blur(1.5rem);
+    border-radius: 0.3rem;
+    bottom: 50%;
+    display: flex;
+    left: 1%;
+    opacity: 0.4;
+    padding: .3%;
+    position: fixed;
+    transform: translateY(50%);
+    z-index: 2;
+    transition: opacity 1s;
+}
+#navegacao:hover {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.botoescada {
+    display: flex;
+    flex-direction: row;
+}
+/* Adicione uma classe para destacar o botão da seção ativa */
+.botoescada.active .nbotao {
+    background-color: white;
+    /* Adicione outros estilos desejados para a seção ativa */
+}
+
+.nbotao {
+    appearance: none;
+    background-color: white;
+    border-radius: 0.3rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: width 0.5s ease;
+}
+.nbotao:hover {
+    width: 2.8rem;
+}
+.botaop {
+    color: white;
+    display: none;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.4rem;
+    padding: 2%;
+    text-wrap: nowrap;
+}
+
+.box {
+    display:none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+#BN {
+    align-items: center;
+    backdrop-filter: blur(0.6rem);
+    background-color: transparent;
+    box-shadow: 0 0 .5rem .20rem rgba(0, 0, 0, 0.25);
+    display: flex;
+    height: 17vh;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    transition: display 2s ease;
+    transition: position 1s ease;
+}
+#BNdivlogo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 20%;
+}
+#BNdivlogo a {
+    display: flex;
+    justify-content: center;
+}
+#BNlogo {
+    height: 10%;
+    width: 45%;
+}
+#BNfixar {
+    left: 16.85%;
+    top: 0;
+    position: absolute;
+}
+#BNfb {
+    background-color: transparent;
+    border: none;
+    padding: 20%;
+}
+#BNfb:hover {
+    cursor: pointer;
+    font-size: 1.3rem;
+
+    transition: font-size 0.5s ease;
+}
+
+#BNitens {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.BNia {
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+    height: 100%;
+    padding: 1.5vw;
+    position: relative;
+    text-decoration: none;
+    text-wrap: nowrap;
+
+    transition: border 0.5s ease;
+    transition: font-size 0.5s ease;
+}
+.BNia::before, .BNia::after {
+    background-color: white;
+    content: "";
+    height: .1rem;
+    position: absolute;
+    transition: .5s;
+    width: 0%;
+}
+.BNia::after {
+    bottom: .1rem;
+    left: 0;
+}
+.BNia::before {
+    right: 0;
+    top: .1rem;
+}
+.BNia:hover {
+    cursor: pointer;
+}
+.BNia:hover::after,
+.BNia:hover::before {
+    width: 100%;
+}
+#dropdown:hover #dropdown-menu{
+    display: flex;
+    transition: display 1s ease;
+}
+#dropdown-menu {
+    background-color: black;
+    border-radius: 0 0 1.1rem 1.1rem;
+    display: none;
+    flex-direction: column;
+    margin-top: 1%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+}
+.dmitem {
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.5vw;
+    height: 100%;
+    padding: 1.2vw;
+    text-decoration: none;
+
+    transition: border 0.5s ease;
+    transition: font-size 0.5s ease;
+}
+.dmitem:hover {
+    border-left: 0.1rem solid gray;
+    font-size: 2vw;
+}
+#BNbotao {
+    background-color: transparent;
+    border: solid white .15rem;
+    border-radius: .5rem;
+    visibility: hidden;
+    height: 50%;
+    padding: 0 4%;
+    position: absolute;
+    right: 14%;
+}
+#popup {
+    animation: popup 7s ease;
+    background-color: white;
+    border-radius: 1rem;
+    bottom: -15%;
+    position: fixed;
+    right: 3%;
+    z-index: 3;
+}
+#popuptexto {
+    color: black;
+    font-size: 1.5vw;
+    padding: 0 1vw;
+    text-wrap: nowrap;
+}
+@keyframes popup {
+    0%, 100% {transform: translateY(0); opacity: 0;}
+    10%, 90% {transform: translateY(-250%); opacity: 1;}
+}
+
+.SMdiv {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+}
+
+#card3dzero, #playerInfozero {
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+}
+
+#cthreevideo {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    transition: filter 1s ease;
+    position: absolute;
+    z-index: -1;
+}
+#card3d {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#cardbox, #threedbox {
+    align-items: center;
+    backdrop-filter: blur(.5rem) saturate(50%);
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .10rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    width: 45%;
+}
+#threedbox {
+    box-shadow: 0 0 .5rem .20rem rgba(0, 0, 0, 0.75) inset;
+    overflow: hidden;
+    width: 52%;
+}
+model-viewer {
+    filter: brightness(250%);
+    height: 100%;
+    width: 100%;
+}
+#cardbox a {
+    align-items: center;
+    animation: float 2s linear infinite;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+
+    transition: width .25s ease-in-out;
+}
+@keyframes float {
+    0%, 100% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+}
+#cardboximg {
+    box-sizing: border-box;
+    width: 100%;
+}
+#cardbox:hover a {
+    animation: unset;
+    width: 60%;
+}
+
+figure {
+    margin: 0;
+}
+#Cgaleria {
+    align-items: center;
+    background-color: #070d1f;
+    box-shadow: 0 0 1rem 0.3rem rgba(0, 0, 0, 0.3) inset;
+    box-sizing: border-box;
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    overflow: hidden;
+    position: static;
+    width: 100vw;
+}
+#Cgaleria:hover .Cimagem {
+    animation: none;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+#CGflutuante {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    font-size: 3.5rem;
+    height: 140%;
+    justify-content: space-around;
+    opacity: 0.2;
+    transform: rotate(45deg);
+    width: 150%;
+}
+.CGFlinhadireita {
+    animation: direita 5s infinite ease;
+}
+.CGFlinhadireita:nth-child(3) {
+    animation: direita 5s 0.3s infinite ease;
+}
+.CGFlinhadireita:nth-child(5) {
+    animation: direita 5s 0.6s infinite ease;
+}
+.CGFlinhadireita:nth-child(7) {
+    animation: direita 5s 0.9s infinite ease;
+}
+.CGFlinhaesquerda {
+    animation: direita 5s infinite ease reverse;
+}
+.CGFlinhaesquerda:nth-child(4) {
+    animation: direita 5s 0.3s infinite ease reverse;
+}
+.CGFlinhaesquerda:nth-child(6) {
+    animation: direita 5s 0.6s infinite ease reverse;
+}
+@keyframes direita {
+    0%, 50%, 100% {}
+    25% {transform: translateY(-150%);}
+    75% {transform: translateY(150%);}
+}
+#Cimagens {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 80%;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+}
+#Cimagens2 {
+    display: none;
+}
+.Cimagem {
+    animation: imgcima 4s infinite;
+    background: url('Pics/Minhas/minhas1.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6) ;
+    filter: saturate(20%);
+    height: 55%;
+    position: relative;
+    transform: translateY(-35%);
+    width: 6%;
+}
+.Cimagem:nth-child(2) {
+    animation: imgcima 4s  0.3s infinite;
+    background: url('Pics/Minhas/minhas2.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(3) {
+    animation: imgcima 4s  0.6s infinite;
+    background: url('Pics/Minhas/minhas3.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(4) {
+    animation: imgcima 4s  0.9s infinite;
+    background: url('Pics/Minhas/minhas7.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(5) {
+    animation: imgcima 4s  1.2s infinite;
+    background: url('Pics/Minhas/minhas8.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(6) {
+    animation: imgcima 4s  1.5s infinite;
+    background: url('Pics/Minhas/minhas16.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(7) {
+    animation: imgcima 4s  1.8s infinite;
+    background: url('Pics/Minhas/minhas18.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem h3 {
+    bottom: 0;
+    backdrop-filter: blur(1.5rem);
+    background-color: transparent;
+    border-radius: 0.3rem;
+    color: white;
+    font-family: 'Dosis-Light';
+    font-size: 1.7vw;
+    left: 5%;
+    opacity: 0;
+    padding: 2%;
+    position: absolute;
+    transition: bottom 1s, opacity 1s;
+}
+.Cimagem:hover {
+    cursor: pointer;
+    filter: saturate(100%);
+    height: 60%;
+    width: 25%;
+}
+.Cimagem:hover h3 {
+    opacity: 1;
+    bottom: 5%;
+}
+@keyframes imgcima {
+    0%, 100% {transform: translateY(-35%);}
+    50% {transform: translateY(35%);}
+}
+
+#playerInfozero {
+    height: 120vh;
+}
+#playerInfo {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 120vh;
+    justify-content: space-evenly;
+}
+#pileft {
+    align-items: start;
+    backdrop-filter: blur(.5rem) saturate(50%);
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .10rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 98%;
+    justify-content: start;
+    padding: 0 1%;
+    width: 23%;
+}
+.pilIP {
+    margin-bottom: 4%;
+}
+.pilIP hr {
+    opacity: .8;
+}
+.pilIP h2 {
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+}
+.pilIP img {
+    max-width: 10%;
+}
+.pilIP span {
+    color: white;
+    font-family: 'Dosis-light';
+    font-size: 1.5rem;
+}
+#piright {
+    box-sizing: border-box;
+    height: 98%;
+    width: 75%;
+}
+#pirtop {
+    align-items: start;
+    box-sizing: border-box;
+    display: flex;
+    height: 30%;
+    justify-content: right;
+    overflow: hidden;
+    width: 100%;
+}
+#pirtopmain {
+    align-items: center;
+    backdrop-filter: blur(.5rem) saturate(50%);
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .10rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 95%;
+    justify-content: space-evenly;
+    position: relative;
+    width: 99%;
+}
+#pirtopmain2 {
+    display: none;
+}
+.progress {
+    background: black linear-gradient(to right, transparent 50%, var(--clr) 0);
+    border-radius: 50%;
+    box-shadow: 0 0 .5rem .15rem rgba(0, 0, 0, 0.6);
+    height: 12rem;
+    position: relative;
+    width: 12rem;
+}
+.progress::before {
+    content: '';
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    transform-origin: left;
+    border-radius: 0 100% 100% 0/50%;
+}
+.progress::before {
+    background: var(--clr);
+    transform: rotate(calc(((var(--i) - 50) * 0.01turn)));
+}
+.p3::before, .p4::before {
+    background: black;
+    transform: rotate(calc(((var(--i) - 0) * 0.01turn)));
+}
+
+.progress::after {
+    background-image: url('Sobre Mim/pt.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    content: '';
+    inset: .7em;
+    position: absolute;
+}
+.p2::after {
+    background-image: url('Sobre Mim/en.jpg');
+}
+.p3::after {
+    background-image: url('Sobre Mim/it.jpg');
+}
+.p4::after {
+    background-image: url('Sobre Mim/mz.jpg');
+}
+
+.progress h3 {
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.4rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.progress h4 {
+    color: rgb(255, 255, 255);
+    font-family: 'Dosis-Medium';
+    font-size: 1.5rem;
+    left: 50%;
+    position: absolute;
+    text-transform: uppercase;
+    top: 15%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+#pirbottom {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    width: 100%;
+}
+#pirbleft {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: start;
+    width: 70%;
+}
+#pirbltop {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    justify-content: space-evenly;
+    padding: 1% 0%;
+    width: 100%;
+}
+#pirblbottom {
+    align-items: center;
+    backdrop-filter: blur(.5rem) saturate(50%);
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .10rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    justify-content: space-evenly;
+    overflow: hidden;
+    padding: 2%;
+    width: 96%;
+}
+#pirblbottom i {
+    font-size: 1.5rem;
+}
+#pirblbottom p {
+    font-family: 'Dosis-Light';
+    font-size: 1.3rem;
+}
+.pirblcol {
+    backdrop-filter: blur(.5rem) saturate(50%);
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .10rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    color: white;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    width: 31%;
+}
+.pirblcol h2 {
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.7rem;
+}
+.pirblcol hr {
+    opacity: .5;
+    width: 60%;
+}
+.pirblcol p {
+    font-family: 'Dosis-Light';
+    font-size: 1.6rem;
+}
+#pirbright {
+    backdrop-filter: blur(.5rem) saturate(50%);
+    border-radius: 1.5rem 0 0 0;
+    box-shadow: 0 0 .5rem .10rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    overflow: hidden;
+    text-align: center;
+    width: 30%;
+}
+#pirbright h2 {
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+}
+#pirbright hr {
+    opacity: .5;
+    width: 50%;
+}
+#pirbrbox {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+}
+.pirbrboxes {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.picada {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    justify-content: center;
+    width: 25%;
+}
+.picadaicon {
+    align-items: center;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+    transition: border-radius .25s linear;
+}
+.picadaicon i {
+    font-size: 2rem;
+}
+.picadatexto {
+    align-items: center;
+    background-color: white;
+    border-radius: 0 .5rem .5rem 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 0%;
+
+    transition: width .2s linear;
+}
+.picadatexto p {
+    font-size: 1.5rem;
+    font-family: 'Dosis-Medium';
+    opacity: 0;
+}
+.picada:hover {
+    height: 15%;
+    position: absolute;
+    width: 70%;
+    z-index: 2;
+}
+.picada:hover .picadaicon {
+    border-radius: .5rem 0 0 .5rem;
+    width: 40%;
+}
+.picada:hover .picadatexto {
+    width: 60%;
+}
+.picada:hover .picadatexto p {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
+
+#ConteudoBaixo {
+    background-color: black;
+    color: rgb(196, 196, 196);
+}
+#CB1 {
+    background-color: black;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    margin-top: 2%;
+    min-height: 30vh;
+}
+#Logo {
+    display: flex;
+    justify-content: center;
+    height: 5%;
+    margin: 0 3%;
+    width: 20%;
+}
+#Logo a {
+    height: 200%;
+}
+#Logoimg {
+    height: 10%;
+    width: 100%;
+}
+.Teletitulo {
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+}
+.CB1links {
+    color: gray;
+    font-family: 'Dosis-Light';
+    font-size: 1.8vw;
+    text-decoration: none;
+}
+.CB1links:hover {
+    color: rgb(199, 199, 199);
+    text-decoration: underline;
+    transition: color 0.5s ease;
+    transition: text-decoration 0.5s ease;
+}
+#Tele, #Mail, #Redes {
+    margin: 0 2%;
+}
+#CBhr {
+    background-color: gray;
+    border: none;
+    height: .05rem;
+    width: 60%;
+}
+#Redes {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    width: 40%;
+}
+#Redes a {
+    font-size: 3vw;
+    transition: font-size 0.5s ease;
+}
+#Redes a:hover {
+    font-size: 4.5vw;
+}
+#Clegal {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.6vw;
+    justify-content: center;
+}
+#Clegal p {
+    font-family: 'Dosis-Light';
+}
+
+@media (500px >= width) and (orientation: portrait) {
+    /*Smartphone*/
+    .box::before  {
+        content: "0-500px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 15vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 100%;
+        height: 100%;
+        width: 25vw;
+    }
+    #BNfixar {
+        display: none;
+        left: 92%;
+        top: 40%;
+    }
+    #BNitens {
+        display: none;
+    }
+    #BNitens2 {
+        animation: opct .5s ease-in-out;
+        background: black;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        height: 200%;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(76%) translateX(-16%);
+        width: 60%;
+        z-index: 4;
+    }
+    @keyframes opct {
+        0% {
+          opacity: 0;
+        }
+        100% {
+            opacity: 1;
+          }      
+    }
+    
+    .BNia2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 1.6rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        width: 100%;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .BNia2:nth-child(1) {
+        border-radius:1.5rem;
+    }
+    .BNia2:active {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+    }
+    #dropdown2 {
+        cursor: pointer;
+    }
+    #dropdown-menu2 {
+        animation: opct .5s ease-in-out, pos 1s ease;
+        background-color: rgb(19, 19, 19);
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        transform: translateY(6.8rem);
+        z-index: 3;
+    }
+    @keyframes pos {
+        0% {  
+          transform: translateY(-3rem);
+        }
+        100% {
+            transform: translateY(6.8rem);  
+          }      
+    }
+    .dmitem2 {
+        border: none;
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 5vw;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .dmitem2:active {
+        color: rgb(19, 19, 19);
+        background-color: white;
+        font-weight: bold;
+    }
+    #BNbotao {
+        cursor: pointer;
+        overflow: hidden;
+        transform: translateX(-35%);
+        visibility: visible;
+
+        width: 20%;
+    }
+    #BNbotao i {
+        transition: opacity 1s ease;
+        animation: opa .5s; /* Adicionando a duração da animação aqui */
+    }
+    @keyframes opa {
+        from {
+            opacity: 0; /* Corrigindo a propriedade opacity inicial */
+            transform: translatey(-4rem) scaleY(-3);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #card3dzero {
+        height: 50vh;
+    }
+
+    .SMdiv {
+        box-sizing: border-box;
+        height: 50vh;
+        width: 100vw;
+    }
+    #cardbox, #threedbox {
+        align-items: center;
+        backdrop-filter: blur(.5rem) saturate(50%);
+        border-radius: 1rem;
+        box-shadow: 0 0 .5rem .10rem rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        display: flex;
+        height: 90%;
+        justify-content: center;
+        width: 40%;
+    }
+    #cardbox {
+        height: 50%;
+    }
+    #threedbox {
+        box-shadow: 0 0 .5rem .20rem rgba(0, 0, 0, 0.75) inset;
+        overflow: hidden;
+        width: 52%;
+    }
+    model-viewer {
+        filter: brightness(100%);
+    }
+    #cardbox a {
+        align-items: center;
+        animation: float 2s linear infinite;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    
+        transition: width .25s ease-in-out;
+    }
+    #cardboximg {
+        box-sizing: border-box;
+        width: 175%;
+    }
+    #cardbox:hover a {
+        animation: unset;
+        width: 60%;
+    }
+
+    #Cimagens {
+        display: none;
+    }
+
+    #Cgaleria {
+        height: 90vh;
+    }
+
+    #Cimagens2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+    }
+    .Cimagem2 {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: .8rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 10%;
+        margin: 1% 0;
+        position: relative;
+        width: 80%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem2:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2 h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 5.2vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 20%;
+    }
+    .Cimagem2:nth-child(3) h3,
+    .Cimagem2:nth-child(4) h3,
+    .Cimagem2:nth-child(5) h3,
+    .Cimagem2:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem2:hover {
+        cursor: pointer;
+    }
+    
+    #playerInfozero {
+        height: 550vh;
+    }
+    #playerInfo {
+        flex-direction: column;
+        height: 550vh;
+    }
+    #pileft {
+        border-radius: 0;
+        padding: 3%;
+        width: 100%;
+    }
+    #piright {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+    }
+    #pirtop {
+        height: 130vh;
+    }
+    #pirtopmain {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    #pirtopmain2 {
+        display: none;
+    }
+    .progress {
+        margin: 5% 0;
+    }
+    #pirbottom {
+        flex-direction: column;
+    }
+    #pirbltop {
+        flex-direction: column;
+    }
+
+    #pirbleft {
+        flex-direction: column;
+        width: 100%;
+    }
+    #pirbltop {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        justify-content: space-evenly;
+        padding: 0%;
+        width: 100%;
+    }
+    .pirblcol {
+        margin: 3% 0;
+        width: 90%;
+    }
+    #pirblbottom {
+        flex-direction: column;
+        margin: 3% 0;
+        padding: 1% 2%;
+        width: 90%;
+    }
+    #pirblbottom p {
+        text-align: justify;
+    }
+    #pirbright {
+        border-radius: 0;
+        margin-top: 3%;
+        width: 100%;
+    }
+
+    #CB1 {
+        display: none;
+    }
+    #CB2 {
+        height: 50vh;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+        margin: 0 3%;
+        width: 60%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 40%;
+    }
+    #Redes2 a {
+        font-size: 7vw;
+        padding: 10% 0;
+    }
+    #Redes2 a:active {
+        font-size: 7vw;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 6vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 4.7vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 4vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (501px <= width <= 768px) and (orientation: portrait) {
+    /*Tablet*/
+    .box::before  {
+        content: "501-768px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 20vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 100%;
+        height: 100%;
+        width: 25vw;
+    }
+    #BNfixar {
+        display: none;
+        left: 92%;
+        top: 40%;
+    }
+    #BNfb {
+        background-color: transparent;
+        border: none;
+        font-size: 1.3rem;
+    }
+    #BNfb:hover {
+        cursor: pointer;
+        font-size: 1.3rem;
+        transition: none;
+    }
+    #BNitens {
+        display: none;
+    }
+    #BNitens2 {
+        animation: opct .5s ease-in-out;
+        background: black;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        height: 140%;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(76%) translateX(-10%);
+        width: 40%;
+        z-index: 999;
+    }
+    @keyframes opct {
+        0% {
+          opacity: 0;  
+        }
+        100% {
+            opacity: 1;  
+          }      
+    }
+    .BNia2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2.5rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        width: 100%;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .BNia2:nth-child(1) {
+        border-radius:1.5rem;
+    }
+    .BNia2:active {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+    }
+    #dropdown2 {
+        cursor: pointer;
+    }
+    #dropdown-menu2 {
+        animation: opct .5s ease-in-out;
+        background-color: rgb(19, 19, 19);
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        transform: translateX(-100%) translateY(-33.5%);
+        z-index: 3;
+    }
+    .dmitem2 {
+        border: none;
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .dmitem2:active {
+        color: rgb(19, 19, 19);
+        background-color: white;
+        font-weight: bold;
+    }
+    #BNbotao {
+        cursor: pointer;
+        overflow: hidden;
+        visibility: visible;
+        width: 20%;
+    }
+    #BNbotao i {
+        font-size: 2.5rem;
+        transition: opacity 1s ease;
+        animation: opa .5s; /* Adicionando a duração da animação aqui */
+    }
+    @keyframes opa {
+        from {
+            opacity: 0; /* Corrigindo a propriedade opacity inicial */
+            transform: translatey(-4rem) scaleY(-3);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+    
+    #card3dzero {
+        height: 80vh;
+    }
+    #card3d {
+        height: 80vh;
+    }
+    #cardbox, #threedbox {
+        height: 90%;
+    }
+    #cardboximg {
+        width: 150%;
+    }
+    #cardbox:hover a {
+        width: 70%;
+    }
+
+    #Cgaleria {
+        height: 100vh;
+    }
+    #Cimagens {
+        display: none;
+    }
+    #Cimagens2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+    }
+    .Cimagem2 {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.3rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 10%;
+        margin: 1% 0;
+        position: relative;
+        width: 80%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem2:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2 h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 4vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 12%;
+    }
+    .Cimagem2:nth-child(3) h3,
+    .Cimagem2:nth-child(4) h3,
+    .Cimagem2:nth-child(5) h3,
+    .Cimagem2:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem2:hover {
+        cursor: pointer;
+    }
+
+    #playerInfozero {
+        height: 319vh;
+    }
+    #playerInfo {
+        flex-direction: column;
+        height: 650vh;
+    }
+    .pilIP h2 {
+        font-size: 4vw;
+    }
+    .pilIP span {
+        font-size: 2rem;
+    }
+    #pileft {
+        border-radius: 0;
+        flex-direction: row;
+        height: 20%;
+        padding: 0 0 0 3%;
+        width: 100%;
+    }
+    #piright {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+    }
+    #pirtop {
+        display: none;
+        height: 130vh;
+    }
+    #pirtopmain {
+        display: none;
+        flex-direction: column;
+        height: 90%;
+        width: 100%;
+    }
+    #pirtopmain2 {
+        align-items: center;
+        border-left: solid rgba(255, 255, 255, 0.6) .1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        width: 85%;
+    }
+    .progress {
+        margin: 5% 0;
+    }
+    #pirbottom {
+        flex-direction: column;
+    }
+    #pirbltop {
+        flex-direction: column;
+    }
+
+    #pirbleft {
+        flex-direction: column;
+        height: 25%;
+        width: 100%;
+    }
+    #pirbltop {
+        align-items: start;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 62%;
+        justify-content: space-evenly;
+        padding: 0%;
+        width: 100%;
+    }
+    .pirblcol {
+        margin: 3% 0;
+        width: 32%;
+    }
+    .pirblcol h2 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+    }
+    .pirblcol p {
+        font-family: 'Dosis-Light';
+        font-size: 2rem;
+    }
+    #pirblbottom {
+        flex-direction: row;
+        height: 38%;
+        margin: 0;
+        padding: 1% 2%;
+        width: 97%;
+    }
+    #pirblbottom p {
+        font-size: 1.95rem;
+        text-align: justify;
+        margin: 0 2%;
+    }
+    #pirbright {
+        border-radius: 0;
+        height: 30%;
+        margin-top: 3%;
+        width: 100%;
+    }
+    #pirbright h2 {
+        font-size: 3rem;
+    }
+    .picadaicon {
+        border-radius: 2rem;
+    }
+    .picadaicon i {
+        font-size: 4rem;
+    }
+    .picadatexto p {
+        font-size: 3rem;
+        font-family: 'Dosis-Medium';
+        opacity: 0;
+    }
+
+    #CB1 {
+        display: none;
+    }
+    #CB2 {
+        height: 45vh;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 2%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+        margin: 0 3%;
+        width: 30%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 0%;
+        padding-right: 10%;
+        width: 40%;
+    }
+    #Redes2 a {
+        font-size: 6vw;
+        margin-right: 7%;
+    }
+    #Redes2 a:active {
+        font-size: 6vw;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 5%;
+        min-height: 30vh;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 4vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 3vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (769px <= width <= 1199px) and (orientation: portrait) {
+    /*Laptop*/
+    .box::before  {
+        content: "769-1199px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        height: 10%;
+        padding-left: 30%;
+        width: 15vw;
+    }
+    #navegacao {
+        padding: .6% 0;
+    }
+    .nbotao {
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+    .nbotao:hover {
+        width: 2.4rem;
+    }
+    .botaop {
+        font-size: 1.2rem;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    .BNia {
+        font-size: 3.1vw;
+        padding: 1.5vw;
+    }
+    .BNia:hover {
+        font-size: 3.5vw;
+    }
+    .dmitem {
+        font-size: 1.5rem;
+        padding: 1.5vw;
+    }
+    .dmitem:hover {
+        font-size: 1.7rem;
+    }
+
+    #card3dzero {
+        height: 80vh;
+    }
+    #card3d {
+        height: 80vh;
+    }
+    #cardbox, #threedbox {
+        height: 90%;
+    }
+    #cardboximg {
+        width: 150%;
+    }
+    #cardbox:hover a {
+        width: 70%;
+    }
+
+    #Cgaleria {
+        height: 100vh;
+    }
+    #Cimagens {
+        display: none;
+    }
+    #Cimagens2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+    }
+    .Cimagem2 {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.3rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 10%;
+        margin: 1% 0;
+        position: relative;
+        width: 80%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem2:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2 h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 4vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 12%;
+    }
+    .Cimagem2:nth-child(3) h3,
+    .Cimagem2:nth-child(4) h3,
+    .Cimagem2:nth-child(5) h3,
+    .Cimagem2:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem2:hover {
+        cursor: pointer;
+    }
+
+    #playerInfozero {
+        height: 298vh;
+    }
+    #playerInfo {
+        flex-direction: column;
+        height: 630vh;
+    }
+    .pilIP h2 {
+        font-size: 4.5vw;
+    }
+    .pilIP span {
+        font-size: 2.5rem;
+    }
+    #pileft {
+        border-radius: 0;
+        flex-direction: row;
+        height: 20%;
+        padding: 0 0 0 3%;
+        width: 100%;
+    }
+    #piright {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+    }
+    #pirtop {
+        display: none;
+        height: 130vh;
+    }
+    #pirtopmain {
+        display: none;
+        flex-direction: column;
+        height: 90%;
+        width: 100%;
+    }
+    #pirtopmain2 {
+        align-items: center;
+        border-left: solid rgba(255, 255, 255, 0.6) .1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        width: 85%;
+    }
+    .progress {
+        background: black linear-gradient(to right, transparent 50%, var(--clr) 0);
+        border-radius: 50%;
+        box-shadow: 0 0 .5rem .15rem rgba(0, 0, 0, 0.6);
+        height: 16rem;
+        position: relative;
+        width: 16rem;
+    }
+    .progress::after {
+        background-image: url('Sobre Mim/pt.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        content: '';
+        inset: 1em;
+        position: absolute;
+    }
+    .p2::after {
+        background-image: url('Sobre Mim/en.jpg');
+    }
+    .p3::after {
+        background-image: url('Sobre Mim/it.jpg');
+    }
+    .p4::after {
+        background-image: url('Sobre Mim/mz.jpg');
+    }
+    
+    .progress h3 {
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+    .progress h4 {
+        color: rgb(255, 255, 255);
+        font-family: 'Dosis-Medium';
+        font-size: 2rem;
+        left: 50%;
+        position: absolute;
+        text-transform: uppercase;
+        top: 15%;
+        transform: translate(-50%);
+        z-index: 1;
+    }
+    #pirbottom {
+        flex-direction: column;
+    }
+    #pirbltop {
+        flex-direction: column;
+    }
+
+    #pirbleft {
+        flex-direction: column;
+        height: 22%;
+        width: 100%;
+    }
+    #pirbltop {
+        align-items: start;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 62%;
+        justify-content: space-evenly;
+        padding: 0%;
+        width: 100%;
+    }
+    .pirblcol {
+        margin: 3% 0;
+        width: 32%;
+    }
+    .pirblcol h2 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+    }
+    .pirblcol p {
+        font-family: 'Dosis-Light';
+        font-size: 2rem;
+    }
+    #pirblbottom {
+        flex-direction: row;
+        height: 38%;
+        margin: 0;
+        padding: 1% 2%;
+        width: 97%;
+    }
+    #pirblbottom p {
+        font-size: 1.95rem;
+        text-align: justify;
+        margin: 0 2%;
+    }
+    #pirbright {
+        border-radius: 0;
+        height: 30%;
+        margin-top: 3%;
+        width: 100%;
+    }
+    #pirbright h2 {
+        font-size: 3rem;
+    }
+    .picadaicon {
+        border-radius: 2rem;
+    }
+    .picadaicon i {
+        font-size: 4rem;
+    }
+    .picadatexto p {
+        font-size: 3rem;
+        font-family: 'Dosis-Medium';
+        opacity: 0;
+    }
+
+    .Teletitulo {
+        font-size: 2.5vw;
+    }
+    #CB1 {
+        min-height: 15vh;
+    }
+    #CB2 {
+        display: none;
+    }
+    .CB1links {
+        font-size: 2.2vw;
+    }
+    #Redes {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0%;
+        width: 60%;
+    }
+    #Redes a {
+        font-size: 1.6rem;
+    }
+    #Redes a:hover {
+        font-size: 1.6rem;
+    }
+    #Clegal {
+        font-size: 1.7vw;
+    }
+}
+@media (width >= 1200px) and (orientation: portrait) {
+    /*Laptop*/
+    .box::before  {
+        content: "769-1199px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        height: 10%;
+        padding-left: 30%;
+        width: 15vw;
+    }
+    #navegacao {
+        padding: .6% 0;
+    }
+    .nbotao {
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+    .nbotao:hover {
+        width: 2.4rem;
+    }
+    .botaop {
+        font-size: 1.2rem;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    .BNia {
+        font-size: 3.1vw;
+        padding: 1.5vw;
+    }
+    .BNia:hover {
+        font-size: 3.5vw;
+    }
+    .dmitem {
+        font-size: 1.5rem;
+        padding: 1.5vw;
+    }
+    .dmitem:hover {
+        font-size: 1.7rem;
+    }
+
+    #card3dzero {
+        height: 80vh;
+    }
+    #card3d {
+        height: 80vh;
+    }
+    #cardbox, #threedbox {
+        height: 90%;
+    }
+    #cardboximg {
+        width: 150%;
+    }
+    #cardbox:hover a {
+        width: 70%;
+    }
+
+    #Cgaleria {
+        height: 100vh;
+    }
+    #Cimagens {
+        display: none;
+    }
+    #Cimagens2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+    }
+    .Cimagem2 {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.3rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 10%;
+        margin: 1% 0;
+        position: relative;
+        width: 80%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem2:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2 h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 4vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 12%;
+    }
+    .Cimagem2:nth-child(3) h3,
+    .Cimagem2:nth-child(4) h3,
+    .Cimagem2:nth-child(5) h3,
+    .Cimagem2:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem2:hover {
+        cursor: pointer;
+    }
+
+    #playerInfozero {
+        height: 298vh;
+    }
+    #playerInfo {
+        flex-direction: column;
+        height: 630vh;
+    }
+    .pilIP h2 {
+        font-size: 4.5vw;
+    }
+    .pilIP span {
+        font-size: 2.5rem;
+    }
+    #pileft {
+        border-radius: 0;
+        flex-direction: row;
+        height: 20%;
+        padding: 0 0 0 3%;
+        width: 100%;
+    }
+    #piright {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+    }
+    #pirtop {
+        display: none;
+        height: 130vh;
+    }
+    #pirtopmain {
+        display: none;
+        flex-direction: column;
+        height: 90%;
+        width: 100%;
+    }
+    #pirtopmain2 {
+        align-items: center;
+        border-left: solid rgba(255, 255, 255, 0.6) .1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        width: 85%;
+    }
+    .progress {
+        background: black linear-gradient(to right, transparent 50%, var(--clr) 0);
+        border-radius: 50%;
+        box-shadow: 0 0 .5rem .15rem rgba(0, 0, 0, 0.6);
+        height: 16rem;
+        position: relative;
+        width: 16rem;
+    }
+    .progress::after {
+        background-image: url('Sobre Mim/pt.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        content: '';
+        inset: 1em;
+        position: absolute;
+    }
+    .p2::after {
+        background-image: url('Sobre Mim/en.jpg');
+    }
+    .p3::after {
+        background-image: url('Sobre Mim/it.jpg');
+    }
+    .p4::after {
+        background-image: url('Sobre Mim/mz.jpg');
+    }
+    
+    .progress h3 {
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+    .progress h4 {
+        color: rgb(255, 255, 255);
+        font-family: 'Dosis-Medium';
+        font-size: 2rem;
+        left: 50%;
+        position: absolute;
+        text-transform: uppercase;
+        top: 15%;
+        transform: translate(-50%);
+        z-index: 1;
+    }
+    #pirbottom {
+        flex-direction: column;
+    }
+    #pirbltop {
+        flex-direction: column;
+    }
+
+    #pirbleft {
+        flex-direction: column;
+        height: 22%;
+        width: 100%;
+    }
+    #pirbltop {
+        align-items: start;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 62%;
+        justify-content: space-evenly;
+        padding: 0%;
+        width: 100%;
+    }
+    .pirblcol {
+        margin: 3% 0;
+        width: 32%;
+    }
+    .pirblcol h2 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+    }
+    .pirblcol p {
+        font-family: 'Dosis-Light';
+        font-size: 2rem;
+    }
+    #pirblbottom {
+        flex-direction: row;
+        height: 38%;
+        margin: 0;
+        padding: 1% 2%;
+        width: 97%;
+    }
+    #pirblbottom p {
+        font-size: 1.95rem;
+        text-align: justify;
+        margin: 0 2%;
+    }
+    #pirbright {
+        border-radius: 0;
+        height: 30%;
+        margin-top: 3%;
+        width: 100%;
+    }
+    #pirbright h2 {
+        font-size: 3rem;
+    }
+    .picadaicon {
+        border-radius: 2rem;
+    }
+    .picadaicon i {
+        font-size: 4rem;
+    }
+    .picadatexto p {
+        font-size: 3rem;
+        font-family: 'Dosis-Medium';
+        opacity: 0;
+    }
+
+    .Teletitulo {
+        font-size: 2.5vw;
+    }
+    #CB1 {
+        min-height: 15vh;
+    }
+    #CB2 {
+        display: none;
+    }
+    .CB1links {
+        font-size: 2.2vw;
+    }
+    #Redes {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0%;
+        width: 60%;
+    }
+    #Redes a {
+        font-size: 1.6rem;
+    }
+    #Redes a:hover {
+        font-size: 1.6rem;
+    }
+    #Clegal {
+        font-size: 1.7vw;
+    }
+}
+
+@media (767px >= width) and (orientation: landscape) {
+    /*Smartphone*/
+    .box::before  {
+        content: "0-767px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 25vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        width: 50%;
+    }
+    #BNfixar {
+        display: none;
+        left: 22%;
+        top: 10%;
+    }
+    #BNitens {
+        display: flex;
+    }
+    #BNitens2 {
+        display: none;
+    }
+    .BNia {
+        font-size: 1.3rem;
+    }
+    #dropdown2 {
+        display: none;
+    }
+    .dmitem, .dmitem:hover {
+        font-size: 3vw;
+    }
+    
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #card3dzero {
+        height: 75vh;
+    }
+    #card3d {
+        height: 75vh;
+    }
+    #cardbox, #threedbox {
+        height: 90%;
+    }
+    #cardboximg {
+        width: 100%;
+    }
+    #cardbox:hover a {
+        width: 50%;
+    }
+
+    #Cgaleria {
+        height: 75vh;
+    }
+    #Cimagens {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #Cimagens2 {
+        display: none;
+    }
+    .Cimagem {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 2rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 70%;
+        margin: 1% 0;
+        position: relative;
+        transform: translateY(0%);
+        width: 7.5%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 30%;
+    }
+    .Cimagem:nth-child(3) h3,
+    .Cimagem:nth-child(4) h3,
+    .Cimagem:nth-child(5) h3,
+    .Cimagem:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem:hover {
+        cursor: pointer;
+        height: 90%;
+        width: 25%;
+    }
+
+    #playerInfozero {
+        height: 705vh;
+    }
+    #playerInfo {
+        flex-direction: column;
+        height: 750vh;
+    }
+    .pilIP {
+        margin: 7.5% 0;
+    }
+    .pilIP h2 {
+        font-size: 3vw;
+    }
+    .pilIP span {
+        font-size: 1.5rem;
+    }
+    #pileft {
+        border-radius: 0;
+        flex-direction: row;
+        height: 35%;
+        padding: 0 0 0 3%;
+        width: 100%;
+    }
+    #piright {
+        box-sizing: border-box;
+        height: 65%;
+        width: 100%;
+    }
+    #pirtop {
+        display: none;
+        height: 240vh;
+    }
+    #pirtopmain {
+        display: none;
+        flex-direction: column;
+        height: 90%;
+        width: 100%;
+    }
+    #pirtopmain2 {
+        align-items: center;
+        border-left: solid rgba(255, 255, 255, 0.6) .1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        width: 85%;
+    }
+    .progress {
+        height: 12rem;
+        margin: 5% 0;
+        width: 11.4rem;
+    }
+    .progress h3 {
+        font-size: 1.4rem;
+    }
+    .progress h4 {
+        font-size: 1.4rem;
+    }
+    #pirbottom {
+        flex-direction: column;
+        height: 100%;
+    }
+    #pirbltop {
+        flex-direction: column;
+    }
+
+    #pirbleft {
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 35%;
+        width: 100%;
+    }
+    #pirbltop {
+        align-items: start;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 62%;
+        justify-content: space-evenly;
+        padding: 0%;
+        width: 100%;
+    }
+    .pirblcol {
+        margin: 3% 0;
+        width: 32%;
+    }
+    .pirblcol h2 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 1.3rem;
+    }
+    .pirblcol p {
+        font-family: 'Dosis-Light';
+        font-size: 1.4rem;
+        margin: .5rem;
+    }
+    #pirblbottom {
+        flex-direction: column;
+        height: 48%;
+        padding: 1% 2%;
+        width: 97%;
+    }
+    #pirblbottom p {
+        font-size: 1.4rem;
+        text-align: justify;
+        margin: 0 2%;
+    }
+    #pirbright {
+        border-radius: 0;
+        height: 55%;
+        margin-top: 2%;
+        width: 100%;
+    }
+    #pirbrbox {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        width: 100%;
+    }
+    #pirbright h2 {
+        font-size: 1.5rem;
+    }
+    .picada {
+        height: 50%;
+        width: 80%;
+    }
+    .picadaicon {
+        border-radius: .5rem;
+        width: 25%;
+    }
+    .picadaicon i {
+        font-size: 2.5rem;
+    }
+    .picadatexto {
+        width: 60%;
+    }
+    .picadatexto p {
+        font-size: 2rem;
+        font-family: 'Dosis-Medium';
+        opacity: 1;
+    }
+    .picada:hover {
+        height: 50%;
+        position: static;
+        width: 80%;
+    }
+    .picada:hover .picadaicon {
+        border-radius: .5rem 0 0 .5rem;
+        width: 25%;
+    }
+    .picada:hover .picadatexto {
+        width: 60%;
+    }
+    .picada:hover .picadatexto p {
+        opacity: 1;
+        transition: opacity .5s ease-in;
+    }
+
+    #CB1 {
+        display: none;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        padding-left: 5%;
+        width: 20%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    #Redes2 a, #Redes2 a:active {
+        font-size: 4vw;
+        padding: 10% 0;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 0 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 2.5vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 2vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (768px <= width <= 1023px) and (orientation: landscape) {
+    /*Smartphone*/
+    .box::before  {
+        content: "768px-1023px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 25vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        width: 50%;
+    }
+    #BNfixar {
+        display: none;
+        left: 22%;
+        top: 10%;
+    }
+    #BNitens {
+        display: flex;
+    }
+    #BNitens2 {
+        display: none;
+    }
+    .BNia {
+        font-size: 1.3rem;
+    }
+    #dropdown2 {
+        display: none;
+    }
+    .dmitem, .dmitem:hover {
+        font-size: 3vw;
+    }
+    
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #card3dzero {
+        height: 75vh;
+    }
+    #card3d {
+        height: 75vh;
+    }
+    #cardbox, #threedbox {
+        height: 90%;
+    }
+    #cardboximg {
+        width: 100%;
+    }
+    #cardbox:hover a {
+        width: 50%;
+    }
+
+    #Cgaleria {
+        height: 75vh;
+    }
+    #Cimagens {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #Cimagens2 {
+        display: none;
+    }
+    .Cimagem {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 2rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 70%;
+        margin: 1% 0;
+        position: relative;
+        transform: translateY(0%);
+        width: 7.5%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 30%;
+    }
+    .Cimagem:nth-child(3) h3,
+    .Cimagem:nth-child(4) h3,
+    .Cimagem:nth-child(5) h3,
+    .Cimagem:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem:hover {
+        cursor: pointer;
+        height: 85%;
+        width: 25%;
+    }
+
+    #playerInfozero {
+        height: 705vh;
+    }
+    #playerInfo {
+        flex-direction: column;
+        height: 750vh;
+    }
+    .pilIP {
+        margin: 7.5% 0;
+    }
+    .pilIP h2 {
+        font-size: 3.25vw;
+    }
+    .pilIP span {
+        font-size: 1.75rem;
+    }
+    #pileft {
+        border-radius: 0;
+        flex-direction: row;
+        height: 35%;
+        padding: 0 0 0 3%;
+        width: 100%;
+    }
+    #piright {
+        box-sizing: border-box;
+        height: 65%;
+        width: 100%;
+    }
+    #pirtop {
+        display: none;
+        height: 240vh;
+    }
+    #pirtopmain {
+        display: none;
+        flex-direction: column;
+        height: 90%;
+        width: 100%;
+    }
+    #pirtopmain2 {
+        align-items: center;
+        border-left: solid rgba(255, 255, 255, 0.6) .1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        width: 85%;
+    }
+    .progress {
+        height: 12rem;
+        margin: 5% 0;
+        width: 12rem;
+    }
+    .progress h3 {
+        font-size: 1.4rem;
+    }
+    .progress h4 {
+        font-size: 1.4rem;
+    }
+    #pirbottom {
+        flex-direction: column;
+        height: 100%;
+    }
+    #pirbltop {
+        flex-direction: column;
+    }
+
+    #pirbleft {
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 35%;
+        width: 100%;
+    }
+    #pirbltop {
+        align-items: start;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 62%;
+        justify-content: space-evenly;
+        padding: 0%;
+        width: 100%;
+    }
+    .pirblcol {
+        margin: 3% 0;
+        width: 32%;
+    }
+    .pirblcol h2 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 1.5rem;
+    }
+    .pirblcol p {
+        font-family: 'Dosis-Light';
+        font-size: 1.6rem;
+        margin: 1rem;
+    }
+    #pirblbottom {
+        flex-direction: column;
+        height: 48%;
+        padding: 1% 2%;
+        width: 97%;
+    }
+    #pirblbottom p {
+        font-size: 1.7rem;
+        text-align: justify;
+        margin: 0 2%;
+    }
+    #pirbright {
+        border-radius: 0;
+        height: 55%;
+        margin-top: 2%;
+        width: 100%;
+    }
+    #pirbrbox {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        width: 100%;
+    }
+    #pirbright h2 {
+        font-size: 2rem;
+    }
+    .picada {
+        height: 50%;
+        width: 80%;
+    }
+    .picadaicon {
+        border-radius: .5rem;
+        width: 25%;
+    }
+    .picadaicon i {
+        font-size: 2.5rem;
+    }
+    .picadatexto {
+        width: 60%;
+    }
+    .picadatexto p {
+        font-size: 2rem;
+        font-family: 'Dosis-Medium';
+        opacity: 1;
+    }
+    .picada:hover {
+        height: 50%;
+        position: static;
+        width: 80%;
+    }
+    .picada:hover .picadaicon {
+        border-radius: .5rem 0 0 .5rem;
+        width: 25%;
+    }
+    .picada:hover .picadatexto {
+        width: 60%;
+    }
+    .picada:hover .picadatexto p {
+        opacity: 1;
+        transition: opacity .5s ease-in;
+    }
+
+    #CB1 {
+        display: none;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        padding-left: 5%;
+        width: 20%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    #Redes2 a, #Redes2 a:active {
+        font-size: 4vw;
+        padding: 10% 0;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 0 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 2.5vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 2vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (1024px <= width <= 1439px) and (orientation: landscape) {
+    /*Desktop*/
+    .box::before  {
+        content: "1024px-1439px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        height: 100%;
+        width: 8vw;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Cimagens2 {
+        display: none;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #CB2 {
+        display: none;
+    }    
+}
+@media (width >= 1440px) and (orientation: landscape) {
+    /*Desktop*/
+    .box::before  {
+        content: "1440px-para frente";
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Cimagens2 {
+        display: none;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #CB2 {
+        display: none;
+    }    
+}

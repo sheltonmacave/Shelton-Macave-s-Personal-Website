@@ -1,0 +1,2064 @@
+html {
+    font-size: 100%;
+}
+body {
+    background-color: black;
+    margin: 0;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+@font-face {
+    font-family: 'JuliusSansOne-Regular';
+    src: url('Fontes/Julius_Sans_One/JuliusSansOne-Regular.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-Light';
+    src: url('Fontes/Dosis/static/Dosis-Light.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-Medium';
+    src: url('Fontes/Dosis/static/Dosis-Medium.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-SemiBold';
+    src: url('Fontes/Dosis/static/Dosis-SemiBold.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Goldoni_DEMO';
+    src: url('Fontes/goldoni/Goldoni_DEMO.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Color Basic';
+    src: url('Fontes/color-basic/Color Basic.otf') format('opentype');
+}
+
+#navegacao {
+    align-items: center;
+    backdrop-filter: blur(1.5rem);
+    border-radius: 0.3rem;
+    bottom: 50%;
+    display: flex;
+    left: 1%;
+    opacity: 0.4;
+    padding: .3%;
+    position: fixed;
+    transform: translateY(50%);
+    z-index: 2;
+    transition: opacity 1s;
+}
+#navegacao:hover {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.botoescada {
+    display: flex;
+    flex-direction: row;
+}
+/* Adicione uma classe para destacar o botão da seção ativa */
+.botoescada.active .nbotao {
+    background-color: white;
+    /* Adicione outros estilos desejados para a seção ativa */
+}
+
+.nbotao {
+    appearance: none;
+    background-color: white;
+    border-radius: 0.3rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: width 0.5s ease;
+}
+.nbotao:hover {
+    width: 2.8rem;
+}
+.botaop {
+    color: white;
+    display: none;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.4rem;
+    padding: 2%;
+    text-wrap: nowrap;
+}
+
+.box {
+    display:none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+.box {
+    display:none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+#BN {
+    align-items: center;
+    backdrop-filter: blur(0.6rem);
+    background-color: transparent;
+    box-shadow: 0 0 .5rem .20rem rgba(0, 0, 0, 0.25);
+    display: flex;
+    height: 17vh;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    transition: display 2s ease;
+    transition: position 1s ease;
+}
+#BNdivlogo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 20%;
+}
+#BNdivlogo a {
+    display: flex;
+    justify-content: center;
+}
+#BNlogo {
+    height: 10%;
+    width: 45%;
+}
+#BNfixar {
+    left: 16.85%;
+    top: 0;
+    position: absolute;
+}
+#BNfb {
+    background-color: transparent;
+    border: none;
+    padding: 20%;
+}
+#BNfb:hover {
+    cursor: pointer;
+    font-size: 1.3rem;
+
+    transition: font-size 0.5s ease;
+}
+
+#BNitens {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.BNia {
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+    height: 100%;
+    padding: 1.5vw;
+    position: relative;
+    text-decoration: none;
+    text-wrap: nowrap;
+
+    transition: border 0.5s ease;
+    transition: font-size 0.5s ease;
+}
+.BNia::before, .BNia::after {
+    background-color: white;
+    content: "";
+    height: .1rem;
+    position: absolute;
+    transition: .5s;
+    width: 0%;
+}
+.BNia::after {
+    bottom: .1rem;
+    left: 0;
+}
+.BNia::before {
+    right: 0;
+    top: .1rem;
+}
+.BNia:hover {
+    cursor: pointer;
+}
+.BNia:hover::after,
+.BNia:hover::before {
+    width: 100%;
+}
+#dropdown:hover #dropdown-menu{
+    display: flex;
+    transition: display 1s ease;
+}
+#dropdown-menu {
+    background-color: black;
+    border-radius: 0 0 1.1rem 1.1rem;
+    display: none;
+    flex-direction: column;
+    margin-top: 1%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+}
+.dmitem {
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.5vw;
+    height: 100%;
+    padding: 1.2vw;
+    text-decoration: none;
+
+    transition: border 0.5s ease;
+    transition: font-size 0.5s ease;
+}
+.dmitem:hover {
+    border-left: 0.1rem solid gray;
+    font-size: 2vw;
+}
+#BNbotao {
+    background-color: transparent;
+    border: solid white .15rem;
+    border-radius: .5rem;
+    visibility: hidden;
+    height: 50%;
+    padding: 0 4%;
+    position: absolute;
+    right: 14%;
+}
+#popup {
+    animation: popup 7s ease;
+    background-color: white;
+    border-radius: 1rem;
+    bottom: -15%;
+    position: fixed;
+    right: 3%;
+    z-index: 3;
+}
+#popuptexto {
+    color: black;
+    font-size: 1.5vw;
+    padding: 0 1vw;
+    text-wrap: nowrap;
+}
+@keyframes popup {
+    0%, 100% {transform: translateY(0); opacity: 0;}
+    10%, 90% {transform: translateY(-250%); opacity: 1;}
+}
+
+#PMtitulodiv {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100vw;
+}
+#PMtitulo {
+    align-items: center;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    font-family: 'Color Basic';
+    height: 30vh;
+    justify-content: center;
+    width: 100%;
+}
+#PMtituloh1 {
+    animation: pm 8.5s infinite;
+    box-sizing: border-box;
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+}
+#PMtituloh1 h1{
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 7vw;
+}
+@keyframes pm {
+    0%, 40% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+}
+#PMvideo {
+    animation: pmblur 8.5s infinite;
+    width: 100%;
+}
+@keyframes pmblur {
+    0%, 40% {
+        filter: blur(0);
+    }
+    45%, 100% {
+        filter: blur(.25rem);
+    }
+}
+
+#Educacao {
+    box-sizing: border-box;
+    height: 110vh;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+}
+#Edvideo {
+    filter: saturate(0%);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    transition: filter 1s ease;
+    position: absolute;
+    z-index: -1;
+}
+#edts0 {
+    backdrop-filter: blur(.25rem);
+}
+#edts {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+}
+#edtexto {
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 1% 2%;
+    width: 70%;
+}
+#edtexto h1 {
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 4vw;
+    margin-bottom: 0%;
+    text-align: left;
+}
+#edtexto p {
+    font-family: 'Dosis-Light';
+    font-size: 1.8vw;
+    margin-bottom: 0%;
+    text-align: justify;
+}
+#edtexto h2 {
+    font-family: 'Dosis-SemiBold';
+    font-size: 2vw;
+    margin-bottom: 1%;
+    text-align: center;
+}
+#athing {
+    display: flex;
+    justify-content: center;
+}
+#edtexto a {
+    color: white;
+    font-family: 'Dosis-Light';
+    font-size: 2vw;
+    text-decoration: none;
+}
+#edtexto a:hover {
+    text-decoration: underline;
+}
+#edtexto a:nth-child(1):hover {
+    color: #629c80;
+}
+.aspaspin {
+    font-size: 4vw;
+    font-weight: light;
+}
+#edslide {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    overflow: hidden;
+    width: 30%;
+}
+#edssquare {
+    align-items: center;
+    background: rgba(0, 0, 0, .6);
+    border: solid rgba(128, 128, 128, 0.623) .1rem;
+    border-radius: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+    justify-content: center;
+    overflow: hidden;
+    width: 90%;
+}
+.edslideicon {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 14vw;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.5s ease;
+}
+.edslideicon i {
+    font-size: 15vw;
+}
+.edslideicon h1 {
+    font-family: 'Dosis-SemiBold';
+    font-size: 4vw;
+}
+
+#Projectos0 {
+    box-sizing: border-box;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+}
+#Projectos {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: space-around;
+    position: relative;
+    width: 100vw;
+}
+.Projvid {
+    filter: blur(.2rem) saturate(100%);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    transition: filter 1s ease;
+    z-index: -1;
+}
+#Pct0 {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    overflow: hidden;
+    width: 50%;
+}
+#Pct1:hover #Pcimg {
+    filter: unset;
+    width: 90%;
+}
+#Pct1 {
+    align-items: center;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: center;
+    overflow: hidden;
+    width: 80%;
+}
+#Pc {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 85%;
+    overflow: hidden;
+    width: 100%;
+}
+#Pcimg {
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .15rem rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+    width: 80%;
+
+    transition: width .25s linear;
+}
+#Pt {
+    align-items: center;
+    backdrop-filter: blur(.4rem);
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem .15rem rgba(0, 0, 0, 0.5) inset;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    filter: saturate(25%);
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+    height: 15%;
+    justify-content: center;
+    width: 50%;
+}
+#Pl {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    overflow: hidden;
+    width: 50%;
+}
+.songframe {
+    height: 45%;
+    width: 90%;
+}
+
+#ConteudoBaixo {
+    background-color: black;
+    color: rgb(196, 196, 196);
+}
+#CB1 {
+    background-color: black;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    margin-top: 2%;
+    min-height: 30vh;
+}
+#Logo {
+    display: flex;
+    justify-content: center;
+    height: 5%;
+    margin: 0 3%;
+    width: 20%;
+}
+#Logo a {
+    height: 200%;
+}
+#Logoimg {
+    height: 10%;
+    width: 100%;
+}
+.Teletitulo {
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+}
+.CB1links {
+    color: gray;
+    font-family: 'Dosis-Light';
+    font-size: 1.8vw;
+    text-decoration: none;
+}
+.CB1links:hover {
+    color: rgb(199, 199, 199);
+    text-decoration: underline;
+    transition: color 0.5s ease;
+    transition: text-decoration 0.5s ease;
+}
+#Tele, #Mail, #Redes {
+    margin: 0 2%;
+}
+#CBhr {
+    background-color: gray;
+    border: none;
+    height: .05rem;
+    width: 60%;
+}
+#Redes {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    width: 40%;
+}
+#Redes a {
+    font-size: 3vw;
+    transition: font-size 0.5s ease;
+}
+#Redes a:hover {
+    font-size: 4.5vw;
+}
+#Clegal {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.6vw;
+    justify-content: center;
+}
+#Clegal p {
+    font-family: 'Dosis-Light';
+}
+
+@media (500px >= width) and (orientation: portrait) {
+    /*Smartphone*/
+    .box::before  {
+        content: "0-500px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 15vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 100%;
+        height: 100%;
+        width: 25vw;
+    }
+    #BNfixar {
+        display: none;
+        left: 92%;
+        top: 40%;
+    }
+    #BNitens {
+        display: none;
+    }
+    #BNitens2 {
+        animation: opct .5s ease-in-out;
+        background: black;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        height: 200%;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(76%) translateX(-16%);
+        width: 60%;
+        z-index: 4;
+    }
+    @keyframes opct {
+        0% {
+          opacity: 0;
+        }
+        100% {
+            opacity: 1;
+          }      
+    }
+    .BNia2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 1.6rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        width: 100%;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .BNia2:nth-child(1) {
+        border-radius:1.5rem;
+    }
+    .BNia2:active {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+    }
+    #dropdown2 {
+        cursor: pointer;
+    }
+    #dropdown-menu2 {
+        animation: opct .5s ease-in-out, pos 1s ease;
+        background-color: rgb(19, 19, 19);
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        transform: translateY(6.8rem);
+        z-index: 3;
+    }
+    @keyframes pos {
+        0% {  
+          transform: translateY(-3rem);
+        }
+        100% {
+            transform: translateY(6.8rem);  
+          }      
+    }
+    .dmitem2 {
+        border: none;
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 5vw;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .dmitem2:active {
+        color: rgb(19, 19, 19);
+        background-color: white;
+        font-weight: bold;
+    }
+    #BNbotao {
+        cursor: pointer;
+        overflow: hidden;
+        transform: translateX(-35%);
+        visibility: visible;
+
+        width: 20%;
+    }
+    #BNbotao i {
+        transition: opacity 1s ease;
+        animation: opa .5s; /* Adicionando a duração da animação aqui */
+    }
+    @keyframes opa {
+        from {
+            opacity: 0; /* Corrigindo a propriedade opacity inicial */
+            transform: translatey(-4rem) scaleY(-3);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #PMtitulo {
+        height: 20vh;
+    }
+    #PMtituloh1 h1{
+        font-size: 7.5vw;
+    }
+
+    #Educacao {
+        height: 135vh;
+    }
+    #edts {
+        flex-direction: column;
+        height: 135vh;
+    }
+    #edtexto {
+        width: 100%;
+    }
+    #edtexto h1 {
+        font-size: 8vw;
+        text-align: center;
+        margin: 0;
+    }
+    #edtexto p {
+        font-size: 1.2rem;
+        padding: 0 2%;
+    }
+    #edtexto h2 {
+        font-size: 5vw;
+    }
+    #edtexto a {
+        font-size: 5vw;
+    }
+    .aspaspin {
+        font-size: 7vw;
+        font-weight: light;
+    }
+    #edslide {
+        height: 100%;
+        width: 100%;
+    }
+    #edssquare {
+        align-items: center;
+        background: rgba(0, 0, 0, .6);
+        border: solid rgba(128, 128, 128, 0.623) .1rem;
+        border-radius: 1.8rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 60%;
+        justify-content: center;
+        overflow: hidden;
+        width: 90%;
+    }
+    .edslideicon {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .edslideicon i {
+        font-size: 25vw;
+    }
+    .edslideicon h1 {
+        font-family: 'Dosis-SemiBold';
+        font-size: 8vw;
+        margin-left: 10%;
+    }
+
+    #Projectos {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-around;
+        position: relative;
+        width: 100vw;
+    }
+    #Pct0 {
+        width: 100%;
+    }
+    #Pct1:hover #Pcimg {
+        width: 80%;
+    }
+    #Pt {
+        border-radius: .5rem;
+        font-size: 6vw;
+    }
+    #Pl {
+        width: 100%;
+    }
+    .songframe {
+        height: 45%;
+        width: 90%;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #CB2 {
+        height: 50vh;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+        margin: 0 3%;
+        width: 60%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 40%;
+    }
+    #Redes2 a {
+        font-size: 7vw;
+        padding: 10% 0;
+    }
+    #Redes2 a:active {
+        font-size: 7vw;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 6vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 4.7vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 4vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (501px <= width <= 768px) and (orientation: portrait) {
+    /*Tablet*/
+    .box::before  {
+        content: "501-768px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 20vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 100%;
+        height: 100%;
+        width: 25vw;
+    }
+    #BNfixar {
+        display: none;
+        left: 92%;
+        top: 40%;
+    }
+    #BNfb {
+        background-color: transparent;
+        border: none;
+        font-size: 1.3rem;
+    }
+    #BNfb:hover {
+        cursor: pointer;
+        font-size: 1.3rem;
+        transition: none;
+    }
+    #BNitens {
+        display: none;
+    }
+    #BNitens2 {
+        animation: opct .5s ease-in-out;
+        background: black;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        height: 140%;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(76%) translateX(-10%);
+        width: 40%;
+        z-index: 999;
+    }
+    @keyframes opct {
+        0% {
+          opacity: 0;  
+        }
+        100% {
+            opacity: 1;  
+          }      
+    }
+    .BNia2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2.5rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        width: 100%;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .BNia2:nth-child(1) {
+        border-radius:1.5rem;
+    }
+    .BNia2:active {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+    }
+    #dropdown2 {
+        cursor: pointer;
+    }
+    #dropdown-menu2 {
+        animation: opct .5s ease-in-out;
+        background-color: rgb(19, 19, 19);
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        transform: translateX(-100%) translateY(-33.5%);
+        z-index: 3;
+    }
+    .dmitem2 {
+        border: none;
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .dmitem2:active {
+        color: rgb(19, 19, 19);
+        background-color: white;
+        font-weight: bold;
+    }
+    #BNbotao {
+        cursor: pointer;
+        overflow: hidden;
+        visibility: visible;
+        width: 20%;
+    }
+    #BNbotao i {
+        font-size: 2.5rem;
+        transition: opacity 1s ease;
+        animation: opa .5s; /* Adicionando a duração da animação aqui */
+    }
+    @keyframes opa {
+        from {
+            opacity: 0; /* Corrigindo a propriedade opacity inicial */
+            transform: translatey(-4rem) scaleY(-3);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+    
+    #PMtituloh1 h1{
+        font-size: 7.5vw;
+    }
+
+    #Educacao {
+        height: 160vh;
+    }
+    #edts {
+        flex-direction: column;
+        height: 160vh;
+    }
+    #edtexto {
+        width: 100%;
+    }
+    #edtexto h1 {
+        font-size: 8vw;
+        text-align: center;
+    }
+    #edtexto p {
+        font-size: 2rem;
+        padding: 0 2%;
+    }
+    #edtexto h2 {
+        font-size: 5vw;
+    }
+    #edtexto a {
+        font-size: 5vw;
+    }
+    .aspaspin {
+        font-size: 7vw;
+        font-weight: light;
+    }
+    #edslide {
+        width: 100%;
+    }
+    #edssquare {
+        border-radius: 1.8rem;
+        width: 40%;
+    }
+    .edslideicon {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .edslideicon i {
+        font-size: 20vw;
+    }
+    .edslideicon h1 {
+        font-family: 'Dosis-SemiBold';
+        font-size: 8vw;
+        margin-left: 10%;
+    }
+
+    #Projectos0 {
+        height: 150vh;
+    }
+    #Projectos {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 150vh;
+        justify-content: space-around;
+        position: relative;
+        width: 100vw;
+    }
+    #Pct0 {
+        width: 100%;
+    }
+    #Pcimg {
+        width: 80%;
+    }
+    #Pct1:hover #Pcimg {
+        filter: unset;
+        width: 80%;
+    }
+    #Pt {
+        font-size: 6vw;
+        height: 20%;
+        width: 50%;
+    }
+    .songframe {
+        height: 60%;
+        width: 80%;
+    }
+    #Pl {
+        width: 100%;
+    }
+
+    #secone {
+        background-color: #0a142f;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    #CB1 {
+        display: none;
+    }
+    #CB2 {
+        height: 45vh;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 2%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+        margin: 0 3%;
+        width: 30%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 0%;
+        padding-right: 10%;
+        width: 40%;
+    }
+    #Redes2 a {
+        font-size: 6vw;
+        margin-right: 7%;
+    }
+    #Redes2 a:active {
+        font-size: 6vw;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 5%;
+        min-height: 30vh;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 4vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 3vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (769px <= width <= 1199px) and (orientation: portrait) {
+    /*Laptop*/
+    .box::before  {
+        content: "769-1199px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        height: 10%;
+        padding-left: 30%;
+        width: 15vw;
+    }
+    #navegacao {
+        padding: .6% 0;
+    }
+    .nbotao {
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+    .nbotao:hover {
+        width: 2.4rem;
+    }
+    .botaop {
+        font-size: 1.2rem;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    .BNia {
+        font-size: 3.1vw;
+        padding: 1.5vw;
+    }
+    .BNia:hover {
+        font-size: 3.5vw;
+    }
+    .dmitem {
+        font-size: 1.5rem;
+        padding: 1.5vw;
+    }
+    .dmitem:hover {
+        font-size: 1.7rem;
+    }
+
+    #PMtituloh1 h1{
+        font-size: 7.5vw;
+    }
+
+    #Educacao {
+        height: 160vh;
+    }
+    #edts {
+        flex-direction: column;
+        height: 160vh;
+    }
+    #edtexto {
+        width: 100%;
+    }
+    #edtexto h1 {
+        font-size: 8vw;
+        text-align: center;
+    }
+    #edtexto p {
+        font-size: 2rem;
+        padding: 0 2%;
+    }
+    #edtexto h2 {
+        font-size: 5vw;
+    }
+    #edtexto a {
+        font-size: 5vw;
+    }
+    .aspaspin {
+        font-size: 7vw;
+        font-weight: light;
+    }
+    #edslide {
+        width: 100%;
+    }
+    #edssquare {
+        border-radius: 1.8rem;
+        width: 40%;
+    }
+    .edslideicon {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .edslideicon i {
+        font-size: 20vw;
+    }
+    .edslideicon h1 {
+        font-family: 'Dosis-SemiBold';
+        font-size: 8vw;
+        margin-left: 10%;
+    }
+
+    #Projectos0 {
+        height: 150vh;
+    }
+    #Projectos {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 150vh;
+        justify-content: space-around;
+        position: relative;
+        width: 100vw;
+    }
+    #Pct0 {
+        width: 100%;
+    }
+    #Pcimg {
+        width: 80%;
+    }
+    #Pct1:hover #Pcimg {
+        filter: unset;
+        width: 80%;
+    }
+    #Pt {
+        font-size: 6vw;
+        height: 20%;
+        width: 50%;
+    }
+    .songframe {
+        height: 60%;
+        width: 80%;
+    }
+    #Pl {
+        width: 100%;
+    }
+    
+    .Teletitulo {
+        font-size: 2.5vw;
+    }
+    #CB1 {
+        min-height: 15vh;
+    }
+    #CB2 {
+        display: none;
+    }
+    .CB1links {
+        font-size: 2.2vw;
+    }
+    #Redes {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0%;
+        width: 60%;
+    }
+    #Redes a {
+        font-size: 1.6rem;
+    }
+    #Redes a:hover {
+        font-size: 1.6rem;
+    }
+    #Clegal {
+        font-size: 1.7vw;
+    }
+}
+@media (width >= 1200px) and (orientation: portrait) {
+    /*Laptop*/
+    .box::before  {
+        content: "769-1199px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        height: 10%;
+        padding-left: 30%;
+        width: 15vw;
+    }
+    #navegacao {
+        padding: .6% 0;
+    }
+    .nbotao {
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+    .nbotao:hover {
+        width: 2.4rem;
+    }
+    .botaop {
+        font-size: 1.2rem;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    .BNia {
+        font-size: 3.1vw;
+        padding: 1.5vw;
+    }
+    .BNia:hover {
+        font-size: 3.5vw;
+    }
+    .dmitem {
+        font-size: 1.5rem;
+        padding: 1.5vw;
+    }
+    .dmitem:hover {
+        font-size: 1.7rem;
+    }
+
+    #PMtituloh1 h1{
+        font-size: 7.5vw;
+    }
+
+    #Educacao {
+        height: 160vh;
+    }
+    #edts {
+        flex-direction: column;
+        height: 160vh;
+    }
+    #edtexto {
+        width: 100%;
+    }
+    #edtexto h1 {
+        font-size: 8vw;
+        text-align: center;
+    }
+    #edtexto p {
+        font-size: 2rem;
+        padding: 0 2%;
+    }
+    #edtexto h2 {
+        font-size: 5vw;
+    }
+    #edtexto a {
+        font-size: 5vw;
+    }
+    .aspaspin {
+        font-size: 7vw;
+        font-weight: light;
+    }
+    #edslide {
+        width: 100%;
+    }
+    #edssquare {
+        border-radius: 1.8rem;
+        width: 40%;
+    }
+    .edslideicon {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .edslideicon i {
+        font-size: 20vw;
+    }
+    .edslideicon h1 {
+        font-family: 'Dosis-SemiBold';
+        font-size: 8vw;
+        margin-left: 10%;
+    }
+
+    #Projectos0 {
+        height: 150vh;
+    }
+    #Projectos {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 150vh;
+        justify-content: space-around;
+        position: relative;
+        width: 100vw;
+    }
+    #Pct0 {
+        width: 100%;
+    }
+    #Pcimg {
+        width: 80%;
+    }
+    #Pct1:hover #Pcimg {
+        filter: unset;
+        width: 80%;
+    }
+    #Pt {
+        font-size: 6vw;
+        height: 20%;
+        width: 50%;
+    }
+    .songframe {
+        height: 60%;
+        width: 80%;
+    }
+    #Pl {
+        width: 100%;
+    }
+    
+    .Teletitulo {
+        font-size: 2.5vw;
+    }
+    #CB1 {
+        min-height: 15vh;
+    }
+    #CB2 {
+        display: none;
+    }
+    .CB1links {
+        font-size: 2.2vw;
+    }
+    #Redes {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0%;
+        width: 60%;
+    }
+    #Redes a {
+        font-size: 1.6rem;
+    }
+    #Redes a:hover {
+        font-size: 1.6rem;
+    }
+    #Clegal {
+        font-size: 1.7vw;
+    }
+}
+
+@media (767px >= width) and (orientation: landscape) {
+    /*Smartphone*/
+    .box::before  {
+        content: "0-767px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 25vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        width: 50%;
+    }
+    #BNfixar {
+        display: none;
+        left: 22%;
+        top: 10%;
+    }
+    #BNitens {
+        display: flex;
+    }
+    #BNitens2 {
+        display: none;
+    }
+    .BNia {
+        font-size: 1.3rem;
+    }
+    #dropdown2 {
+        display: none;
+    }
+    .dmitem, .dmitem:hover {
+        font-size: 3vw;
+    }
+    
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #PMtitulo {
+        height: 25vh;
+    }
+
+    #PMtituloh1 h1{
+        font-size: 7.5vw;
+    }
+
+    #Educacao {
+        height: 300vh;
+    }
+    #edts {
+        flex-direction: column;
+        height: 300vh;
+    }
+    #edtexto {
+        width: 100%;
+    }
+    #edtexto h1 {
+        font-size: 5vw;
+        text-align: center;
+    }
+    #edtexto p {
+        font-size: 1.4rem;
+        padding: 0 2%;
+    }
+    #edtexto h2 {
+        font-size: 3vw;
+    }
+    #edtexto a {
+        font-size: 3vw;
+    }
+    .aspaspin {
+        font-size: 7vw;
+        font-weight: light;
+    }
+    #edslide {
+        height: 50%;
+        margin: 0 auto;
+        width: 35%;
+    }
+    #edssquare {
+        border-radius: 1.8rem;
+    }
+    .edslideicon {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .edslideicon i {
+        font-size: 12vw;
+    }
+
+    #Projectos0 {
+        height: 150vh;
+    }
+    #Projectos {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 150vh;
+        justify-content: space-around;
+        position: relative;
+        width: 100vw;
+    }
+    #Pct0 {
+        width: 100%;
+    }
+    #Pcimg {
+        width: 70%;
+    }
+    #Pct1:hover #Pcimg {
+        filter: unset;
+        width: 70%;
+    }
+    #Pt {
+        font-size: 4vw;
+        height: 15%;
+        transform: translateY(-50%);
+        width: 60%;
+    }
+    .songframe {
+        height: 45%;
+        width: 90%;
+    }
+    #Pl {
+        width: 100%;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        padding-left: 5%;
+        width: 20%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    #Redes2 a, #Redes2 a:active {
+        font-size: 4vw;
+        padding: 10% 0;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 0 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 2.5vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 2vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (768px <= width <= 1023px) and (orientation: landscape) {
+    /*Smartphone*/
+    .box::before  {
+        content: "768px-1023px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 25vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        width: 50%;
+    }
+    #BNfixar {
+        display: none;
+        left: 22%;
+        top: 10%;
+    }
+    #BNitens {
+        display: flex;
+    }
+    #BNitens2 {
+        display: none;
+    }
+    .BNia {
+        font-size: 1.3rem;
+    }
+    #dropdown2 {
+        display: none;
+    }
+    .dmitem, .dmitem:hover {
+        font-size: 3vw;
+    }
+    
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #PMtitulo {
+        height: 25vh;
+    }
+
+    #PMtituloh1 h1{
+        font-size: 7.5vw;
+    }
+
+    #Educacao {
+        height: 300vh;
+    }
+    #edts {
+        flex-direction: column;
+        height: 300vh;
+    }
+    #edtexto {
+        width: 100%;
+    }
+    #edtexto h1 {
+        font-size: 5vw;
+        text-align: center;
+    }
+    #edtexto p {
+        font-size: 1.6rem;
+        padding: 0 2%;
+    }
+    #edtexto h2 {
+        font-size: 3.7vw;
+    }
+    #edtexto a {
+        font-size: 3.2vw;
+    }
+    .aspaspin {
+        font-size: 7vw;
+        font-weight: light;
+    }
+    #edslide {
+        height: 50%;
+        margin: 0 auto;
+        width: 35%;
+    }
+    #edssquare {
+        border-radius: 1.8rem;
+    }
+    .edslideicon {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .edslideicon i {
+        font-size: 12vw;
+    }
+
+    #Projectos0 {
+        height: 150vh;
+    }
+    #Projectos {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 150vh;
+        justify-content: space-around;
+        position: relative;
+        width: 100vw;
+    }
+    #Pct0 {
+        width: 100%;
+    }
+    #Pcimg {
+        width: 70%;
+    }
+    #Pct1:hover #Pcimg {
+        filter: unset;
+        width: 70%;
+    }
+    #Pt {
+        font-size: 4vw;
+        height: 15%;
+        transform: translateY(-50%);
+        width: 60%;
+    }
+    .songframe {
+        height: 45%;
+        width: 90%;
+    }
+    #Pl {
+        width: 100%;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        padding-left: 5%;
+        width: 20%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    #Redes2 a, #Redes2 a:active {
+        font-size: 4vw;
+        padding: 10% 0;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 0 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 2.5vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 2vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (1024px <= width <= 1439px) and (orientation: landscape) {
+    /*Desktop*/
+    .box::before  {
+        content: "1024px-1439px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        height: 100%;
+        width: 8vw;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #CB2 {
+        display: none;
+    }    
+}
+@media (width >= 1440px) and (orientation: landscape) {
+    /*Desktop*/
+    .box::before  {
+        content: "1440px-para frente";
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #CB2 {
+        display: none;
+    }    
+}

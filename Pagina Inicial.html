@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="icon" href="LogoAssinatura/Branco-sembg.png" type="image/png">
+    <link rel="stylesheet" href="Pagina Inicial.css">
+    <link rel="stylesheet" href="fonts-6/css/all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Pagina Inicial.js"></script>
+    <title>PÁGINA INICIAL</title>
+</head>
+<body>
+    <audio id = "click" src="click.mp3"></audio>
+    <audio id = "clicklow" src="click low.mp3"></audio>
+    <audio id = "mouseover" src="mouseover open.mp3"></audio>
+    <audio id = "mouseout" src="mouseout close.mp3"></audio>
+    <audio id = "bnsound" src="BN.mp3"></audio>
+    <audio id = "bnlowsound" src="BNlow.mp3"></audio>
+    
+    <aside id = "navegacao">
+        <div id = "botoes">
+            <div class = "botoescada">
+                <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#ConteudoTopo');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                <label for = "seccao" class =  "botaop">Sobre Mim</label>
+            </div>
+            <div class = "botoescada">
+                <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#Carreiras1');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                <label for = "seccao" class =  "botaop">Carreiras</label>
+            </div>
+            <div class = "botoescada">
+                <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#Galeria');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                <label for = "seccao" class =  "botaop">Galeria</label>
+            </div>
+            <div class = "botoescada">
+                <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#Contactos');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                <label for = "seccao" class =  "botaop">Contactos</label>
+            </div>
+        </div>
+    </aside>
+
+    <div class="box">
+        
+    </div>
+
+    <header id = "BN">
+        <figure id = "BNdivlogo">
+            <a href="Pagina Inicial.html"><img id = "BNlogo" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+        </figure>
+        <div id = "BNfixar">
+            <button id = "BNfb" onclick="fix()"><i class="fa-solid fa-thumbtack" style="color: #ffffff;"></i></button>
+        </div>
+        <ul id = "BNitens">
+            <li class = "BNitem"><a class = "BNia" href="Sobre Mim.html" onmouseover="playSound('bnsound')">Sobre Mim</a></li>
+            <li id = "dropdown" class = "BNitem">
+                <a class = "BNia" onmouseover = "playSound('bnsound')">
+                    Carreiras
+                    <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                </a>
+                
+                <div id = "dropdown-menu">
+                    <a class = "dmitem" href="CWebDev.html" onmouseover = "playSound('bnlowsound')";>Desenvolvedor Web</a>
+                    <a class = "dmitem" href="CDA.html" onmouseover = "playSound('bnlowsound')">Analista de Dados</a>
+                    <a class = "dmitem" href="CPM.html" onmouseover = "playSound('bnlowsound')">Produtor Musical</a>
+                </div>
+            </li>
+            <li class = "BNitem"><a class = "BNia" href="Galeria.html" onmouseover = "playSound('bnsound')">Galeria</a></li>
+            <li class = "BNitem"><a class = "BNia" href="Contactos.html" onmouseover = "playSound('bnsound')">Contactos</a></li>
+        </ul>
+        <button id = "BNbotao" onclick="mostrarnavbar()">
+            <i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>
+        </button>
+        <ul id = "BNitens2">
+            <li class = "BNitem2"><a class = "BNia2" href="Sobre Mim.html" onclick="playSound('bnsound')">Sobre Mim</a></li>
+            <li id = "dropdown2" class = "BNitem2">
+                <a class = "BNia2" onclick = "dmi2()" onclick = "playSound('bnsound')">
+                    Carreiras &nbsp
+                    <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                </a>
+                
+                <div id = "dropdown-menu2">
+                    <a class = "dmitem2" href="CWebDev.html" onclick = "playSound('bnlowsound')">Desenvolvedor Web</a>
+                    <a class = "dmitem2" href="CDA.html" onclick = "playSound('bnlowsound')">Analista de Dados</a>
+                    <a class = "dmitem2" href="CPM.html" onclick = "playSound('bnlowsound')">Produtor Musical</a>
+                </div>
+            </li>
+            <li class = "BNitem2"><a class = "BNia2" href="Galeria.html" onclick = "playSound('bnsound')">Galeria</a></li>
+            <li class = "BNitem2"><a class = "BNia2" href="Contactos.html" onclick = "playSound('bnsound')">Contactos</a></li>
+        </ul>
+    </header>
+
+    <aside id = "popup">
+        <p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>
+    </aside>
+
+    <main id = "seccoes">
+        <section id = "ConteudoTopo" class = "sec">
+            <div id = "scroller">
+                <div id = "letters">
+                    <div id = "Shelton">
+                        <p class = "cima">Q<br>R<br>S<br>T<br>U</p>
+                        <p class = "baixo">F<br>G<br>H<br>I<br>J</p>
+                        <p class = "cima">B<br>C<br>E<br>F<br>G</p>
+                        <p class = "baixo">J<br>K<br>L<br>M<br>N</p>
+                        <p class = "cima">R<br>S<br>T<br>U<br>V</p>
+                        <p class = "baixo">M<br>N<br>O<br>P<br>Q</p>
+                        <p  class = "cima">L<br>M<br>N<br>O<br>P</p>
+                        <p class = "sunderline"><br><br>¦</p>
+                    </div>
+                    <div id = "Elias">
+                        <p class = "baixo">C<br>D<br>E<br>F<br>G</p>
+                        <p class = "cima">J<br>K<br>L<br>M<br>N</p>
+                        <p class = "baixo">G<br>H<br>I<br>J<br>K</p>
+                        <p class = "cima">Y<br>Z<br>A<br>B<br>C</p>
+                        <p class = "baixo">Q<br>R<br>S<br>T<br>U</p>
+                    </div>
+                    <div id = "Macave">
+                        <p class = "sunderline"><br><br>¦</p>
+                        <p class = "cima">K<br>L<br>M<br>N<br>O</p>
+                        <p class = "baixo">Y<br>Z<br>A<br>B<br>C</p>
+                        <p class = "cima">A<br>B<br>C<br>D<br>E</p>
+                        <p class = "baixo">Y<br>Z<br>A<br>B<br>C</p>
+                        <p class = "cima">T<br>U<br>V<br>W<br>X</p>
+                        <p class = "baixo">C<br>D<br>E<br>F<br>G</p>
+                    </div>
+                </div>
+                <div id = "espaco"></div>
+            </div>
+
+            <div id = "Cslider">
+                <div id = "Ctexto">
+                    <div id = "CTtitulo">
+                        <h1>SOBRE MIM</h1>
+                    </div>
+                    <div id = "CTparagrafo">
+                        <p>Presumo que estejas curioso para saber mais sobre o responsável por este website.<br><br>Mas calma, aguente um pouco, tire um minuto para apreciar a beleza presente em cada um desses cards; depois disso clique no botão abaixo.</p>
+                        <a id = "CTbotao" href = "Sobre Mim.html">Explorar</a>
+                    </div>
+                </div>
+
+                <figure id = "Cgaleria">
+                    <div id = "CGflutuante">
+                        <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                        <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                        
+                    </div>
+                    <figure id = "Cimagens">
+                        <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                            <h3>2011</h3>
+                        </div>
+                        <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                            <h3>2012</h3>
+                        </div>
+                        <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                            <h3>2019</h3>
+                        </div>
+                        <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                            <h3>2020</h3>
+                        </div>
+                        <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                            <h3>2021</h3>
+                        </div>
+                        <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                            <h3>2022</h3>
+                        </div>
+                        <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                            <h3>2023</h3>
+                        </div>
+                    </figure>
+                    <figure id = "Cimagens2">
+                        <div class = "Cimagem2" onclick = "abririmagem2()">
+                            <h3>2011</h3>
+                        </div>
+                        <div class = "Cimagem2" onclick = "abririmagem2()">
+                            <h3>2012</h3>
+                        </div>
+                        <div class = "Cimagem2" onclick = "abririmagem2()">
+                            <h3>2019</h3>
+                        </div>
+                        <div class = "Cimagem2" onclick = "abririmagem2()">
+                            <h3>2020</h3>
+                        </div>
+                        <div class = "Cimagem2" onclick = "abririmagem2()">
+                            <h3>2021</h3>
+                        </div>
+                        <div class = "Cimagem2" onclick = "abririmagem2()">
+                            <h3>2022</h3>
+                        </div>
+                        <div class = "Cimagem2" onclick = "abririmagem2()">
+                            <h3>2023</h3>
+                        </div>
+                    </figure>
+                </figure>
+            </div>
+        </section>
+
+        <section id = "Carreiras1" class = "sec">
+            <div id = "remolocar">
+                <button id = "Cremolocar" onclick="pp()">
+                    <i class="fa-solid fa-pause fa-2xl" style="color: #ffffff;"></i>
+                </button>
+            </div>
+            <section id = "WebDev" class="Carreirasbox" onmouseenter = "Cefeitos(this)" onmouseleave = "Cefeitosoff(this)">
+                <video autoplay loop muted id = "WebDevvideo" class = "Carreirasvideo videosGLobal" onclick = "playPauseCarr(this)">
+                    <source src="Videos/WDopt.mp4" type="video/mp4">
+                </video>
+
+                    <nav id = "WebDevtexto" class="Cnav">
+                        <h1 class = "Carreirastitulo">Desenvolvedor Web</h1>
+                        <i class="fa-solid fa-code fa-2xl Cicone" style="color: #ffffff;"></i>
+                        <a class = "Carreirasbotao" href = "CWebDev.html">Explorar</a>
+                    </nav>
+            </section>
+
+            <section id = "AnaliseDados" class="Carreirasbox" onmouseenter = "Cefeitos(this)" onmouseleave = "Cefeitosoff(this)">
+                <video autoplay loop muted id = "AnaliseDadosvideo" class = "Carreirasvideo videosGLobal" onclick = "playPauseCarr(this)">
+                    <source src="Videos/DAopt.mp4" type="video/mp4">
+                </video>
+                
+                    <nav id = "AnaliseDadostexto" class="Cnav">
+                        <h1 class = "Carreirastitulo">Analista de Dados</h1>
+                        <i class="fa-solid fa-chart-line fa-2xl Cicone" style="color: #000000;"></i>
+                        <a class = "Carreirasbotao" href = "CDA.html">Explorar</a>
+                    </nav>
+            </section>
+
+            <section id = "ProdMusical" class="Carreirasbox" onmouseenter = "Cefeitos(this)" onmouseleave = "Cefeitosoff(this)">
+                <video autoplay loop muted id = "ProdMusicalvideo" class = "Carreirasvideo videosGLobal" onclick = "playPauseCarr(this)">
+                    <source src="Videos/MPopt.mp4" type="video/mp4">
+                </video>
+                
+                <nav id = "ProdMusicaltexto" class="Cnav">
+                    <h1 class = "Carreirastitulo">Produtor Musical</h1>
+                    <i class="fa-solid fa-music fa-2xl Cicone" style="color: #ffffff;"></i>
+                    <a class = "Carreirasbotao" href = "CPM.html">Explorar</a>
+                </nav>
+            </section>
+        </section>
+
+        <section id = "Galeria" class = "sec">
+            <img id = "Galeriaimg" src="Images/Adobe_Express_20240116_1556030_1.jpg" alt="Coleção de fotos tiradas por mim." onmouseover="aplicarGrayscale()" onmouseout="removerGrayscale()">
+            <img id = "Galeriaimg2" src="Images/Adobe_Express_20240116_1556030_1.jpg" alt="Coleção de fotos tiradas por mim.">
+
+            <section id = "Galeriabox">
+                <button id = "Gbremolocar" onclick="remolocarGaleriabox()"><i class="fa-regular fa-eye-slash fa-xl"></i></button>
+                <h1 id = "Gboxh1">PICFOLIO</h1>
+                <p id = "Gboxp">Espaço dedicado a apresentar o meu trabalho fotográfico de forma visual <sub class = "Gbp2sub">(obviamente)</sub> e inspiradora.</p>
+                <a id = "Gboxb" href = "Galeria.html">Explorar</a>
+            </section>
+            <section id = "Galeriabox2">
+                <button id = "Gbremolocar2" onclick="remolocarGaleriabox2()"><i class="fa-regular fa-eye-slash fa-xl"></i></button>
+                <h1 id = "Gboxh12">PICFOLIO</h1>
+                <p id = "Gboxp2">Espaço dedicado a apresentar o meu trabalho fotográfico de forma visual <sub class = "Gbp2sub">(obviamente)</sub> e inspiradora.</p>
+                <a id = "Gboxb2" href = "Galeria.html">Explorar</a>
+            </section>
+        </section>
+
+        <section id = "Contactos" class = "sec">
+            <video autoplay loop muted id = "Contactosvideo" class = "videosGLobal">
+                <source src="Background/Azul Branco.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+
+            <nav id = "Contactosbox">
+                <div id = "Contactostitulo">
+                    <h1><a href = "Contactos.html">Contactos</a></h1>
+                </div>
+
+                <nav id = "Iconesbox">
+                    <nav class = "Icones">
+                        <a class = "IconeLabel" href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank">
+                            <i class = "fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel">Shelton Elias</h2>
+                        </a>
+                        <a class = "IconeLabel" href="https://www.instagram.com/_drakesdeception" target="_blank">
+                            <i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel">_drakesdeception</h2>
+                        </a>
+                        <a class = "IconeLabel" href="https://www.facebook.com/sheltone153" target="_blank">
+                            <i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i>
+                            <h2 class = "ILLabel">Shelton Macave</h2>
+                        </a>
+                        <a class = "IconeLabel" href="mailto:sheltonelias992@gmail.com" target="_blank">
+                            <i class="fa-regular fa-envelope fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel">sheltonelias992@gmail.com</h2>
+                        </a>
+                    </nav>
+                    <nav class = "Icones">
+                        <a class = "IconeLabel" href="https://github.com/sheltonmacave" target="_blank">
+                            <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel">sheltonmacave</h2>
+                        </a>
+                        <a class = "IconeLabel" href="https://open.spotify.com/user/sqwipxrhyi6uz9ms2khopenm6?si=0a2c21d6c3fa48b2" target="_blank">
+                            <i class="fa-brands fa-spotify fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel">_drakesdeception</h2>
+                        </a>
+                        <div class = "IconeLabel">
+                            <i class="fa-brands fa-playstation fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel">itaky_153</h2>
+                        </div>
+                        <div class = "IconeLabel">
+                            <i class="fa-brands fa-xbox fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel">Itaky153</h2>
+                        </div>
+                    </nav>
+                </nav>
+                <nav id = "Iconesbox2">
+                    <nav class = "Icones2">
+                        <a class = "IconeLabel2" href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank">
+                            <i class = "fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel2">Shelton Elias</h2>
+                        </a>
+                        <a class = "IconeLabel2" href="https://www.instagram.com/_drakesdeception" target="_blank">
+                            <i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel2">_drakesdeception</h2>
+                        </a>
+                        <a class = "IconeLabel2" href="https://www.facebook.com/sheltone153" target="_blank">
+                            <i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i>
+                            <h2 class = "ILLabel2">Shelton Macave</h2>
+                        </a>
+                        <a class = "IconeLabel2" href="mailto:sheltonelias992@gmail.com" target="_blank">
+                            <i class="fa-regular fa-envelope fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel2">sheltonelias992@gmail.com</h2>
+                        </a>
+                    </nav>
+                    <nav class = "Icones2">
+                        <a class = "IconeLabel2" href="https://github.com/sheltonmacave" target="_blank">
+                            <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel2">sheltonmacave</h2>
+                        </a>
+                        <a class = "IconeLabel2" href="https://open.spotify.com/user/sqwipxrhyi6uz9ms2khopenm6?si=0a2c21d6c3fa48b2" target="_blank">
+                            <i class="fa-brands fa-spotify fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel2">_drakesdeception</h2>
+                        </a>
+                        <div class = "IconeLabel2">
+                            <i class="fa-brands fa-playstation fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel2">itaky_153</h2>
+                        </div>
+                        <div class = "IconeLabel2">
+                            <i class="fa-brands fa-xbox fa-2xl" style="color: #ffffff;"></i>
+                            <h2 class = "ILLabel2">Itaky153</h2>
+                        </div>
+                    </nav>
+                </nav>
+            </nav>
+        </section>
+    </main>
+
+    <footer id = "ConteudoBaixo" class = "sec">
+        <nav id = "CB1">
+            <nav id = "Logo">
+                <a href="Pagina Inicial.html"><img id = "Logoimg" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+            </nav>
+            <nav id = "Tele">
+                <h2 class = "Teletitulo">Contacto:</h2>
+                <p>
+                    <a class = "CB1links" href = "tel:+258855673021">+258 855673021</a>
+                </p>
+            </nav>
+            <nav id = "Mail">
+
+                <h2 class = "Teletitulo">Endereço Electrônico:</h2>
+                <a class = "CB1links" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+            </nav>
+            <nav id = "Redes">
+                <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+            </nav>
+        </nav>
+        <nav id = "CB2">
+            <div id = "sec1">
+                <nav id = "Logo2">
+                    <a href="Pagina Inicial.html"><img id = "Logoimg2" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+                </nav>
+                <nav id = "Redes2">
+                    <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+                </nav>
+            </div>
+            <div id = "sec2">
+                <nav id = "Tele2">
+                    <h2 class = "Teletitulo2">Contacto:</h2>
+                    <p>
+                        <a class = "CB1links2" href = "tel:+258855673021">+258 855673021</a>
+                    </p>
+                </nav>
+                <nav id = "Mail2">
+
+                    <h2 class = "Teletitulo2">Endereço Electrônico:</h2>
+                    <a class = "CB1links2" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+                </nav>
+            </div>
+        </nav>
+        <hr id = "CBhr">
+        <div id = "Clegal">
+            <p>© 2024 SHELTON MACAVE</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Se o vídeo estiver visível, inicie a reprodução
+                    entry.target.play();
+                } else {
+                    // Se o vídeo não estiver visível, pause a reprodução
+                    entry.target.pause();
+                }
+            });
+        }
+
+        const options = {
+            threshold: 0.4
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, options)
+
+        const videoSet = document.querySelectorAll('.videosGLobal');
+        videoSet.forEach(vid => {
+            observer.observe (vid);
+        });
+
+        function playSound(soundId) {
+            var audio = document.getElementById(soundId);
+            audio.play();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Obtenha todas as seções e botões
+            var sections = document.querySelectorAll(".sec");
+            var buttons = document.querySelectorAll(".nbotao");
+
+            // Adicione um ouvinte de rolagem ao documento
+            document.addEventListener("scroll", function () {
+                var scrollPosition = window.scrollY;
+
+                // Iterar sobre as seções
+                sections.forEach(function (section, index) {
+                    var sectionTop = section.offsetTop;
+                    var sectionHeight = section.clientHeight;
+
+                    // Verifique se a posição de rolagem está dentro da seção
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remova a classe 'active' de todos os botões
+                        buttons.forEach(function (button) {
+                            button.parentElement.classList.remove("active");
+                        });
+
+                        // Adicione a classe 'active' ao botão correspondente à seção visível
+                        buttons[index].parentElement.classList.add("active");
+                        function playSound() {
+                            var audio = document.getElementById('#mouseover');
+                            audio.play();
+                        }
+                    }
+                });
+            });
+        });
+
+
+
+        function fix() {
+            const but = document.querySelector('#BN');
+            const pp = document.querySelector('#popup');
+
+            if (but.style.position === "sticky") {
+                but.style.position = "static";
+                pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Livre</strong>.</p>';
+            } else {
+                but.style.position = "sticky";
+                pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>';
+            }
+
+            pp.style.display = "block";
+
+            setTimeout(() => {
+                pp.style.display = "none";
+            }, 7000);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById("BNitens2");
+            const botao = document.querySelector("#BNbotao");
+
+            let isNavbarOpen = false;
+
+            // Evento para abrir/fechar o dropdown ao clicar no botão
+            botao.addEventListener('click', function(event) {
+                event.stopPropagation(); // Impede que o evento de clique se propague para o documento
+                isNavbarOpen = !isNavbarOpen;
+
+                if (isNavbarOpen) {
+                    navbar.style.display = "block";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-up fa-2xl" style="color: #ffffff;"></i>';
+                } else {
+                    navbar.style.display = "none";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+                }
+            });
+
+            // Evento para fechar o dropdown ao clicar fora dele
+            document.addEventListener('click', function(event) {
+                if (isNavbarOpen && !navbar.contains(event.target) && event.target !== botao) {
+                    navbar.style.display = "none";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+                    isNavbarOpen = false; // Atualiza o estado para refletir que o navbar está fechado
+                }
+            });
+        });
+
+
+        let num1 = 0;
+        function mostrarnavbar() {
+            const navbar = document.getElementById("BNitens2");
+            const botao = document.querySelector("#BNbotao")
+            const ddm2 = document.querySelector("#dropdown-menu2");
+            // Se a barra de navegação estiver visível, oculta; se estiver oculta, mostra
+            if (num1 === 0) {
+                num1 = 1;
+                navbar.style.display = "flex";
+                botao.innerHTML = '<i class="fa-solid fa-chevron-up fa-2xl" style="color: #ffffff;"></i>';
+            } else {
+                num1 = 0;
+                navbar.style.display = "none";
+                botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+            }
+        }
+
+        function dmi2() {
+            const ddm2 = document.querySelector("#dropdown-menu2");
+            
+            if (ddm2.style.display === "none" || ddm2.style.display === "") {
+                ddm2.style.display = "flex";
+            } else {
+                ddm2.style.display = "none";
+            }
+        }
+
+        function Scrollar(id) {
+            document.querySelector(id).scrollIntoView({ behavior: 'smooth'});
+            bp.style.display = "block"
+        }
+
+        const botaos = document.querySelectorAll('.nbotao');
+        botaos.forEach(botao => {
+            const botaop = botao.nextElementSibling;
+
+            botao.addEventListener('mouseover', () => {
+                botaop.style.display = "block";
+            });
+
+            botao.addEventListener('mouseout', () => {
+                botaop.style.display = "none";
+            });
+        });
+
+        function abririmagem() {
+            const img = document.querySelectorAll('.Cimagem')
+
+            img.forEach(imagem => {
+                imagem.style.transition = "width 0.5s ease";
+            })
+        };
+
+        const imagens = document.querySelectorAll('.Cimagem2');
+        const mov = document.querySelector('#mouseover');
+        const mot = document.querySelector('#mouseout');
+        let num = 0
+            imagens.forEach(imagem => {
+                imagem.addEventListener('click', function () {
+                    if (num === 0) {
+                        num = 1;
+                        mov.play();
+                        imagem.style.filter = "saturate(100%)";
+                        imagem.style.height = "60%";
+                        imagem.style.position = "absolute";
+                        imagem.style.width = "80%";
+                        imagem.style.zIndex = "1";
+                        imagem.style.transition = "height .5s ease-in-out, filter 0.5s 0.5s ease-in-out";
+                    } else if (num === 1) {
+                        num = 0;
+                        mot.play();
+                        imagem.style.filter = "saturate(20%)";
+                        imagem.style.height = "10%";
+                        imagem.style.position = "relative";
+                        imagem.style.width = "80%";
+                        imagem.style.zIndex = "0";
+                        imagem.style.transition = "none";
+                    }
+                });
+            });
+
+
+        function pp() {
+            const videos = document.querySelectorAll('.Carreirasvideo');
+            const bt = document.querySelector('#Cremolocar');
+
+            videos.forEach(vidcada => {
+                if (vidcada.paused) {
+                vidcada.play();
+                bt.innerHTML = '<i class="fa-solid fa-pause fa-2xl" style="color: #ffffff;"></i>';
+            } else {
+                vidcada.pause();
+                bt.innerHTML = '<i class="fa-solid fa-play fa-xl" style="color: #ffffff;"></i>';
+            } 
+            });
+        }
+
+        function Cefeitos(section) {
+            let Cicone = section.querySelectorAll('.Cicone');
+
+            Cicone.forEach(icone => {
+                icone.style.fontSize = "6rem";
+                icone.style.opacity = "1";
+            });
+        }
+
+        function Cefeitosoff(section) {
+            let Cicone = section.querySelectorAll('.Cicone');
+
+            Cicone.forEach(icone => {
+                icone.style.fontSize = "1vw";
+                icone.style.opacity = "0";
+            });
+        }
+
+        function aplicarGrayscale() {
+            document.getElementById('Galeriaimg').style.filter = 'grayscale(0)';
+        }
+        function removerGrayscale() {
+            document.getElementById('Galeriaimg').style.filter = 'grayscale(1)';
+        }
+        const gb = document.querySelector('#Galeriabox');
+        const gbme = document.querySelector('#Gbremolocar');
+        const gh = document.querySelector('#Gboxh1');
+        const gp = document.querySelector('#Gboxp');
+        const gbut = document.querySelector('#Gboxb');
+        function remolocarGaleriabox() {
+            if (gb.style.height == "60%") {
+                gb.style.height = "4%";
+                gb.style.transform = "translateX(30%, 30%)";
+                gh.style.visibility = "hidden";
+                gp.style.visibility = "hidden";
+                gbut.style.visibility = "hidden";
+                gbme.innerHTML = '<i class="fa-regular fa-eye fa-xl"></i>';
+            } else {
+                gb.style.height = "60%";
+                gb.style.width = "35%";
+                gh.style.visibility = "visible";
+                gp.style.visibility = "visible";
+                gbut.style.visibility = "visible";
+                gbme.innerHTML = '<i class="fa-regular fa-eye-slash fa-xl"></i>';
+            }
+        }
+        
+        function remolocarGaleriabox2() {
+            const gb = document.querySelector('#Galeriabox2');
+            const gbme = document.querySelector('#Gbremolocar2');
+            const gh = document.querySelector('#Gboxh12');
+            const gp = document.querySelector('#Gboxp2');
+            const gbut = document.querySelector('#Gboxb2');
+            if (gb.style.height == "60%") {
+                gb.style.height = "10%";
+                gb.style.transform = "translateX(30%, 30%)";
+                gh.style.visibility = "hidden";
+                gp.style.visibility = "hidden";
+                gbut.style.visibility = "hidden";
+                gbme.innerHTML = '<i class="fa-regular fa-eye fa-xl"></i>';
+            } else {
+                gb.style.height = "60%";
+                gb.style.width = "75%";
+                gh.style.visibility = "visible";
+                gp.style.visibility = "visible";
+                gbut.style.visibility = "visible";
+                gbme.innerHTML = '<i class="fa-regular fa-eye-slash fa-xl"></i>';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <link rel="icon" href="LogoAssinatura/Branco-sembg.png" type="image/png">
+        <link rel="stylesheet" href="Galeria.css">
+        <link rel="stylesheet" href="fonts-6/css/all.css">
+        <link href="lightbox2-dev/lightbox2-dev/dist/css/lightbox.css" rel="stylesheet" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Galeria.js"></script>
+        <title>GALERIA</title>
+    </head>
+    <body>
+        <audio id = "click" src="click.mp3"></audio>
+        <audio id = "clicklow" src="click low.mp3"></audio>
+        <audio id = "mouseover" src="mouseover open.mp3"></audio>
+        <audio id = "mouseout" src="mouseout close.mp3"></audio>
+        <audio id = "bnsound" src="BN.mp3"></audio>
+        <audio id = "bnlowsound" src="BNlow.mp3"></audio>
+
+        <div class="box">
+            
+        </div>
+
+        <header id = "BN">
+            <figure id = "BNdivlogo">
+                <a href="Pagina Inicial.html"><img id = "BNlogo" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+            </figure>
+            <div id = "BNfixar">
+                <button id = "BNfb" onclick="fix()"><i class="fa-solid fa-thumbtack" style="color: #ffffff;"></i></button>
+            </div>
+            <ul id = "BNitens">
+                <li class = "BNitem"><a class = "BNia" href="Sobre Mim.html" onmouseover="playSound('bnsound')">Sobre Mim</a></li>
+                <li id = "dropdown" class = "BNitem">
+                    <a class = "BNia" onmouseover = "playSound('bnsound')">
+                        Carreiras
+                        <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                    </a>
+                    
+                    <div id = "dropdown-menu">
+                        <a class = "dmitem" href="CWebDev.html" onmouseover = "playSound('bnlowsound')";>Desenvolvedor Web</a>
+                        <a class = "dmitem" href="CDA.html" onmouseover = "playSound('bnlowsound')">Analista de Dados</a>
+                        <a class = "dmitem" href="CPM.html" onmouseover = "playSound('bnlowsound')">Produtor Musical</a>
+                    </div>
+                </li>
+                <li class = "BNitem"><a class = "BNia" href="Galeria.html" onmouseover = "playSound('bnsound')">Galeria</a></li>
+                <li class = "BNitem"><a class = "BNia" href="Contactos.html" onmouseover = "playSound('bnsound')">Contactos</a></li>
+            </ul>
+            <button id = "BNbotao" onclick="mostrarnavbar()">
+                <i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>
+            </button>
+            <ul id = "BNitens2">
+                <li class = "BNitem2"><a class = "BNia2" href="Sobre Mim.html" onclick="playSound('bnsound')">Sobre Mim</a></li>
+                <li id = "dropdown2" class = "BNitem2">
+                    <a class = "BNia2" onclick = "dmi2()" onclick = "playSound('bnsound')">
+                        Carreiras &nbsp
+                        <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                    </a>
+                    
+                    <div id = "dropdown-menu2">
+                        <a class = "dmitem2" href="CWebDev.html" onclick = "playSound('bnlowsound')">Desenvolvedor Web</a>
+                        <a class = "dmitem2" href="CDA.html" onclick = "playSound('bnlowsound')">Analista de Dados</a>
+                        <a class = "dmitem2" href="CPM.html" onclick = "playSound('bnlowsound')">Produtor Musical</a>
+                    </div>
+                </li>
+                <li class = "BNitem2"><a class = "BNia2" href="Galeria.html" onclick = "playSound('bnsound')">Galeria</a></li>
+                <li class = "BNitem2"><a class = "BNia2" href="Contactos.html" onclick = "playSound('bnsound')">Contactos</a></li>
+            </ul>
+        </header>
+
+        <aside id = "popup">
+            <p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>
+        </aside>
+
+        <main id = "GP">
+            <section id = "GPtexto">
+                <h1 id = "GPtitulo">
+                    <span id = "GPtG">Galeria</span>
+                    <span id = "GPts"></span> 
+                    <span id = "GPtP">Picfolio</span>
+                </h1>
+                <p id = "GPparagrafo">
+                    Espaço dedicado a apresentação do meu trabalho fotográfico,<br> de forma visual <sub class = "Gbp2sub">(obviamente)</sub> e inspiradora.
+                </p>
+            </section>
+            <section id = "GPnb">
+                <ul id = "GPnavbar">
+                    <li class = "GPnbitem"><button class = "GPnbiB" onclick="playSound('click');toggleSection('grid-gallery-minhas');">Minhas</button></li>
+                    <li class = "GPnbitem"><button class = "GPnbiB" onclick="playSound('click');toggleSection('grid-gallery-aleatorias')">Aleatórias</button></li>
+                    <li class = "GPnbitem"><button class = "GPnbiB" onclick="playSound('click');toggleSection('grid-gallery-EP')">Edifícios<hr>Paisagens</button></li>
+                    <li class = "GPnbitem"><button id = "CCbotao" class = "GPnbiB" onclick="playSound('click'); CCdisplay()">Centro<br>Cultural</button></li>
+                </ul>
+            </section>
+            <section id = "GPnbCC">
+                <ul id = "GPnavbar">
+                    <li class = "GPnbitem"><button class = "GPnbiBCC" onclick="playSound('clicklow');toggleSection('grid-gallery-alemanha')">Alemanha</button></li>
+                    <li class = "GPnbitem"><button class = "GPnbiBCC" onclick="playSound('clicklow')">Brasil</button></li>
+                    <li class = "GPnbitem"><button class = "GPnbiBCC" onclick="playSound('clicklow');toggleSection('grid-gallery-china')">China</button></li>
+                    <li class = "GPnbitem"><button class = "GPnbiBCC" onclick="playSound('clicklow');toggleSection('grid-gallery-franca')">França</button></li>
+                    <li class = "GPnbitem"><button class = "GPnbiBCC" onclick="playSound('clicklow');toggleSection('grid-gallery-japao')">Japão</button></li>
+                </ul>
+            </section>
+
+            <figure class="grid-gallery" id = "grid-gallery-minhas">
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas1.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas1.jpg" alt="Shelton com 5 anos.">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas2.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas2.jpg" alt="Shelton com 6 anos.">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas3.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas3.jpg" alt="Shelton com 12 anos.">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas4.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas5.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas6.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas7.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas8.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas9.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas10.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas11.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas12.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas13.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas14.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas15.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas16.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas17.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas17.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-minhas">
+                    <a href="Pics/Minhas/minhas18.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Minhas/minhas18.jpg" alt="">
+                    </a>
+                </div>
+            </figure>
+
+            <figure class="grid-gallery" id ="grid-gallery-aleatorias">
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A1.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A2.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A3.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A4.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A5.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A6.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A7.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A8.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A9.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A10.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A11.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A12.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A13.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A14.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A15.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A16.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A17.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A17.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A18.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A18.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A19.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A19.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A20.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A20.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A21.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A21.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A22.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A22.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A23.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A23.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A24.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A24.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A25.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A25.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A26.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A26.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A27.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A27.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A28.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A28.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A29.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A29.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-aleatorias">
+                    <a href="Pics/Aleatórias/A30.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Aleatórias/A30.jpg" alt="">
+                    </a>
+                </div>
+            </figure>
+
+            <figure class="grid-gallery" id = "grid-gallery-EP">
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP1.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP2.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP3.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP4.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP5.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP6.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP7.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP8.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP9.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP10.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP11.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP12.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP13.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP14.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP15.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP16.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP18.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP18.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP19.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP19.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP20.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP20.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP21.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP21.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP22.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP22.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP23.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP23.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP24.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP24.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP25.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP25.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP26.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP26.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP27.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP27.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP28.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP28.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP29.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP29.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP30.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP30.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP31.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP31.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP32.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP32.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP33.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP33.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-EP">
+                    <a href="Pics/Edificios e Paisagens/EP34.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/Edificios e Paisagens/EP34.jpg" alt="">
+                    </a>
+                </div>
+            </figure>
+
+            <figure class="grid-gallery" id = "grid-gallery-alemanha">
+                <div class="grid-item-alemanha">
+                    <a href="Pics/GERMAN/G1.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/GERMAN/G1.jpg" alt="">
+                    </a>
+                </div>
+            </figure>
+
+            <figure class="grid-gallery" id = "grid-gallery-china">
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C1.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C2.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C3.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C4.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C5.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C6.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C7.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C8.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C9.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C10.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C11.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C12.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C13.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C14.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C15.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C16.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C17.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C17.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C18.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C18.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C19.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C19.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C20.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C20.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C21.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C21.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-china">
+                    <a href="Pics/CHINA/C22.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/CHINA/C22.jpg" alt="">
+                    </a>
+                </div>
+            </figure>
+
+            <figure class="grid-gallery" id = "grid-gallery-japao">
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao1.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao2.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao3.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao4.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao5.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao6.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao7.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao8.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao9.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao10.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao11.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao12.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao13.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao14.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao15.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao16.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao17.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao17.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao18.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao18.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao19.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao19.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao20.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao20.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao21.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao21.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-japao">
+                    <a href="Pics/JAPAN/japao22.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/JAPAN/japao22.jpg" alt="">
+                    </a>
+                </div>
+            </figure>
+
+            <figure class="grid-gallery" id = "grid-gallery-franca">
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca1.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca2.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca3.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca4.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca5.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca6.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca7.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca8.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca9.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca10.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca11.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca12.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca13.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca14.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca15.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca16.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca17.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca17.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca18.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca18.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca19.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca19.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca20.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca20.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca21.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca21.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca22.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca22.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca23.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca23.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca24.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca24.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca25.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca25.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca26.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca26.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca27.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca27.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca28.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca28.jpg" alt="">
+                    </a>
+                </div>
+                <div class="grid-item-franca">
+                    <a href="Pics/FRANCE/franca29.jpg" data-lightbox="roadtrip" >
+                        <img src="Pics/FRANCE/franca29.jpg" alt="">
+                    </a>
+                </div>
+            </figure>
+        </main>
+
+        <footer id = "ConteudoBaixo" class = "sec">
+            <nav id = "CB1">
+                <nav id = "Logo">
+                    <a href="Pagina Inicial.html"><img id = "Logoimg" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+                </nav>
+                <nav id = "Tele">
+                    <h2 class = "Teletitulo">Contacto:</h2>
+                    <p>
+                        <a class = "CB1links" href = "tel:+258855673021">+258 855673021</a>
+                    </p>
+                </nav>
+                <nav id = "Mail">
+    
+                    <h2 class = "Teletitulo">Endereço Electrônico:</h2>
+                    <a class = "CB1links" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+                </nav>
+                <nav id = "Redes">
+                    <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+                </nav>
+            </nav>
+            <nav id = "CB2">
+                <div id = "sec1">
+                    <nav id = "Logo2">
+                        <a href="Pagina Inicial.html"><img id = "Logoimg2" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+                    </nav>
+                    <nav id = "Redes2">
+                        <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+                    </nav>
+                </div>
+                <div id = "sec2">
+                    <nav id = "Tele2">
+                        <h2 class = "Teletitulo2">Contacto:</h2>
+                        <p>
+                            <a class = "CB1links2" href = "tel:+258855673021">+258 855673021</a>
+                        </p>
+                    </nav>
+                    <nav id = "Mail2">
+    
+                        <h2 class = "Teletitulo2">Endereço Electrônico:</h2>
+                        <a class = "CB1links2" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+                    </nav>
+                </div>
+            </nav>
+            <hr id = "CBhr">
+            <div id = "Clegal">
+                <p>© 2024 SHELTON MACAVE</p>
+            </div>
+        </footer>
+
+        <script>
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true,
+               'disableScrolling': true,
+               'showImageNumberLabel': false,
+            })
+            
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Se o vídeo estiver visível, inicie a reprodução
+                        entry.target.play();
+                    } else {
+                        // Se o vídeo não estiver visível, pause a reprodução
+                        entry.target.pause();
+                    }
+                });
+            }
+
+            const options = {
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver(handleIntersection, options)
+
+            const videoSet = document.querySelectorAll('.videosGLobal');
+            videoSet.forEach(vid => {
+                observer.observe (vid);
+            });
+
+            function playSound(soundId) {
+                var audio = document.getElementById(soundId);
+                audio.play();
+            }
+
+            function CCdisplay() {
+                const ccbar = document.querySelector("#GPnbCC");
+
+                if (ccbar.style.display === "none" || ccbar.style.display === "") {
+                    ccbar.style.display = "flex"; // Altere aqui para "flex" se desejar
+                } else {
+                    ccbar.style.display = "none";
+                }
+            }
+
+
+            function fix() {
+                const but = document.querySelector('#BN');
+                const pp = document.querySelector('#popup');
+
+                if (but.style.position === "sticky") {
+                    but.style.position = "static";
+                    pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Livre</strong>.</p>';
+                } else {
+                    but.style.position = "sticky";
+                    pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>';
+                }
+
+                pp.style.display = "block";
+
+                setTimeout(() => {
+                    pp.style.display = "none";
+                }, 7000);
+            }
+            
+
+
+            function dmi2() {
+                const ddm2 = document.querySelector("#dropdown-menu2");
+                
+                if (ddm2.style.display === "none" || ddm2.style.display === "") {
+                    ddm2.style.display = "flex";
+                } else {
+                    ddm2.style.display = "none";
+                }
+            }
+
+            function Scrollar(id) {
+                document.querySelector(id).scrollIntoView({ behavior: 'smooth'});
+                bp.style.display = "block"
+            }
+
+            const botaos = document.querySelectorAll('.nbotao');
+            botaos.forEach(botao => {
+                const botaop = botao.nextElementSibling;
+
+                botao.addEventListener('mouseover', () => {
+                    botaop.style.display = "block";
+                });
+
+                botao.addEventListener('mouseout', () => {
+                    botaop.style.display = "none";
+                });
+            });
+
+            function toggleSection(sectionId) {
+                var sections = document.querySelectorAll('.grid-gallery');
+                sections.forEach(function(section) {
+                    if (section.id === sectionId) {
+                        section.style.display = 'grid';
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+                sectionId.scrollIntoView({behavior: 'smooth'});
+            }
+            document.querySelector('.GPnbiB').addEventListener("click", function() {
+                // Chame a função toggleSection passando o ID da seção desejada
+                toggleSection('grid-gallery');
+            });
+        </script>
+        <script src="lightbox2-dev/lightbox2-dev/dist/js/lightbox-plus-jquery.js"></script>
+    </body>
+</html>

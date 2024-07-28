@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <link rel="icon" href="LogoAssinatura/Branco-sembg.png" type="image/png">
+        <link rel="stylesheet" href="Sobre Mim.css">
+        <link rel="stylesheet" href="fonts-6/css/all.css">
+        <link href="lightbox2-dev/lightbox2-dev/dist/css/lightbox.css" rel="stylesheet" />  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Sobre Mim.js"></script>
+        <title>SOBRE MIM</title>
+    </head>
+    <body>
+        <audio id = "click" src="click.mp3"></audio>
+        <audio id = "clicklow" src="click low.mp3"></audio>
+        <audio id = "mouseover" src="mouseover open.mp3"></audio>
+        <audio id = "mouseout" src="mouseout close.mp3"></audio>
+        <audio id = "bnsound" src="BN.mp3"></audio>
+        <audio id = "bnlowsound" src="BNlow.mp3"></audio>
+
+        <aside id = "navegacao">
+            <div id = "botoes">
+                <div class = "botoescada">
+                    <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#card3dzero');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                    <label for = "seccao" class =  "botaop"></label>
+                </div>
+                <div class = "botoescada">
+                    <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#Cgaleria');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                    <label for = "seccao" class =  "botaop">Imagens</label>
+                </div>
+                <div class = "botoescada">
+                    <input class = "nbotao" type="radio" name = "seccao" onclick = "playSound('clicklow');Scrollar('#playerInfozero');" onmouseover = "mostrarLabel()" onmouseout = "esconderLabel()">
+                    <label for = "seccao" class =  "botaop">Informação</label>
+                </div>
+            </div>
+        </aside>
+
+        <div class="box">
+            
+        </div>
+
+        <header id = "BN">
+            <figure id = "BNdivlogo">
+                <a href="Pagina Inicial.html"><img id = "BNlogo" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+            </figure>
+            <div id = "BNfixar">
+                <button id = "BNfb" onclick="fix()"><i class="fa-solid fa-thumbtack" style="color: #ffffff;"></i></button>
+            </div>
+            <ul id = "BNitens">
+                <li class = "BNitem"><a class = "BNia" href="Sobre Mim.html" onmouseover="playSound('bnsound')">Sobre Mim</a></li>
+                <li id = "dropdown" class = "BNitem">
+                    <a class = "BNia" onmouseover = "playSound('bnsound')">
+                        Carreiras
+                        <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                    </a>
+                    
+                    <div id = "dropdown-menu">
+                        <a class = "dmitem" href="CWebDev.html" onmouseover = "playSound('bnlowsound')";>Desenvolvedor Web</a>
+                        <a class = "dmitem" href="CDA.html" onmouseover = "playSound('bnlowsound')">Analista de Dados</a>
+                        <a class = "dmitem" href="CPM.html" onmouseover = "playSound('bnlowsound')">Produtor Musical</a>
+                    </div>
+                </li>
+                <li class = "BNitem"><a class = "BNia" href="Galeria.html" onmouseover = "playSound('bnsound')">Galeria</a></li>
+                <li class = "BNitem"><a class = "BNia" href="Contactos.html" onmouseover = "playSound('bnsound')">Contactos</a></li>
+            </ul>
+            <button id = "BNbotao" onclick="mostrarnavbar()">
+                <i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>
+            </button>
+            <ul id = "BNitens2">
+                <li class = "BNitem2"><a class = "BNia2" href="Sobre Mim.html" onclick="playSound('bnsound')">Sobre Mim</a></li>
+                <li id = "dropdown2" class = "BNitem2">
+                    <a class = "BNia2" onclick = "dmi2()" onclick = "playSound('bnsound')">
+                        Carreiras &nbsp
+                        <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                    </a>
+                    
+                    <div id = "dropdown-menu2">
+                        <a class = "dmitem2" href="CWebDev.html" onclick = "playSound('bnlowsound')">Desenvolvedor Web</a>
+                        <a class = "dmitem2" href="CDA.html" onclick = "playSound('bnlowsound')">Analista de Dados</a>
+                        <a class = "dmitem2" href="CPM.html" onclick = "playSound('bnlowsound')">Produtor Musical</a>
+                    </div>
+                </li>
+                <li class = "BNitem2"><a class = "BNia2" href="Galeria.html" onclick = "playSound('bnsound')">Galeria</a></li>
+                <li class = "BNitem2"><a class = "BNia2" href="Contactos.html" onclick = "playSound('bnsound')">Contactos</a></li>
+            </ul>
+        </header>
+
+        <aside id = "popup">
+            <p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>
+        </aside>
+
+        <main id = "SM">
+            <section id="card3dzero">
+                <video id = "cthreevideo" class = "videosGLobal" autoplay loop muted>
+                    <source src = "Background/Azul Branco.mp4">
+                </video>
+                <div id="card3d" class="SMdiv">
+                    <figure id="cardbox">
+                        <a href="Sobre Mim/SHELTON 18.png" data-lightbox="roadtrip" >
+                            <img id = "cardboximg" src="Sobre Mim/SHELTON 18.png" alt="Cartão FIFA do Shelton">
+                        </a>
+                    </figure>
+                    <model id="threedbox">
+                        <model-viewer alt="Shelton 3D" src="Sobre Mim/Shelton 3D 2 gltf.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+                    </model>
+                </div>
+            </section>
+
+            <figure id = "Cgaleria">
+                <div id = "CGflutuante">
+                    <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhadireita">¦<br><br>¦<br><br>¦<br><br></p>
+                    <p class = "CGFlinhaesquerda">¦<br><br>¦<br><br>¦<br><br></p>
+                </div>
+                <figure id = "Cimagens">
+                    <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                        <h3>2011</h3>
+                    </div>
+                    <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                        <h3>2012</h3>
+                    </div>
+                    <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                        <h3>2019</h3>
+                    </div>
+                    <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                        <h3>2020</h3>
+                    </div>
+                    <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                        <h3>2021</h3>
+                    </div>
+                    <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                        <h3>2022</h3>
+                    </div>
+                    <div class = "Cimagem" onmouseover = "playSound('mouseover');abririmagem()" onmouseout="playSound('mouseout');">
+                        <h3>2023</h3>
+                    </div>
+                </figure>
+                <figure id = "Cimagens2">
+                    <div class = "Cimagem2" onclick = "abririmagem2()">
+                        <h3>2011</h3>
+                    </div>
+                    <div class = "Cimagem2" onclick = "abririmagem2()">
+                        <h3>2012</h3>
+                    </div>
+                    <div class = "Cimagem2" onclick = "abririmagem2()">
+                        <h3>2019</h3>
+                    </div>
+                    <div class = "Cimagem2" onclick = "abririmagem2()">
+                        <h3>2020</h3>
+                    </div>
+                    <div class = "Cimagem2" onclick = "abririmagem2()">
+                        <h3>2021</h3>
+                    </div>
+                    <div class = "Cimagem2" onclick = "abririmagem2()">
+                        <h3>2022</h3>
+                    </div>
+                    <div class = "Cimagem2" onclick = "abririmagem2()">
+                        <h3>2023</h3>
+                    </div>
+                </figure>
+            </figure>
+            
+            <section id="playerInfozero" class="SMdiv">
+                <video id = "cthreevideo" class = "videosGLobal" autoplay loop muted>
+                    <source src = "Background/Azul Branco.mp4">
+                </video>
+                <section id="playerInfo" class="SMdiv">
+                    <section id = "pileft" class="SMdiv">
+                        <section>
+                            <div class = "pilIP">
+                                <h2>NOME</h2>
+                                <hr>
+                                <span>Shelton Elias Macave</span>
+                            </div>
+                            <div class = "pilIP">
+                                <h2>IDADE</h2>
+                                <hr>
+                                <span>18 Anos</span>
+                            </div>
+                            <div class = "pilIP">
+                                <h2>PAÍS/REGIÃO</h2>
+                                <hr>
+                                <span>Moçambique <img src="Sobre Mim/mozambique2.png" alt = "Mini bandeira de Moçambique"></span>
+                            </div>
+                            <div class = "pilIP">
+                                <h2>ALTURA</h2>
+                                <hr>
+                                <span>1,80M</span>
+                            </div>
+                            <div class = "pilIP">
+                                <h2>PESO</h2>
+                                <hr>
+                                <span>65 KG</span>
+                            </div>
+                            <div class = "pilIP">
+                                <h2>NICKNAMES</h2>
+                                <hr>
+                                <span>Itaky</span><br>
+                                <span>Maza</span><br>
+                                <span>Ghost</span><br>
+                                <span>Drake's Deception</span>
+                            </div>
+                        </section>
+                        <section id = "pirtopmain2">
+                            <div class="progress" style="--i:100;--clr:#016701">
+                                <h3>Português</h3>
+                                <h4>Nativo</h4>
+                            </div>
+                            <div class="progress p2" style="--i:85;--clr:#c7102e">
+                                <h3>Inglês</h3>
+                                <h4>Proficiente</h4>
+                            </div>
+                            <div class="progress p3" style="--i:45;--clr:#006240">
+                                <h3>Italiano</h3>
+                                <h4>Intermediário</h4>
+                            </div>
+                            <div class="progress p4" style="--i:10;--clr:#007169">
+                                <h3>Changana</h3>
+                                <h4>Iniciante</h4>
+                            </div>
+                        </section>
+                    </section>
+                    <section id = "piright" class="SMdiv">
+                        <section id = "pirtop">
+                            <section id="pirtopmain">
+                                <div class="progress" style="--i:100;--clr:#016701">
+                                    <h3>Português</h3>
+                                    <h4>Nativo</h4>
+                                </div>
+                                <div class="progress p2" style="--i:85;--clr:#c7102e">
+                                    <h3>Inglês</h3>
+                                    <h4>Proficiente</h4>
+                                </div>
+                                <div class="progress p3" style="--i:45;--clr:#006240">
+                                    <h3>Italiano</h3>
+                                    <h4>Intermediário</h4>
+                                </div>
+                                <div class="progress p4" style="--i:10;--clr:#007169">
+                                    <h3>Changana</h3>
+                                    <h4>Iniciante</h4>
+                                </div>
+                            </section>
+                        </section>
+                        <section id = "pirbottom">
+                            <section id = "pirbleft">
+                                <section id = "pirbltop">
+                                    <section class = "pirblcol">
+                                        <h2 class="pirblcolh2">Mentalidade</h2>
+                                        <hr>
+                                        <p>Determinado</p>
+                                        <p>Proativo</p>
+                                        <p>Persistente</p>
+                                        <p>Focado</p>
+                                        <p>Resiliente</p>
+                                        <p>Confiável</p>
+                                    </section>
+                                    <section class = "pirblcol">
+                                        <h2 class="pirblcolh2">Habilidades Sociais</h2>
+                                        <hr>
+                                        <p>Empático</p>
+                                        <p>Colaborativo</p>
+                                        <p>Altruísta</p>
+                                        <p>Sociável</p>
+                                        <p>Paciente</p>
+                                    </section>
+                                    <section class = "pirblcol">
+                                        <h2 class="pirblcolh2">Pensamento</h2>
+                                        <hr>
+                                        <p>Criativo</p>
+                                        <p>Curioso</p>
+                                        <p>Analítico</p>
+                                        <p>Inovador</p>
+                                        <p>Responsável</p>
+                                    </section>
+                                </section>
+                                <section id = "pirblbottom">
+                                    <p><i class="fa-solid fa-flag-checkered"></i> Impactar de forma grandiosa e positiva o mercado tecnológico, resolvendo problemas enfrentados pela sociedade usando tecnologia.</p>
+                                    <p><i class="fa-solid fa-flag-checkered"></i> Revolucionar a arquitectura contemporânea, projectando edifícios icônicos que se integrem harmoniosamente ao meio ambiente e inspirem uma nova era de design.</p>
+                                </section>
+                            </section>
+                            <section id = "pirbright">
+                                <h2>Paixões / Interesses</h2>
+                                <hr>
+                                <section id = "pirbrbox">
+                                    <section class = "pirbrboxes">
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-computer"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Tecnologia</P>
+                                            </div>
+                                        </div>
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-pen-ruler"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Arquitectura</P>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class = "pirbrboxes">
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-building-columns"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Museus e Exposições</P>
+                                            </div>
+                                        </div>
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-paintbrush"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Desenho</P>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class = "pirbrboxes">
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-swatchbook"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Livros</P>
+                                            </div>
+                                        </div>
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-person-running"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Caminhada<br>/Corrida</P>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class = "pirbrboxes">
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-play"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Música</P>
+                                            </div>
+                                        </div>
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-film"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Filmes</P>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class = "pirbrboxes">
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-futbol"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Futebol</P>
+                                            </div>
+                                        </div>
+                                        <div class="picada">
+                                            <div class = "picadaicon">
+                                                <i class="fa-solid fa-gamepad"></i>
+                                            </div>
+                                            <div class = "picadatexto">
+                                                <P>Videojogos</P>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </main>
+
+        <footer id = "ConteudoBaixo" class = "sec">
+            <nav id = "CB1">
+                <nav id = "Logo">
+                    <a href="Pagina Inicial.html"><img id = "Logoimg" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+                </nav>
+                <nav id = "Tele">
+                    <h2 class = "Teletitulo">Contacto:</h2>
+                    <p>
+                        <a class = "CB1links" href = "tel:+258855673021">+258 855673021</a>
+                    </p>
+                </nav>
+                <nav id = "Mail">
+    
+                    <h2 class = "Teletitulo">Endereço Electrônico:</h2>
+                    <a class = "CB1links" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+                </nav>
+                <nav id = "Redes">
+                    <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+                </nav>
+            </nav>
+            <nav id = "CB2">
+                <div id = "sec1">
+                    <nav id = "Logo2">
+                        <a href="Pagina Inicial.html"><img id = "Logoimg2" src="LogoAssinatura/Branco-sembg.png" alt="Logotipo do website"></a>
+                    </nav>
+                    <nav id = "Redes2">
+                        <a href="mailto:sheltonelias992@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.linkedin.com/in/shelton-elias-57a340249" target="_blank"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.instagram.com/_drakesdeception" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                        <a href="https://www.facebook.com/sheltone153" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl" style="color: #ffffff"></i></a>
+                    </nav>
+                </div>
+                <div id = "sec2">
+                    <nav id = "Tele2">
+                        <h2 class = "Teletitulo2">Contacto:</h2>
+                        <p>
+                            <a class = "CB1links2" href = "tel:+258855673021">+258 855673021</a>
+                        </p>
+                    </nav>
+                    <nav id = "Mail2">
+    
+                        <h2 class = "Teletitulo2">Endereço Electrônico:</h2>
+                        <a class = "CB1links2" href = "mailto:sheltonelias992@gmail.com" target="_blank">sheltonelias992@gmail.com</a>
+                    </nav>
+                </div>
+            </nav>
+            <hr id = "CBhr">
+            <div id = "Clegal">
+                <p>© 2024 SHELTON MACAVE</p>
+            </div>
+        </footer>
+        
+        <script>
+            
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Se o vídeo estiver visível, inicie a reprodução
+                        entry.target.play();
+                    } else {
+                        // Se o vídeo não estiver visível, pause a reprodução
+                        entry.target.pause();
+                    }
+                });
+            }
+
+            const options = {
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver(handleIntersection, options)
+
+            const videoSet = document.querySelectorAll('.videosGLobal');
+            videoSet.forEach(vid => {
+                observer.observe (vid);
+            });
+
+            function playSound(soundId) {
+                var audio = document.getElementById(soundId);
+                audio.play();
+            }
+
+            function fix() {
+                const but = document.querySelector('#BN');
+                const pp = document.querySelector('#popup');
+
+                if (but.style.position === "sticky") {
+                    but.style.position = "static";
+                    pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Livre</strong>.</p>';
+                } else {
+                    but.style.position = "sticky";
+                    pp.innerHTML = '<p id = "popuptexto">Barra de Navegação <strong>Fixa</strong>.</p>';
+                }
+
+                pp.style.display = "block";
+
+                setTimeout(() => {
+                    pp.style.display = "none";
+                }, 7000);
+            }
+            
+            document.addEventListener("DOMContentLoaded", function () {
+                // Obtenha todas as seções e botões
+                var sections = document.querySelectorAll(".sec");
+                var buttons = document.querySelectorAll(".nbotao");
+
+                // Adicione um ouvinte de rolagem ao documento
+                document.addEventListener("scroll", function () {
+                    var scrollPosition = window.scrollY;
+
+                    // Iterar sobre as seções
+                    sections.forEach(function (section, index) {
+                        var sectionTop = section.offsetTop;
+                        var sectionHeight = section.clientHeight;
+
+                        // Verifique se a posição de rolagem está dentro da seção
+                        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                            // Remova a classe 'active' de todos os botões
+                            buttons.forEach(function (button) {
+                                button.parentElement.classList.remove("active");
+                            });
+
+                            // Adicione a classe 'active' ao botão correspondente à seção visível
+                            buttons[index].parentElement.classList.add("active");
+                            function playSound() {
+                                var audio = document.getElementById('#mouseover');
+                                audio.play();
+                            }
+                        }
+                    });
+                });
+            });
+
+            let num1 = 0;
+            function mostrarnavbar() {
+                const navbar = document.getElementById("BNitens2");
+                const botao = document.querySelector("#BNbotao")
+                const ddm2 = document.querySelector("#dropdown-menu2");
+                // Se a barra de navegação estiver visível, oculta; se estiver oculta, mostra
+                if (num1 === 0) {
+                    num1 = 1;
+                    navbar.style.display = "flex";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-up fa-2xl" style="color: #ffffff;"></i>';
+                } else {
+                    num1 = 0;
+                    navbar.style.display = "none";
+                    botao.innerHTML = '<i class="fa-solid fa-chevron-down fa-2xl" style="color: #ffffff;"></i>';
+                }
+            }
+
+            function dmi2() {
+                const ddm2 = document.querySelector("#dropdown-menu2");
+                
+                if (ddm2.style.display === "none" || ddm2.style.display === "") {
+                    ddm2.style.display = "flex";
+                } else {
+                    ddm2.style.display = "none";
+                }
+            }
+
+            const botaos = document.querySelectorAll('.nbotao');
+            botaos.forEach(botao => {
+                const botaop = botao.nextElementSibling;
+
+                botao.addEventListener('mouseover', () => {
+                    botaop.style.display = "block";
+                });
+
+                botao.addEventListener('mouseout', () => {
+                    botaop.style.display = "none";
+                });
+            });
+
+            function abririmagem() {
+            const img = document.querySelectorAll('.Cimagem')
+                img.forEach(imagem => {
+                    imagem.style.transition = "width 0.5s ease";
+                })
+            };
+            function abririmagem2() {
+            const img = document.querySelectorAll('.Cimagem2')
+                img.forEach(imagem => {
+                    imagem.style.transition = "width 0.5s ease";
+                })
+            };
+
+            const imagens = document.querySelectorAll('.Cimagem2');
+            const mov = document.querySelector('#mouseover');
+            const mot = document.querySelector('#mouseout');
+            let num = 0
+            imagens.forEach(imagem => {
+                imagem.addEventListener('click', function () {
+                    if (num === 0) {
+                        num = 1;
+                        mov.play();
+                        imagem.style.filter = "saturate(100%)";
+                        imagem.style.height = "60%";
+                        imagem.style.position = "absolute";
+                        imagem.style.width = "80%";
+                        imagem.style.zIndex = "1";
+                        imagem.style.transition = "height .5s ease-in-out, filter 0.5s 0.5s ease-in-out";
+                    } else if (num === 1) {
+                        num = 0;
+                        mot.play();
+                        imagem.style.filter = "saturate(20%)";
+                        imagem.style.height = "10%";
+                        imagem.style.position = "relative";
+                        imagem.style.width = "80%";
+                        imagem.style.zIndex = "0";
+                        imagem.style.transition = "none";
+                    }
+                });
+            });
+
+            /*document.addEventListener('DOMContentLoaded', function() {
+                const colh2 = document.querySelectorAll(".pirblcolh2");
+
+                colh2.forEach(h2 => {
+                    h2.addEventListener('click', function () {
+                        const col = h2.closest(".pirblcol"); // Encontre o elemento .pirblcol mais próximo do h2 clicado
+
+                        if (col.style.height === "7%") {
+                            col.style.height = "auto";
+                            col.style.transition = "height .3s linear";
+                        } else {
+                            col.style.height = "7%";
+                            col.style.transition = "height .3s linear";
+                        }
+                    });
+                });
+            });*/
+        </script>
+        <script src="lightbox2-dev/lightbox2-dev/dist/js/lightbox-plus-jquery.js"></script>
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    </body>
+</html>

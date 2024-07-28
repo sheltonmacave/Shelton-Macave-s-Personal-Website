@@ -1,0 +1,3826 @@
+html {
+    font-size: 100%;
+}
+body {
+    background-color: black;
+    margin: 0;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+@font-face {
+    font-family: 'JuliusSansOne-Regular';
+    src: url('Fontes/Julius_Sans_One/JuliusSansOne-Regular.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-Light';
+    src: url('Fontes/Dosis/static/Dosis-Light.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Dosis-Medium';
+    src: url('Fontes/Dosis/static/Dosis-Medium.ttf') format('opentype');
+}
+
+
+#navegacao {
+    align-items: center;
+    backdrop-filter: blur(1.5rem);
+    border-radius: 0.3rem;
+    bottom: 50%;
+    display: flex;
+    left: 1%;
+    opacity: 0.4;
+    padding: .3%;
+    position: fixed;
+    transform: translateY(50%);
+    z-index: 2;
+    transition: opacity 1s;
+}
+#navegacao:hover {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.botoescada {
+    display: flex;
+    flex-direction: row;
+}
+/* Adicione uma classe para destacar o botão da seção ativa */
+.botoescada.active .nbotao {
+    background-color: white;
+    /* Adicione outros estilos desejados para a seção ativa */
+}
+
+.nbotao {
+    appearance: none;
+    background-color: black;
+    border-radius: 0.3rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: width 0.5s ease;
+}
+.nbotao:hover {
+    width: 2.8rem;
+}
+.botaop {
+    color: white;
+    display: none;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.4rem;
+    padding: 2%;
+    text-wrap: nowrap;
+}
+
+.box {
+    display:none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+#BN {
+    align-items: center;
+    backdrop-filter: blur(0.6rem);
+    background-color: transparent;
+    box-shadow: 0 0 .5rem .20rem rgba(0, 0, 0, 0.25);
+    display: flex;
+    height: 17vh;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    transition: display 2s ease;
+    transition: position 1s ease;
+}
+#BNdivlogo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 20%;
+}
+#BNdivlogo a {
+    display: flex;
+    justify-content: center;
+}
+#BNlogo {
+    height: 10%;
+    width: 100%;
+}
+#BNfixar {
+    left: 16.85%;
+    top: 0;
+    position: absolute;
+}
+#BNfb {
+    background-color: transparent;
+    border: none;
+    padding: 20%;
+}
+#BNfb:hover {
+    cursor: pointer;
+    font-size: 1.3rem;
+
+    transition: font-size 0.5s ease;
+}
+
+#BNitens {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.BNia {
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+    height: 100%;
+    padding: 1.5vw;
+    position: relative;
+    text-decoration: none;
+    text-wrap: nowrap;
+
+    transition: border 0.5s ease;
+    transition: font-size 0.5s ease;
+}
+.BNia::before, .BNia::after {
+    background-color: white;
+    content: "";
+    height: .1rem;
+    position: absolute;
+    transition: .5s;
+    width: 0%;
+}
+.BNia::after {
+    bottom: .1rem;
+    left: 0;
+}
+.BNia::before {
+    right: 0;
+    top: .1rem;
+}
+.BNia:hover {
+    cursor: pointer;
+}
+.BNia:hover::after,
+.BNia:hover::before {
+    width: 100%;
+}
+#dropdown:hover #dropdown-menu{
+    display: flex;
+    transition: display 1s ease;
+}
+#dropdown-menu {
+    background-color: black;
+    border-radius: 0 0 1.1rem 1.1rem;
+    display: none;
+    flex-direction: column;
+    margin-top: 1%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+}
+.dmitem {
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 1.5vw;
+    height: 100%;
+    padding: 1.2vw;
+    text-decoration: none;
+
+    transition: border 0.5s ease;
+    transition: font-size 0.5s ease;
+}
+.dmitem:hover {
+    border-left: 0.1rem solid gray;
+    font-size: 2vw;
+}
+#BNbotao {
+    background-color: transparent;
+    border: solid white .15rem;
+    border-radius: .5rem;
+    visibility: hidden;
+    height: 50%;
+    padding: 0 4%;
+    position: absolute;
+    right: 14%;
+}
+#popup {
+    animation: popup 7s ease;
+    background-color: white;
+    border-radius: 1rem;
+    bottom: -15%;
+    position: fixed;
+    right: 3%;
+    z-index: 3;
+}
+#popuptexto {
+    color: black;
+    font-size: 1.5vw;
+    padding: 0 1vw;
+    text-wrap: nowrap;
+}
+@keyframes popup {
+    0%, 100% {transform: translateY(0); opacity: 0;}
+    10%, 90% {transform: translateY(-250%); opacity: 1;}
+}
+
+
+#ConteudoTopo {
+    background-color: #0a142f;
+    display: block;
+    height: 100vh;
+    justify-content: center;
+}
+#scroller {
+    align-items: center;
+    animation: colorAnimation 20s infinite alternate;
+    border-radius: 1.1rem;
+    display: flex;
+    height: 5%;
+    justify-content: center;
+    margin: 0 auto 10% auto;
+    overflow: hidden;
+    padding: .5vw;
+    position: relative;
+    top: 7%;
+    max-width: 66%;
+    z-index: 0;
+}
+@keyframes colorAnimation {
+    0% {}
+    10% {box-shadow: 0 0 .5rem 0 rgba(0, 0, 0, 0.3);}
+    20% {}
+    30% {box-shadow: 0 0 .75rem 0;}
+    50% {box-shadow: 0 0 .1rem 0 rgba(0, 0, 0, 0.1);}
+    70% {box-shadow: 0 0 .75rem 0;}
+    80% {}
+    90% {box-shadow: 0 0 .5rem 0 rgba(0, 0, 0, 0.3);}
+    100% {}
+}
+#letters {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 4.07vw;
+    font-weight: bold;
+    justify-content: center;
+    overflow: hidden;
+    transform: translateY(1%);
+    z-index: 2;
+  }
+#Shelton {
+    display: flex;
+    text-align: center;
+}
+#Elias {
+    display: flex;
+    text-align: center;
+}
+#Macave {
+    display: flex;
+    text-align: center;
+}
+.cima {
+    animation: cima 20s infinite;
+    transform: translateY(40%);
+}
+.cima:nth-child(3) {
+    animation: cima 20s 0.5s infinite;
+    transform: translateY(40%);
+}
+.cima:nth-child(5) {
+    animation: cima 20s 1s infinite;
+    transform: translateY(40%);
+}
+.cima:nth-child(7) {
+    animation: cima 20s 1.5s infinite;
+    transform: translateY(40%);
+}
+.cima:nth-child(2) {
+    animation: cima 20s 2s infinite;
+    transform: translateY(40%);
+}
+.cima:nth-child(4) {
+    animation: cima 20s 2.5s infinite;
+    transform: translateY(40%);
+}
+@keyframes cima {
+    0% {transform: translateY(40%);}
+    5% {transform: translateY(20%);}
+    10% {transform: translateY(0);}
+    50% {transform: translateY(0);}
+    90% {transform: translateY(0);}
+    95% {transform: translateY(20%);}
+    100% {transform: translateY(40%);}
+}
+.baixo {
+    animation: baixo 20s infinite;
+    transform: translateY(-40%);
+}
+.baixo:nth-child(2) {
+    animation: baixo 20s 0.3s infinite;
+    transform: translateY(-40%);
+}
+.baixo:nth-child(3) {
+    animation: baixo 20s 0.6s infinite;
+    transform: translateY(-40%);
+}
+.baixo:nth-child(4) {
+    animation: baixo 20s 0.9s infinite;
+    transform: translateY(-40%);
+}
+.baixo:nth-child(5) {
+    animation: baixo 20s 1.2s infinite;
+    transform: translateY(-40%);
+}
+.baixo:nth-child(6) {
+    animation: baixo 20s 1.5s infinite;
+    transform: translateY(-40%);
+}
+.baixo:nth-child(7) {
+    animation: baixo 20s 1.8s infinite;
+    transform: translateY(-40%);
+}
+.baixo:nth-child(10) {
+    animation: baixo 20s 10.3s infinite;
+    transform: translateY(-40%);
+}
+@keyframes baixo {
+    0% {transform: translateY(-40%);}
+    5% {transform: translateY(-20%);}
+    10% {transform: translateY(0);}
+    50% {transform: translateY(0);}
+    90% {transform: translateY(0);}
+    95% {transform: translateY(-20%);}
+    100% {transform: translateY(-40%);}
+}
+.sunderline:nth-child(8) {
+    animation: sunderbaixo 4s infinite;
+}
+@keyframes sunderbaixo {
+    0%, 100% {transform: translateY(-35%);}
+    50% {transform: translateY(35%);}
+}
+.sunderline {
+    animation: sundercima 4s infinite;
+}
+@keyframes sundercima {
+    0%, 100% {transform: translateY(35%);}
+    50% {transform: translateY(-35%);}
+}
+@keyframes oscilate {
+    0% {color: transparent;}
+}
+
+#Cslider {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 70vh;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    width: 100vw;
+    z-index: 1;
+}
+#Ctexto {
+    align-items: center;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    transform: translateY(-5%);
+    width: 45%;
+}
+#CTtitulo {
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 3.5vw;
+    position: absolute;
+    top: -1rem;
+}
+#CTparagrafo {
+    font-family: 'Dosis-Light';
+    font-size: 2vw;
+    margin-top: 5%;
+    text-align: justify;
+    width: 70%;
+}
+#CTbotao {
+    background: transparent;
+    border: solid 0.1rem;
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    font-family: 'Bahnschrift Light';
+    font-size: 1.7vw;
+    font-style: italic;
+    margin-top: 5%;
+    padding: 3.5%;
+    text-decoration: none;
+}
+#Cgaleria {
+    align-items: center;
+    background-color: #070d1f;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem 0.3rem rgba(0, 0, 0, 0.3) inset;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 51%;
+
+    transform: translateY(-5%);
+}
+#Cgaleria:hover .Cimagem {
+    animation: none;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+#CGflutuante {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    font-size: 3.5rem;
+    height: 140%;
+    justify-content: space-around;
+    opacity: 0.2;
+    transform: rotate(45deg);
+    width: 150%;
+}
+.CGFlinhadireita {
+    animation: direita 5s infinite ease;
+}
+.CGFlinhadireita:nth-child(3) {
+    animation: direita 5s 0.3s infinite ease;
+}
+.CGFlinhadireita:nth-child(5) {
+    animation: direita 5s 0.6s infinite ease;
+}
+.CGFlinhadireita:nth-child(7) {
+    animation: direita 5s 0.9s infinite ease;
+}
+.CGFlinhaesquerda {
+    animation: direita 5s infinite ease reverse;
+}
+.CGFlinhaesquerda:nth-child(4) {
+    animation: direita 5s 0.3s infinite ease reverse;
+}
+.CGFlinhaesquerda:nth-child(6) {
+    animation: direita 5s 0.6s infinite ease reverse;
+}
+@keyframes direita {
+    0%, 50%, 100% {}
+    25% {transform: translateY(-150%);}
+    75% {transform: translateY(150%);}
+}
+#Cimagens {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+}
+.Cimagem {
+    animation: imgcima 4s infinite;
+    background: url('Pics/Minhas/minhas1.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 1.3rem;
+    box-shadow: 0 0 .4rem 0 rgba(0, 0, 0, 0.6) ;
+    filter: saturate(20%);
+    height: 55%;
+    margin: 0 .5%;
+    position: relative;
+    transform: translateY(-35%);
+    width: 7%;
+}
+.Cimagem:nth-child(2) {
+    animation: imgcima 4s  0.3s infinite;
+    background: url('Pics/Minhas/minhas2.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(3) {
+    animation: imgcima 4s  0.6s infinite;
+    background: url('Pics/Minhas/minhas3.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(4) {
+    animation: imgcima 4s  0.9s infinite;
+    background: url('Pics/Minhas/minhas7.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(5) {
+    animation: imgcima 4s  1.2s infinite;
+    background: url('Pics/Minhas/minhas8.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(6) {
+    animation: imgcima 4s  1.5s infinite;
+    background: url('Pics/Minhas/minhas16.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem:nth-child(7) {
+    animation: imgcima 4s  1.8s infinite;
+    background: url('Pics/Minhas/minhas18.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Cimagem h3 {
+    bottom: 0;
+    backdrop-filter: blur(1.5rem);
+    background-color: transparent;
+    border-radius: 0.3rem;
+    color: white;
+    font-family: 'Dosis-Light';
+    font-size: 1.7vw;
+    left: 5%;
+    opacity: 0;
+    padding: 2%;
+    position: absolute;
+    transition: bottom 1s, opacity 1s;
+}
+.Cimagem:hover {
+    cursor: pointer;
+    filter: saturate(100%);
+    height: 60%;
+    width: 40%;
+}
+.Cimagem:hover h3 {
+    opacity: 1;
+    bottom: 5%;
+}
+@keyframes imgcima {
+    0%, 100% {transform: translateY(-35%);}
+    50% {transform: translateY(35%);}
+}
+
+#Carreiras1 {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+#WebDev {
+    overflow: hidden;
+    position: relative;
+}
+
+#WebDevvideo {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    z-index: -1;
+}
+
+#WebDevtexto {
+    color: white;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+#AnaliseDados {
+    overflow: hidden;
+    position: relative;
+}
+
+#AnaliseDadosvideo {
+    height: 100%;
+    object-fit: cover;
+    width: 101%;
+    z-index: -1;
+}
+
+#AnaliseDadostexto {
+    color: white;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+#ProdMusical {
+    overflow: hidden;
+    position: relative;
+}
+
+#ProdMusicalvideo {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    z-index: -1;
+}
+
+#ProdMusicaltexto {
+    color: white;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.Carreirasbox {
+    flex: 1;
+}
+.Carreirasbox .Carreirasvideo {
+    filter: blur(0);
+    transition: filter 1s;
+}
+.Carreirasbox:hover  .Carreirasvideo {
+    filter: blur(.3rem);
+    transition: filter 1s;
+}
+#remolocar {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+}
+#Cremolocar {
+    background-color: transparent;
+    border: none;
+    border-radius: 0.4rem;
+    color: white;
+    cursor: pointer;
+    height: 2rem;
+    opacity: 0.3;
+    position: absolute;
+    transform: translateY(40%);
+    width: 2rem;
+
+    transition: box-shadow 0.5s ease;
+    transition: opacity 0.5s ease;
+}
+#Cremolocar:hover {
+    box-shadow: 0 0 .5rem 0.05rem rgba(0, 0, 0, 0.5) inset;
+    opacity: 1;
+    transition: box-shadow 0.5s ease;
+    transition: opacity 0.5s ease;
+}
+.Cnav {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.Carreirastitulo {
+    color: white;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 3.5vw;
+    padding: 2%;
+
+    transform: translateY(0);
+    transition: transform 1s;
+}
+.Carreirasbox:nth-child(3) h1 {
+    color: black;
+}
+.Carreirasbox:hover .Carreirastitulo {
+    transform: translateY(-70%);
+    transition: transform 1s;
+}
+.Cicone {
+    opacity: 0;
+    position: absolute;
+    bottom: 30%;
+    transition: font-size 0.5s ease, opacity 0.5s ease;
+}
+.Carreirasbotao {
+    background: transparent;
+    border: solid 0.1rem;
+    border-radius: .7rem;
+    color: white;
+    cursor: pointer;
+    font-family: 'Bahnschrift Light';
+    font-style: italic;
+    font-size: 2.2vw;
+    padding: 2%;
+    text-decoration: none;
+    width: 12rem;
+
+    backdrop-filter: blur(0.2rem);
+    box-shadow: 0 0 0 0 rgba(92, 92, 92, 0);
+    transform: translateY(0);
+    transition: border 3s;
+    transition: backdrop-filter 3s;
+    transition: box-shadow 3s;
+    transition: transform 1s;
+}
+.Carreirasbotao:nth-child(3) {
+    padding: 2%;
+    width: 12rem;
+}
+.Carreirasbox:nth-child(3) .Carreirasbotao {
+    color: black;
+}
+.Carreirasbox:hover .Carreirasbotao {
+    border: none;
+    backdrop-filter: blur(0.5rem);
+    box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+    transform: translateY(120%);
+    transition: border 2s;
+    transition: backdrop-filter 1.5s;
+    transition: box-shadow 1.5s;
+    transition: transform 1s;
+}
+
+#Galeria {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+#Galeriaimg {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    z-index: -1;
+    filter: grayscale(1);
+    transition: filter 0.5s ease;
+}
+#Galeriabox {
+    color: white;
+    backdrop-filter: blur(0.5rem);
+    border-radius: 1.3rem;
+    box-shadow: 0 0 .6rem 0.4rem rgba(0, 0, 0, 0.4);
+    height: 60%;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    z-index: 1;
+    
+    transition: height 0.5s ease;
+}
+
+#Gbremolocar {
+    background-color: transparent;
+    backdrop-filter: blur(0.4rem);
+    box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0 0 1.1rem 1.1rem;
+    color: white;
+    cursor: pointer;
+    padding: 1.5%;
+}
+#Gboxh1 {
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 6vw;
+    visibility: visible;
+
+    transition: visibility 0.2s ease-in;
+}
+#Gboxp {
+    font-family: 'Bahnschrift Light';
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-top: -5%;
+    padding: 0 5%;
+    visibility: visible;
+    
+    transition: visibility 0.1s ease-in;
+}
+#Gboxb {
+    background-color: transparent;
+    backdrop-filter: blur(0.4rem);
+    box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+    border: solid 0.1rem;
+    border-radius: 1.1rem;
+    bottom: 5%;
+    color: white;
+    cursor: pointer;
+    font-family: 'Bahnschrift Light';
+    font-style: italic;
+    font-size: 1.9vw;
+    padding: 3%;
+    position: absolute;
+    opacity: 1;
+    text-decoration: none;
+    transform: translateX(-50%);
+
+    transition: opacity 0s 0.3s ease-out;
+}
+
+#Contactos {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+#Contactosvideo {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    transition: filter 1s ease;
+    z-index: -1;
+}
+#Contactosbox {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+#Contactostitulo {
+    backdrop-filter: blur(0.4rem);
+    background: transparent;
+    box-sizing: border-box;
+    display: flex;
+    font-family: 'JuliusSansOne-Regular';
+    justify-content: center;
+    z-index: 1;
+}
+#Contactostitulo a {
+    color: white;
+    font-size: 8vw;
+    text-decoration: none;
+}
+#Iconesbox {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-evenly;
+}
+.Icones {
+    backdrop-filter: blur(0.4rem);
+    border-radius: 1.1rem;
+    box-shadow: 0 0 .5rem 0.05rem rgba(0, 0, 0, 0.7) inset;
+    display: flex;
+    height: 70%;
+    justify-content: space-evenly;
+    margin: 5% auto;
+    overflow: hidden;
+    width: 80%;
+    z-index: 1;
+}
+.IconeLabel {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Dosis-Light';
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    z-index: 2;
+}
+.IconeLabel i {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 5vw;
+    height: 70%;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 5%;
+    width: 100%;
+    transition: font-size 0.5s ease;
+    z-index: 2;
+}
+.IconeLabel:hover i {
+    font-size: 7vw;
+}
+.ILLabel {
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    font-size: 2vw;
+    justify-content: center;
+    margin: 1.5% auto;
+    opacity: 0;
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+.IconeLabel:hover .ILLabel {
+    opacity: 1;
+}
+
+#ConteudoBaixo {
+    background-color: black;
+    color: rgb(196, 196, 196);
+}
+#CB1 {
+    background-color: black;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    margin-top: 2%;
+    min-height: 30vh;
+}
+#Logo {
+    display: flex;
+    justify-content: center;
+    height: 5%;
+    margin: 0 3%;
+    width: 20%;
+}
+#Logo a {
+    height: 200%;
+}
+#Logoimg {
+    height: 10%;
+    width: 100%;
+}
+.Teletitulo {
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 2vw;
+}
+.CB1links {
+    color: gray;
+    font-family: 'Dosis-Light';
+    font-size: 1.8vw;
+    text-decoration: none;
+}
+.CB1links:hover {
+    color: rgb(199, 199, 199);
+    text-decoration: underline;
+    transition: color 0.5s ease;
+    transition: text-decoration 0.5s ease;
+}
+#Tele, #Mail, #Redes {
+    margin: 0 2%;
+}
+#CBhr {
+    background-color: gray;
+    border: none;
+    height: .05rem;
+    width: 60%;
+}
+#Redes {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2%;
+    width: 40%;
+}
+#Redes a {
+    font-size: 3vw;
+    transition: font-size 0.5s ease;
+}
+#Redes a:hover {
+    font-size: 4.5vw;
+}
+#Clegal {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.6vw;
+    justify-content: center;
+}
+#Clegal p {
+    font-family: 'Dosis-Light';
+}
+
+@media (500px >= width) and (orientation: portrait) {
+    /*Smartphone*/
+    .box::before  {
+        content: "0-500px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 15vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 100%;
+        height: 100%;
+        width: 25vw;
+    }
+    #BNfixar {
+        display: none;
+        left: 92%;
+        top: 40%;
+    }
+    #BNitens {
+        display: none;
+    }
+    #BNitens2 {
+        animation: opct .5s ease-in-out;
+        background: black;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        height: 200%;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(76%) translateX(-16%);
+        width: 60%;
+        z-index: 4;
+    }
+    @keyframes opct {
+        0% {
+          opacity: 0;
+        }
+        100% {
+            opacity: 1;
+          }      
+    }
+    .BNia2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 1.6rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        width: 100%;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .BNia2:nth-child(1) {
+        border-radius:1.5rem;
+    }
+    .BNia2:active {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+    }
+    #dropdown2 {
+        cursor: pointer;
+    }
+    #dropdown-menu2 {
+        animation: opct .5s ease-in-out, pos 1s ease;
+        background-color: rgb(19, 19, 19);
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        transform: translateY(6.8rem);
+        z-index: 3;
+    }
+    @keyframes pos {
+        0% {  
+          transform: translateY(-3rem);
+        }
+        100% {
+            transform: translateY(6.8rem);  
+          }      
+    }
+    .dmitem2 {
+        border: none;
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 5vw;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .dmitem2:active {
+        color: rgb(19, 19, 19);
+        background-color: white;
+        font-weight: bold;
+    }
+    #BNbotao {
+        cursor: pointer;
+        overflow: hidden;
+        transform: translateX(-35%);
+        visibility: visible;
+
+        width: 20%;
+    }
+    #BNbotao i {
+        transition: opacity 1s ease;
+        animation: opa .5s; /* Adicionando a duração da animação aqui */
+    }
+    @keyframes opa {
+        from {
+            opacity: 0; /* Corrigindo a propriedade opacity inicial */
+            transform: translatey(-4rem) scaleY(-3);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #ConteudoTopo {
+        height: 165vh;
+        justify-content: start;
+    }
+    #scroller {
+        border-radius: .5rem;
+        height: 5.6vw;
+        min-width: 98%;
+        top: 3%;
+        z-index: 0;
+    }
+    #letters {
+        font-size: 6.1vw;
+    }
+    #Cslider {
+        box-sizing: border-box;
+        height: 157vh;
+        flex-direction: column;
+    }
+    #Ctexto {
+        flex-direction: column;
+        height: 60%;
+        justify-content: space-evenly;
+        transform: translateY(0%);
+        width: 100%;
+    }
+    #CTtitulo {
+        font-size: 10vw;
+        margin: 0;
+        position: static;
+        top: 0;
+    }
+    #CTparagrafo {
+        font-size: 6vw;
+        margin-top: 0%;
+        transform: translateY(-10%);
+        width: 80%;
+    }
+    #CTbotao {
+        font-size: 4.5vw;
+        padding: 3.5% 7%;
+    }
+
+    #Cgaleria {
+        align-items: center;
+        background-color: #070d1f;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 1rem 0.3rem rgba(0, 0, 0, 0.3) inset;
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 95%;
+    
+        transform: translateY(0%);
+    }
+    #Cgaleria:hover .Cimagem {
+        animation: none;
+        transform: translateY(-5%);
+    }
+    #CGflutuante {
+        margin: -50%;
+    }
+    #Cimagens {
+        display: none;
+    }
+    #Cimagens2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+    }
+    .Cimagem2 {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: .8rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 7.5%;
+        margin: 1% 0;
+        position: relative;
+        width: 80%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem2:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2 h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 5.2vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 20%;
+    }
+    .Cimagem2:nth-child(3) h3,
+    .Cimagem2:nth-child(4) h3,
+    .Cimagem2:nth-child(5) h3,
+    .Cimagem2:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem2:hover {
+        cursor: pointer;
+    }
+
+    #Carreiras1 {
+        display: flex;
+        flex-direction: column;
+        height: 180vh;
+    }
+    #Cremolocar {
+        left: 100%;
+    }
+    #Cremolocar i {
+        font-size: 5vw;
+    }
+    #WebDev {
+        height: 1vh;
+    }
+    .Carreirastitulo {
+        font-size: 11vw;
+        transform: translateY(-30%);
+    }
+    .Carreirasbox:active .Carreirastitulo {
+        transform: translateY(-50%);
+    }
+    .Carreirasbox:active .Cicone2 {
+        font-size: 3rem;
+    }
+    .Cicone2 {
+        display: none;
+    }
+    .Cicone2 {
+        opacity: 0;
+        position: absolute;
+        bottom: 30%;
+        transition: font-size 0.5s ease, opacity 0.5s ease;
+    }
+    .Carreirasbotao {
+        border-radius: 0.6rem;
+        font-size: 2rem;
+        padding: 2%;
+    }
+    .Carreirasbox:hover .Carreirasbotao {
+        transform: translateY(100%);
+    }
+    #Galeriaimg {
+        display: none;
+    }
+    #Galeriaimg2 {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        z-index: -1;
+    }
+    #Galeriabox {
+        display: none;
+    }
+    #Galeriabox2 {
+        color: white;
+        backdrop-filter: blur(0.5rem);
+        border-radius: 1.3rem;
+        box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.4);
+        height: 60%;
+        left: 50%;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        z-index: 1;
+        
+        transition: height 0.5s ease;
+    }
+    
+    #Gbremolocar2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 0 0 1.1rem 1.1rem;
+        color: white;
+        cursor: pointer;
+        padding: 3%;
+    }
+    #Gbremolocar2 i {
+        font-size: 1.6rem;
+    }
+    #Gboxh12 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 14vw;
+        margin: 10% 0;
+        visibility: visible;
+    
+        transition: visibility 0.2s ease-in;
+    }
+    #Gboxp2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Bahnschrift Light';
+        font-size: 7vw;
+        font-style: italic;
+        justify-content: center;
+        height: 42.5%;
+        line-height: 2rem;
+        margin-top: -2%;
+        padding: 0 5%;
+        text-align:center;
+        visibility: visible;
+        
+        transition: visibility 0.1s ease-in;
+    }
+    #Gboxb2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: solid 0.1rem;
+        border-radius: .5rem;
+        bottom: 5%;
+        color: white;
+        cursor: pointer;
+        font-family: 'Bahnschrift Light';
+        font-style: italic;
+        font-size: 1.6rem;
+        padding: 3%;
+        position: absolute;
+        opacity: 1;
+        text-decoration: none;
+        transform: translateX(-50%);
+    
+        transition: opacity 0s 0.3s ease-out;
+    }
+    #Contactostitulo {
+        font-size: 5vw;
+    }
+    #Iconesbox {
+        display: none;
+    }
+    #Iconesbox2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+    .Icones2 {
+        align-items: space-evenly;
+        backdrop-filter: blur(0.4rem);
+        border-radius: 1.1rem;
+        box-shadow: 0 0 .4rem 0.05rem rgba(0, 0, 0, 0.5) inset;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        justify-content: center;
+        overflow: hidden;
+        padding-top: 5%;
+        width: 40%;
+        z-index: 1;
+    }
+    .IconeLabel2 {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Dosis-Light';
+        justify-content: center;
+        margin: auto 0;
+        text-decoration: none;
+        width: 100%;
+        z-index: 2;
+    }
+    .IconeLabel2 i {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        font-size: 13vw;
+        height: 70%;
+        justify-content: center;
+        padding: 5%;
+        width: 100%;
+        z-index: 2;
+    }
+    .ILLabel2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-size: 3.5vw;
+        justify-content: center;
+        margin: 20% auto;
+        opacity: 1;
+        width: 100%;
+        transition: opacity 0.5s ease;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #CB2 {
+        height: 50vh;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+        margin: 0 3%;
+        width: 60%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 40%;
+    }
+    #Redes2 a {
+        font-size: 7vw;
+        padding: 10% 0;
+    }
+    #Redes2 a:active {
+        font-size: 7vw;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 6vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 4.7vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 4vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (501px <= width <= 768px) and (orientation: portrait) {
+    /*Tablet*/
+    .box::before  {
+        content: "501-768px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 20vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 100%;
+        height: 100%;
+        width: 25vw;
+    }
+    #BNfixar {
+        display: none;
+        left: 92%;
+        top: 40%;
+    }
+    #BNfb {
+        background-color: transparent;
+        border: none;
+        font-size: 1.3rem;
+    }
+    #BNfb:hover {
+        cursor: pointer;
+        font-size: 1.3rem;
+        transition: none;
+    }
+    #BNitens {
+        display: none;
+    }
+    #BNitens2 {
+        animation: opct .5s ease-in-out;
+        background: black;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        height: 140%;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(76%) translateX(-10%);
+        width: 40%;
+        z-index: 999;
+    }
+    @keyframes opct {
+        0% {
+          opacity: 0;  
+        }
+        100% {
+            opacity: 1;  
+          }      
+    }
+    .BNia2 {
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2.5rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        width: 100%;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .BNia2:nth-child(1) {
+        border-radius:1.5rem;
+    }
+    .BNia2:active {
+        color: black;
+        background-color: white;
+        font-weight: bold;
+    }
+    #dropdown2 {
+        cursor: pointer;
+    }
+    #dropdown-menu2 {
+        animation: opct .5s ease-in-out;
+        background-color: rgb(19, 19, 19);
+        border-radius: 1.5rem;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        transform: translateX(-100%) translateY(-33.5%);
+        z-index: 3;
+    }
+    .dmitem2 {
+        border: none;
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 2rem;
+        height: 100%;
+        padding: .85rem;
+        text-decoration: none;
+        text-wrap: nowrap;
+        transition: border 0.5s ease;
+        transition: font-size 0.5s ease;
+    }
+    .dmitem2:active {
+        color: rgb(19, 19, 19);
+        background-color: white;
+        font-weight: bold;
+    }
+    #BNbotao {
+        cursor: pointer;
+        overflow: hidden;
+        visibility: visible;
+        width: 20%;
+    }
+    #BNbotao i {
+        font-size: 2.5rem;
+        transition: opacity 1s ease;
+        animation: opa .5s; /* Adicionando a duração da animação aqui */
+    }
+    @keyframes opa {
+        from {
+            opacity: 0; /* Corrigindo a propriedade opacity inicial */
+            transform: translatey(-4rem) scaleY(-3);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #ConteudoTopo {
+        height: 205vh;
+    }
+    #scroller {
+        border-radius: .5rem;
+        height: 5.6vw;
+        min-width: 98%;
+        top: 5%;
+        z-index: 0;
+    }
+    #letters {
+        font-size: 6.1vw;
+    }
+    #Cslider {
+        box-sizing: border-box;
+        height: 187vh;
+        flex-direction: column;
+    }
+    #Ctexto {
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        transform: translateY(0%);
+        width: 100%;
+    }
+    #CTtitulo {
+        font-size: 4rem;
+        margin: 0;
+        top: 5%;
+    }
+    #CTparagrafo {
+        font-size: 2.5rem;
+        margin-top: 5rem;
+        width: 90%;
+    }
+    #CTbotao {
+        font-size: 4.5vw;
+    }
+
+    #Cgaleria {
+        align-items: center;
+        background-color: #070d1f;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 1rem 0.3rem rgba(0, 0, 0, 0.3) inset;
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 95%;
+    
+        transform: translateY(0%);
+    }
+    #Cgaleria:hover .Cimagem {
+        animation: none;
+        transform: translateY(-5%);
+    }
+    #CGflutuante {
+        margin: -50%;
+    }
+    #Cimagens {
+        display: none;
+    }
+    #Cimagens2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+    }
+    .Cimagem2 {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.3rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 10%;
+        margin: 1% 0;
+        position: relative;
+        width: 80%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem2:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2 h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 12%;
+    }
+    .Cimagem2:nth-child(3) h3,
+    .Cimagem2:nth-child(4) h3,
+    .Cimagem2:nth-child(5) h3,
+    .Cimagem2:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem2:hover {
+        cursor: pointer;
+    }
+
+    #Carreiras1 {
+        display: flex;
+        flex-direction: column;
+        height: 300vh;
+    }
+    #Cremolocar {
+        left: 100%;
+    }
+    #Cremolocar i {
+        font-size: 5vw;
+    }
+    #WebDev {
+        height: 1vh;
+    }
+    .Carreirastitulo {
+        font-size: 10vw;
+        transform: translateY(-30%);
+    }
+    .Carreirasbox:active .Carreirastitulo {
+        transform: translateY(-50%);
+    }
+    .Carreirasbox:active .Cicone2 {
+        font-size: 3rem;
+    }
+    .Cicone2 {
+        display: none;
+    }
+    .Cicone {
+        opacity: 0;
+        position: absolute;
+        bottom: 30%;
+        transition: font-size 0.5s ease, opacity 0.5s ease;
+    }
+    .Carreirasbotao {
+        border-radius: 0.6rem;
+        font-size: 3rem;
+        padding: 2%;
+    }
+    .Carreirasbox:hover .Carreirasbotao {
+        transform: translateY(100%);
+    }
+    #Galeriaimg {
+        display: none;
+    }
+    #Galeriaimg2 {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        z-index: -1;
+    }
+    #Galeriabox {
+        display: none;
+    }
+    #Galeriabox2 {
+        color: white;
+        backdrop-filter: blur(0.5rem);
+        border-radius: 1.3rem;
+        box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.4);
+        height: 60%;
+        left: 50%;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        z-index: 1;
+        
+        transition: height 0.5s ease;
+    }
+    
+    #Gbremolocar2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 0 0 1.1rem 1.1rem;
+        color: white;
+        cursor: pointer;
+        padding: 3%;
+    }
+    #Gbremolocar2 i {
+        font-size:2rem;
+    }
+    #Gboxh12 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 7rem;
+        margin-top: 7%;
+        visibility: visible;
+    
+        transition: visibility 0.2s ease-in;
+    }
+    #Gboxp2 {
+        font-family: 'Bahnschrift Light';
+        font-size: 2.3rem;
+        font-style: italic;
+        margin-top: -15%;
+        padding: 0 5%;
+        visibility: visible;
+        
+        transition: visibility 0.1s ease-in;
+    }
+    #Gboxb2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: solid 0.1rem;
+        border-radius: 1rem;
+        bottom: 10%;
+        color: white;
+        cursor: pointer;
+        font-family: 'Bahnschrift Light';
+        font-style: italic;
+        font-size: 2.5rem;
+        padding: 3%;
+        position: absolute;
+        opacity: 1;
+        text-decoration: none;
+        transform: translateX(-50%);
+    
+        transition: opacity 0s 0.3s ease-out;
+    }
+    #Contactostitulo {
+        font-size: 5vw;
+        margin: 0;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #Iconesbox {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+    .Icones {
+        align-items: space-evenly;
+        backdrop-filter: blur(0.4rem);
+        border-radius: 1.1rem;
+        box-shadow: 0 0 .4rem 0.05rem rgba(0, 0, 0, 0.9) inset;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        justify-content: space-evenly;
+        overflow: hidden;
+        padding-top: 5%;
+        width: 40%;
+        z-index: 1;
+    }
+    .IconeLabel i {
+        font-size: 5.5rem;
+        padding: 20%;
+    }
+    .ILLabel {
+        font-size: 3vw;
+        margin: 1.5% auto;
+        opacity: 1;
+    }
+    .IconeLabel:hover i {
+        font-size: 5rem;
+    }
+
+    #CB1 {
+        display: none;
+    }
+    #CB2 {
+        height: 45vh;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 2%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 5%;
+        margin: 0 3%;
+        width: 30%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 0%;
+        padding-right: 10%;
+        width: 40%;
+    }
+    #Redes2 a {
+        font-size: 6vw;
+        margin-right: 7%;
+    }
+    #Redes2 a:active {
+        font-size: 6vw;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 5%;
+        min-height: 30vh;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 4vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 3vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (769px <= width <= 1199px) and (orientation: portrait) {
+    /*Laptop*/
+    .box::before  {
+        content: "769-1199px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        height: 10%;
+        padding-left: 30%;
+        width: 15vw;
+    }
+    #navegacao {
+        padding: .6% 0;
+    }
+    .nbotao {
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+    .nbotao:hover {
+        width: 2.4rem;
+    }
+    .botaop {
+        font-size: 1.2rem;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    .BNia {
+        font-size: 3.1vw;
+        padding: 1.5vw;
+    }
+    .BNia:hover {
+        font-size: 3.5vw;
+    }
+    .dmitem {
+        font-size: 1.5rem;
+        padding: 1.5vw;
+    }
+    .dmitem:hover {
+        font-size: 1.7rem;
+    }
+    
+    #ConteudoTopo {
+        height: 151.5vh;
+    }
+    #scroller {
+        border-radius: .5rem;
+        height: 5.6vw;
+        min-width: 98%;
+        top: 5%;
+        z-index: 0;
+    }
+    #letters {
+        font-size: 6.1vw;
+    }
+    #Cslider {
+        box-sizing: border-box;
+        height: 140vh;
+        flex-direction: column;
+    }
+    #Ctexto {
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        transform: translateY(0%);
+        width: 100%;
+    }
+    #CTtitulo {
+        font-size: 5rem;
+        margin: 0;
+        top: 5%;
+    }
+    #CTparagrafo {
+        font-size: 2.5rem;
+        margin-top: 10rem;
+        width: 90%;
+    }
+    #CTbotao {
+        font-size: 4.5vw;
+    }
+
+    #Cgaleria {
+        align-items: center;
+        background-color: #070d1f;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 1rem 0.3rem rgba(0, 0, 0, 0.3) inset;
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 95%;
+    
+        transform: translateY(0%);
+    }
+    #Cgaleria:hover .Cimagem {
+        animation: none;
+        transform: translateY(-5%);
+    }
+    #CGflutuante {
+        margin: -50%;
+    }
+    #Cimagens {
+        display: none;
+    }
+    #Cimagens2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+    }
+    .Cimagem2 {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.3rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 10%;
+        margin: 1% 0;
+        position: relative;
+        width: 80%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem2:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2 h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 12%;
+    }
+    .Cimagem2:nth-child(3) h3,
+    .Cimagem2:nth-child(4) h3,
+    .Cimagem2:nth-child(5) h3,
+    .Cimagem2:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem2:hover {
+        cursor: pointer;
+    }
+
+    #Carreiras1 {
+        display: flex;
+        flex-direction: column;
+        height: 300vh;
+    }
+    #Cremolocar {
+        left: 100%;
+    }
+    #Cremolocar i {
+        font-size: 5vw;
+    }
+    #WebDev {
+        height: 1vh;
+    }
+    .Carreirastitulo {
+        font-size: 11vw;
+        transform: translateY(-30%);
+    }
+    .Carreirasbox:active .Carreirastitulo {
+        transform: translateY(-50%);
+    }
+    .Carreirasbox:active .Cicone2 {
+        font-size: 3rem;
+    }
+    .Cicone2 {
+        display: none;
+    }
+    .Cicone2 {
+        opacity: 0;
+        position: absolute;
+        bottom: 30%;
+        transition: font-size 0.5s ease, opacity 0.5s ease;
+    }
+    .Carreirasbotao {
+        border-radius: 0.6rem;
+        font-size: 3rem;
+        padding: 2%;
+    }
+    .Carreirasbox:hover .Carreirasbotao {
+        transform: translateY(100%);
+    }
+    #Galeriaimg {
+        display: none;
+    }
+    #Galeriaimg2 {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        z-index: -1;
+    }
+    #Galeriabox {
+        display: none;
+    }
+    #Galeriabox2 {
+        color: white;
+        backdrop-filter: blur(0.5rem);
+        border-radius: 1.3rem;
+        box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.4);
+        height: 60%;
+        left: 50%;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        z-index: 1;
+        
+        transition: height 0.5s ease;
+    }
+    #Gbremolocar2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 0 0 1.1rem 1.1rem;
+        color: white;
+        cursor: pointer;
+        padding: 3%;
+    }
+    #Gbremolocar2 i {
+        font-size: 2.5rem;
+    }
+    #Gboxh12 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 7rem;
+        margin-top: 10%;
+        visibility: visible;
+    
+        transition: visibility 0.2s ease-in;
+    }
+    #Gboxp2 {
+        font-family: 'Bahnschrift Light';
+        font-size: 2.5rem;
+        font-style: italic;
+        margin-top: -10%;
+        padding: 0 5%;
+        visibility: visible;
+        
+        transition: visibility 0.1s ease-in;
+    }
+    #Gboxb2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: solid 0.1rem;
+        border-radius: 1rem;
+        bottom: 10%;
+        color: white;
+        cursor: pointer;
+        font-family: 'Bahnschrift Light';
+        font-style: italic;
+        font-size: 2.5rem;
+        padding: 3%;
+        position: absolute;
+        opacity: 1;
+        text-decoration: none;
+        transform: translateX(-50%);
+    
+        transition: opacity 0s 0.3s ease-out;
+    }
+    #Contactostitulo {
+        font-size: 5vw;
+        margin: 0;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #Iconesbox {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+    .Icones {
+        align-items: space-evenly;
+        backdrop-filter: blur(0.4rem);
+        border-radius: 1.1rem;
+        box-shadow: 0 0 .4rem 0.05rem rgba(0, 0, 0, 0.9) inset;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        justify-content: space-evenly;
+        overflow: hidden;
+        padding-top: 5%;
+        width: 40%;
+        z-index: 1;
+    }
+    .IconeLabel i {
+        font-size: 5.5rem;
+        padding: 20%;
+    }
+    .ILLabel {
+        font-size: 3vw;
+        margin: 1.5% auto;
+        opacity: 1;
+    }
+    .IconeLabel:hover i {
+        font-size: 5rem;
+    }
+    
+    .Teletitulo {
+        font-size: 2.5vw;
+    }
+    #CB1 {
+        min-height: 15vh;
+    }
+    #CB2 {
+        display: none;
+    }
+    .CB1links {
+        font-size: 2.2vw;
+    }
+    #Redes {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0%;
+        width: 60%;
+    }
+    #Redes a {
+        font-size: 1.6rem;
+    }
+    #Redes a:hover {
+        font-size: 1.6rem;
+    }
+    #Clegal {
+        font-size: 1.7vw;
+    }
+}
+@media (width >= 1200px) and (orientation: portrait) {
+    /*Laptop*/
+    .box::before  {
+        content: "769-1199px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        height: 10%;
+        padding-left: 30%;
+        width: 15vw;
+    }
+    #navegacao {
+        padding: .6% 0;
+    }
+    .nbotao {
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+    .nbotao:hover {
+        width: 2.4rem;
+    }
+    .botaop {
+        font-size: 1.2rem;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    .BNia {
+        font-size: 3.1vw;
+        padding: 1.5vw;
+    }
+    .BNia:hover {
+        font-size: 3.5vw;
+    }
+    .dmitem {
+        font-size: 1.5rem;
+        padding: 1.5vw;
+    }
+    .dmitem:hover {
+        font-size: 1.7rem;
+    }
+    
+    #ConteudoTopo {
+        height: 151.5vh;
+    }
+    #scroller {
+        border-radius: .5rem;
+        height: 5.6vw;
+        min-width: 98%;
+        top: 5%;
+        z-index: 0;
+    }
+    #letters {
+        font-size: 6.1vw;
+    }
+    #Cslider {
+        box-sizing: border-box;
+        height: 140vh;
+        flex-direction: column;
+    }
+    #Ctexto {
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        transform: translateY(0%);
+        width: 100%;
+    }
+    #CTtitulo {
+        font-size: 5rem;
+        margin: 0;
+        top: 5%;
+    }
+    #CTparagrafo {
+        font-size: 2.5rem;
+        margin-top: 10rem;
+        width: 90%;
+    }
+    #CTbotao {
+        font-size: 4.5vw;
+    }
+
+    #Cgaleria {
+        align-items: center;
+        background-color: #070d1f;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 1rem 0.3rem rgba(0, 0, 0, 0.3) inset;
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 95%;
+    
+        transform: translateY(0%);
+    }
+    #Cgaleria:hover .Cimagem {
+        animation: none;
+        transform: translateY(-5%);
+    }
+    #CGflutuante {
+        margin: -50%;
+    }
+    #Cimagens {
+        display: none;
+    }
+    #Cimagens2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+    }
+    .Cimagem2 {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.3rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 10%;
+        margin: 1% 0;
+        position: relative;
+        width: 80%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem2:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem2 h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 12%;
+    }
+    .Cimagem2:nth-child(3) h3,
+    .Cimagem2:nth-child(4) h3,
+    .Cimagem2:nth-child(5) h3,
+    .Cimagem2:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem2:hover {
+        cursor: pointer;
+    }
+
+    #Carreiras1 {
+        display: flex;
+        flex-direction: column;
+        height: 300vh;
+    }
+    #Cremolocar {
+        left: 100%;
+    }
+    #Cremolocar i {
+        font-size: 5vw;
+    }
+    #WebDev {
+        height: 1vh;
+    }
+    .Carreirastitulo {
+        font-size: 11vw;
+        transform: translateY(-30%);
+    }
+    .Carreirasbox:active .Carreirastitulo {
+        transform: translateY(-50%);
+    }
+    .Carreirasbox:active .Cicone2 {
+        font-size: 3rem;
+    }
+    .Cicone2 {
+        display: none;
+    }
+    .Cicone2 {
+        opacity: 0;
+        position: absolute;
+        bottom: 30%;
+        transition: font-size 0.5s ease, opacity 0.5s ease;
+    }
+    .Carreirasbotao {
+        border-radius: 0.6rem;
+        font-size: 3rem;
+        padding: 2%;
+    }
+    .Carreirasbox:hover .Carreirasbotao {
+        transform: translateY(100%);
+    }
+    #Galeriaimg {
+        display: none;
+    }
+    #Galeriaimg2 {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        z-index: -1;
+    }
+    #Galeriabox {
+        display: none;
+    }
+    #Galeriabox2 {
+        color: white;
+        backdrop-filter: blur(0.5rem);
+        border-radius: 1.3rem;
+        box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.4);
+        height: 60%;
+        left: 50%;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        z-index: 1;
+        
+        transition: height 0.5s ease;
+    }
+    #Gbremolocar2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 0 0 1.1rem 1.1rem;
+        color: white;
+        cursor: pointer;
+        padding: 3%;
+    }
+    #Gbremolocar2 i {
+        font-size: 2.5rem;
+    }
+    #Gboxh12 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 7rem;
+        margin-top: 10%;
+        visibility: visible;
+    
+        transition: visibility 0.2s ease-in;
+    }
+    #Gboxp2 {
+        font-family: 'Bahnschrift Light';
+        font-size: 2.5rem;
+        font-style: italic;
+        margin-top: -10%;
+        padding: 0 5%;
+        visibility: visible;
+        
+        transition: visibility 0.1s ease-in;
+    }
+    #Gboxb2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: solid 0.1rem;
+        border-radius: 1rem;
+        bottom: 10%;
+        color: white;
+        cursor: pointer;
+        font-family: 'Bahnschrift Light';
+        font-style: italic;
+        font-size: 2.5rem;
+        padding: 3%;
+        position: absolute;
+        opacity: 1;
+        text-decoration: none;
+        transform: translateX(-50%);
+    
+        transition: opacity 0s 0.3s ease-out;
+    }
+    #Contactostitulo {
+        font-size: 5vw;
+        margin: 0;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #Iconesbox {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+    .Icones {
+        align-items: space-evenly;
+        backdrop-filter: blur(0.4rem);
+        border-radius: 1.1rem;
+        box-shadow: 0 0 .4rem 0.05rem rgba(0, 0, 0, 0.9) inset;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        justify-content: space-evenly;
+        overflow: hidden;
+        padding-top: 5%;
+        width: 40%;
+        z-index: 1;
+    }
+    .IconeLabel i {
+        font-size: 5.5rem;
+        padding: 20%;
+    }
+    .ILLabel {
+        font-size: 3vw;
+        margin: 1.5% auto;
+        opacity: 1;
+    }
+    .IconeLabel:hover i {
+        font-size: 5rem;
+    }
+    
+    .Teletitulo {
+        font-size: 2.5vw;
+    }
+    #CB1 {
+        min-height: 15vh;
+    }
+    #CB2 {
+        display: none;
+    }
+    .CB1links {
+        font-size: 2.2vw;
+    }
+    #Redes {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0%;
+        width: 60%;
+    }
+    #Redes a {
+        font-size: 1.6rem;
+    }
+    #Redes a:hover {
+        font-size: 1.6rem;
+    }
+    #Clegal {
+        font-size: 1.7vw;
+    }
+}
+
+@media (767px >= width) and (orientation: landscape) {
+    .box::before  {
+        content: "0-767px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 25vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        width: 50%;
+    }
+    #BNfixar {
+        display: none;
+        left: 22%;
+        top: 10%;
+    }
+    #BNitens {
+        display: flex;
+    }
+    #BNitens2 {
+        display: none;
+    }
+    .BNia {
+        font-size: 1.3rem;
+    }
+    #dropdown2 {
+        display: none;
+    }
+    .dmitem, .dmitem:hover {
+        font-size: 3vw;
+    }
+    
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #ConteudoTopo {
+        height: 230vh;
+    }
+    #scroller {
+        border-radius: .5rem;
+        height: 5.6vw;
+        min-width: 98%;
+        top: 5%;
+        z-index: 0;
+    }
+    #letters {
+        font-size: 6.1vw;
+    }
+    #Cslider {
+        box-sizing: border-box;
+        height: 192vh;
+        flex-direction: column;
+    }
+    #Ctexto {
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        transform: translateY(0%);
+        width: 100%;
+    }
+    #CTtitulo {
+        font-size: 2rem;
+        margin: 0;
+        top: 0%;
+    }
+    #CTparagrafo {
+        font-size: 1.5rem;
+        margin-top: 5rem;
+        width: 90%;
+    }
+    #CTbotao {
+        font-size: 2.5vw;
+        padding: 2%;
+    }
+
+    #Cgaleria {
+        align-items: center;
+        background-color: #070d1f;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 1rem 0.3rem rgba(0, 0, 0, 0.3) inset;
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 95%;
+    
+        transform: translateY(0%);
+    }
+    #Cgaleria:hover .Cimagem {
+        animation: none;
+        transform: translateY(-5%);
+    }
+    #CGflutuante {
+        margin: -50%;
+    }
+    #Cimagens {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #Cimagens2 {
+        display: none;
+    }
+    .Cimagem {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 2rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 80%;
+        margin: 1% 0;
+        position: relative;
+        transform: translateY(0%);
+        width: 7.5%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 20%;
+    }
+    .Cimagem:nth-child(3) h3,
+    .Cimagem:nth-child(4) h3,
+    .Cimagem:nth-child(5) h3,
+    .Cimagem:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem:hover {
+        cursor: pointer;
+        height: 80%;
+    }
+
+    #Carreiras1 {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+    }
+    #Cremolocar {
+        left: 100%;
+    }
+    #Cremolocar i {
+        font-size: 5vw;
+    }
+    .Carreirastitulo {
+        font-size: 4vw;
+        transform: translateY(-30%);
+    }
+    .Carreirasbox:active .Carreirastitulo {
+        transform: translateY(-50%);
+    }
+    .Carreirasbox:active .Cicone2 {
+        font-size: 3rem;
+    }
+    .Cicone2 {
+        display: none;
+    }
+    .Cicone2 {
+        opacity: 0;
+        position: absolute;
+        bottom: 30%;
+        transition: font-size 0.5s ease, opacity 0.5s ease;
+    }
+    .Carreirasbotao {
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        padding: 2%;
+    }
+    .Carreirasbotao:nth-child(3) {
+        padding: 5%;
+        width: 6rem;
+    }
+    .Carreirasbox:hover .Carreirasbotao {
+        transform: translateY(70%);
+    }
+    #Galeria {
+        height: 100vh;
+    }
+    #Galeriaimg {
+        display: none;
+    }
+    #Galeriaimg2 {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        z-index: -1;
+    }
+    #Galeriabox {
+        display: none;
+    }
+    #Galeriabox2 {
+        color: white;
+        backdrop-filter: blur(0.5rem);
+        border-radius: 1.3rem;
+        box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.4);
+        height: 60%;
+        left: 50%;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        z-index: 1;
+        
+        transition: height 0.5s ease;
+    }
+    
+    #Gbremolocar2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 0 0 1.1rem 1.1rem;
+        color: white;
+        cursor: pointer;
+        padding: 2%;
+    }
+    #Gbremolocar2 i {
+        font-size: 1.5rem;
+    }
+    #Gboxh12 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 4rem;
+        margin-top: 2.5%;
+        visibility: visible;
+    
+        transition: visibility 0.2s ease-in;
+    }
+    #Gboxp2 {
+        display: none;
+    }
+    #Gboxb2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: solid 0.1rem;
+        border-radius: .5rem;
+        bottom: 10%;
+        color: white;
+        cursor: pointer;
+        font-family: 'Bahnschrift Light';
+        font-style: italic;
+        font-size: 1.2rem;
+        padding: 1.5%;
+        position: absolute;
+        opacity: 1;
+        text-decoration: none;
+        transform: translateX(-50%);
+    
+        transition: opacity 0s 0.3s ease-out;
+    }
+
+    #Contactos {
+        height: 100vh;
+    }
+    #Contactosbox {
+        height: 100vh;
+    }
+    #Contactostitulo h1 {
+        font-size: 1.5vw;
+        margin: 0;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    .Icones {
+        border-radius: 1rem;
+        height: 6rem;
+        margin: 1rem auto;
+        width: 95%;
+    }
+    .IconeLabel i {
+        font-size: 4rem;
+        padding: 5%;
+    }
+    .ILLabel {
+        display: none;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        padding-left: 5%;
+        width: 20%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    #Redes2 a, #Redes2 a:active {
+        font-size: 4vw;
+        padding: 10% 0;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 0 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 2.5vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 2vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (768px <= width <= 1023px) and (orientation: landscape) {
+    .box::before  {
+        content: "768px-1023px";
+    }
+    #navegacao {
+        display: none;
+    }
+    #BN {
+        box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, 0.3);
+        height: 25vh;
+        position: sticky;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        width: 50%;
+    }
+    #BNfixar {
+        display: none;
+        left: 22%;
+        top: 10%;
+    }
+    #BNitens {
+        display: flex;
+    }
+    #BNitens2 {
+        display: none;
+    }
+    .BNia {
+        font-size: 1.3rem;
+    }
+    #dropdown2 {
+        display: none;
+    }
+    .dmitem, .dmitem:hover {
+        font-size: 3vw;
+    }
+    
+    #popuptexto {
+        display: none;
+        font-size: 2.8vw;
+        padding: 0 1vw;
+    }
+    @keyframes popup {
+        0%, 100% {transform: translateY(0); opacity: 0;}
+        10%, 90% {transform: translateY(-300%); opacity: 1;}
+    }
+
+    #ConteudoTopo {
+        height: 230vh;
+    }
+    #scroller {
+        border-radius: .5rem;
+        height: 5.6vw;
+        min-width: 98%;
+        top: 5%;
+        z-index: 0;
+    }
+    #letters {
+        font-size: 6.1vw;
+    }
+    #Cslider {
+        box-sizing: border-box;
+        height: 192vh;
+        flex-direction: column;
+    }
+    #Ctexto {
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        transform: translateY(0%);
+        width: 100%;
+    }
+    #CTtitulo {
+        font-size: 2.5rem;
+        margin: 0;
+        top: -15%;
+    }
+    #CTparagrafo {
+        font-size: 2rem;
+        margin-top: 2rem;
+        width: 90%;
+    }
+    #CTbotao {
+        font-size: 3.5vw;
+        padding: 2%;
+    }
+
+    #Cgaleria {
+        align-items: center;
+        background-color: #070d1f;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 1rem 0.3rem rgba(0, 0, 0, 0.3) inset;
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 95%;
+    
+        transform: translateY(0%);
+    }
+    #Cgaleria:hover .Cimagem {
+        animation: none;
+        transform: translateY(-5%);
+    }
+    #CGflutuante {
+        margin: -50%;
+    }
+    #Cimagens {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #Cimagens2 {
+        display: none;
+    }
+    .Cimagem {
+        animation: none;
+        background: url('Pics/Minhas/minhas1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 2rem;
+        box-shadow: 0 0 .75rem .2rem rgba(0, 0, 0, 0.2);
+        filter: saturate(20%);
+        height: 80%;
+        margin: 1% 0;
+        position: relative;
+        transform: translateY(0%);
+        width: 7.5%;
+
+        transition: height 0.5 ease, filter 0.5s 0.5s ease;
+    }
+    .Cimagem:nth-child(2) {
+        animation: none;
+        background: url('Pics/Minhas/minhas2.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(3) {
+        animation: none;
+        background: url('Pics/Minhas/minhas3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(4) {
+        animation: none;
+        background: url('Pics/Minhas/minhas7.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(5) {
+        animation: none;
+        background: url('Pics/Minhas/minhas8.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(6) {
+        animation: none;
+        background: url('Pics/Minhas/minhas16.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem:nth-child(7) {
+        animation: none;
+        background: url('Pics/Minhas/minhas18.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .Cimagem h3 {
+        bottom: -2%;
+        backdrop-filter: blur(1.5rem);
+        background-color: transparent;
+        border-bottom: solid white 0.15rem;
+        border-radius: .5rem;
+        color: white;
+        font-family: 'Dosis-Light';
+        font-size: 3.5vw;
+        left: 5%;
+        position: absolute;
+        transition: bottom 1s, opacity 1s;
+        text-align: center;
+        width: 20%;
+    }
+    .Cimagem:nth-child(3) h3,
+    .Cimagem:nth-child(4) h3,
+    .Cimagem:nth-child(5) h3,
+    .Cimagem:nth-child(6) h3 {
+        border-bottom: solid black 0.15rem;
+        bottom: -2%;
+        color: black;
+    }
+    .Cimagem:hover {
+        cursor: pointer;
+        height: 80%;
+    }
+
+    #Carreiras1 {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+    }
+    #Cremolocar {
+        left: 100%;
+    }
+    #Cremolocar i {
+        font-size: 5vw;
+    }
+    .Carreirastitulo {
+        font-size: 4vw;
+        transform: translateY(-30%);
+    }
+    .Carreirasbox:active .Carreirastitulo {
+        transform: translateY(-50%);
+    }
+    .Carreirasbox:active .Cicone2 {
+        font-size: 3rem;
+    }
+    .Cicone2 {
+        display: none;
+    }
+    .Cicone2 {
+        opacity: 0;
+        position: absolute;
+        bottom: 30%;
+        transition: font-size 0.5s ease, opacity 0.5s ease;
+    }
+    .Carreirasbotao {
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        padding: 2%;
+    }
+    .Carreirasbotao:nth-child(3) {
+        padding: 5%;
+        width: 6rem;
+    }
+    .Carreirasbox:hover .Carreirasbotao {
+        transform: translateY(70%);
+    }
+    #Galeria {
+        height: 100vh;
+    }
+    #Galeriaimg {
+        display: none;
+    }
+    #Galeriaimg2 {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        z-index: -1;
+    }
+    #Galeriabox {
+        display: none;
+    }
+    #Galeriabox2 {
+        color: white;
+        backdrop-filter: blur(0.5rem);
+        border-radius: 1.3rem;
+        box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.4);
+        height: 60%;
+        left: 50%;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        z-index: 1;
+        
+        transition: height 0.5s ease;
+    }
+    
+    #Gbremolocar2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 0 0 1.1rem 1.1rem;
+        color: white;
+        cursor: pointer;
+        padding: 2%;
+    }
+    #Gbremolocar2 i {
+        font-size: 1.5rem;
+    }
+    #Gboxh12 {
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 4.5rem;
+        margin-top: 2.5%;
+        visibility: visible;
+    
+        transition: visibility 0.2s ease-in;
+    }
+    #Gboxp2 {
+        display: none;
+    }
+    #Gboxb2 {
+        background-color: transparent;
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0 1rem 0.05rem rgba(0, 0, 0, 0.5);
+        border: solid 0.1rem;
+        border-radius: .5rem;
+        bottom: 10%;
+        color: white;
+        cursor: pointer;
+        font-family: 'Bahnschrift Light';
+        font-style: italic;
+        font-size: 1.5rem;
+        padding: 1.5% 3%;
+        position: absolute;
+        opacity: 1;
+        text-decoration: none;
+        transform: translateX(-50%);
+    
+        transition: opacity 0s 0.3s ease-out;
+    }
+
+    #Contactos {
+        height: 100vh;
+    }
+    #Contactosbox {
+        height: 100vh;
+    }
+    #Contactostitulo h1 {
+        font-size: 1.5vw;
+        margin: 0;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    .Icones {
+        border-radius: 1rem;
+        height: 6rem;
+        margin: 0 auto;
+        width: 95%;
+    }
+    .IconeLabel i {
+        font-size: 4rem;
+        padding: 5%;
+    }
+    .ILLabel {
+        display: none;
+    }
+    
+    #CB1 {
+        display: none;
+    }
+    #sec1 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5%;
+        min-height: 30vh;
+    }
+    #Logo2 {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        padding-left: 5%;
+        width: 20%;
+    }
+    #Logo2 a {
+        height: 100%;
+    }
+    #Logoimg2 {
+        height: 10%;
+        width: 100%;
+    }
+    #Redes2 {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    #Redes2 a, #Redes2 a:active {
+        font-size: 4vw;
+        padding: 10% 0;
+    }
+    #sec2 {
+        background-color: black;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 30vh;
+    }
+    #Tele2, #Mail2 {
+        padding: 0 2%;
+        text-align: center;
+        width: 50%;
+    }
+    .Teletitulo2 {
+        color: lightgray;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 3vw;
+    }
+    .CB1links2 {
+        color: gray;
+        font-family: 'Dosis-Light';
+        font-size: 2.5vw;
+        overflow-wrap: break-word;
+        text-decoration: none;
+    }
+    .CB1links2:active {
+        color: rgb(199, 199, 199);
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        transition: text-decoration 0.5s ease;
+    }
+    #Clegal {
+        display: flex;
+        flex-direction: row;
+        font-size: 2vw;
+        justify-content: center;
+    }
+    #Clegal p {
+        font-family: 'Dosis-Light';
+    }
+}
+@media (1024px <= width <= 1439px) and (orientation: landscape) {
+    /*Desktop*/
+    .box::before  {
+        content: "1024px-1439px";
+    }
+    #BN {
+        height: 15vh;
+    }
+    #BNlogo {
+        padding-left: 50%;
+        height: 100%;
+        width: 8vw;
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Cimagens2 {
+        display: none;
+    }
+    .Cicone2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Galeriaimg2 {
+        display: none;
+    }
+    #Galeriabox2 {
+        display: none;
+    }
+    #Gboxh1 {
+        margin-top: 10%;
+    }
+    #Gboxp {
+        font-size: 1.8rem;
+        margin-top: -2rem;
+        padding: 0 8%;
+    }
+    #Contactostitulo a {
+        font-size: 6vw;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #CB2 {
+        display: none;
+    }
+}
+@media (width >= 1440px) and (orientation: landscape) {
+    /*Desktop*/
+    .box::before  {
+        content: "1440px-para frente";
+    }
+    #BNitens2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Cimagens2 {
+        display: none;
+    }
+    .Cicone2 {
+        display: none;
+        position: absolute;
+        left: -9999px;
+    }
+    #Galeriaimg2 {
+        display: none;
+    }
+    #Galeriabox2 {
+        display: none;
+    }
+    #Iconesbox2 {
+        display: none;
+    }
+    #CB2 {
+        display: none;
+    }
+}
